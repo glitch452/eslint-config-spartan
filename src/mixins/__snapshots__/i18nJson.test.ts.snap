@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`i18nJson > should configure the expected rules 1`] = `
+{
+  "i18n-json/identical-keys": 0,
+  "i18n-json/identical-placeholders": 0,
+  "i18n-json/sorted-keys": [
+    2,
+    {
+      "indentSpaces": 2,
+      "order": "asc",
+    },
+  ],
+  "i18n-json/valid-json": 2,
+  "i18n-json/valid-message-syntax": "off",
+}
+`;

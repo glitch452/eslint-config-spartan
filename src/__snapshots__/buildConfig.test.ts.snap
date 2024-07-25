@@ -1,0 +1,650 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildConfig > 'base' > should configure the expected rules 1`] = `
+{
+  "@stylistic/array-bracket-spacing": [
+    "error",
+    "never",
+  ],
+  "@stylistic/arrow-parens": [
+    "error",
+    "always",
+  ],
+  "@stylistic/arrow-spacing": [
+    "error",
+    {
+      "after": true,
+      "before": true,
+    },
+  ],
+  "@stylistic/block-spacing": [
+    "error",
+    "always",
+  ],
+  "@stylistic/brace-style": [
+    "error",
+    "1tbs",
+    {
+      "allowSingleLine": false,
+    },
+  ],
+  "@stylistic/comma-dangle": [
+    "error",
+    "always-multiline",
+  ],
+  "@stylistic/comma-spacing": [
+    "error",
+    {
+      "after": true,
+      "before": false,
+    },
+  ],
+  "@stylistic/comma-style": [
+    "error",
+    "last",
+  ],
+  "@stylistic/computed-property-spacing": [
+    "error",
+    "never",
+    {
+      "enforceForClassMembers": true,
+    },
+  ],
+  "@stylistic/dot-location": [
+    "error",
+    "property",
+  ],
+  "@stylistic/eol-last": "error",
+  "@stylistic/indent": [
+    "error",
+    2,
+    {
+      "ArrayExpression": 1,
+      "CallExpression": {
+        "arguments": 1,
+      },
+      "FunctionDeclaration": {
+        "body": 1,
+        "parameters": 1,
+      },
+      "FunctionExpression": {
+        "body": 1,
+        "parameters": 1,
+      },
+      "ImportDeclaration": 1,
+      "MemberExpression": 1,
+      "ObjectExpression": 1,
+      "SwitchCase": 1,
+      "VariableDeclarator": 1,
+      "flatTernaryExpressions": false,
+      "ignoreComments": false,
+      "ignoredNodes": [
+        "TSUnionType",
+        "TSIntersectionType",
+        "TSTypeParameterInstantiation",
+        "FunctionExpression > .params[decorators.length > 0]",
+        "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+      ],
+      "offsetTernaryExpressions": true,
+      "outerIIFEBody": 1,
+      "tabLength": 2,
+    },
+  ],
+  "@stylistic/indent-binary-ops": [
+    "error",
+    2,
+  ],
+  "@stylistic/jsx-closing-bracket-location": "error",
+  "@stylistic/jsx-closing-tag-location": "error",
+  "@stylistic/jsx-curly-brace-presence": [
+    "error",
+    {
+      "propElementValues": "always",
+    },
+  ],
+  "@stylistic/jsx-curly-newline": "error",
+  "@stylistic/jsx-curly-spacing": [
+    "error",
+    {
+      "children": true,
+      "when": "never",
+    },
+  ],
+  "@stylistic/jsx-equals-spacing": "error",
+  "@stylistic/jsx-first-prop-new-line": "error",
+  "@stylistic/jsx-function-call-newline": [
+    "error",
+    "multiline",
+  ],
+  "@stylistic/jsx-indent-props": [
+    "error",
+    2,
+  ],
+  "@stylistic/jsx-max-props-per-line": [
+    "error",
+    {
+      "maximum": 1,
+      "when": "multiline",
+    },
+  ],
+  "@stylistic/jsx-one-expression-per-line": [
+    "error",
+    {
+      "allow": "single-child",
+    },
+  ],
+  "@stylistic/jsx-quotes": "error",
+  "@stylistic/jsx-tag-spacing": [
+    "error",
+    {
+      "afterOpening": "never",
+      "beforeClosing": "never",
+      "beforeSelfClosing": "always",
+      "closingSlash": "never",
+    },
+  ],
+  "@stylistic/jsx-wrap-multilines": [
+    "error",
+    {
+      "arrow": "parens-new-line",
+      "assignment": "parens-new-line",
+      "condition": "parens-new-line",
+      "declaration": "parens-new-line",
+      "logical": "parens-new-line",
+      "prop": "parens-new-line",
+      "propertyValue": "parens-new-line",
+      "return": "parens-new-line",
+    },
+  ],
+  "@stylistic/key-spacing": [
+    "error",
+    {
+      "afterColon": true,
+      "beforeColon": false,
+    },
+  ],
+  "@stylistic/keyword-spacing": [
+    "error",
+    {
+      "after": true,
+      "before": true,
+    },
+  ],
+  "@stylistic/lines-between-class-members": [
+    "error",
+    "always",
+    {
+      "exceptAfterSingleLine": true,
+    },
+  ],
+  "@stylistic/max-statements-per-line": [
+    "error",
+    {
+      "max": 1,
+    },
+  ],
+  "@stylistic/member-delimiter-style": "error",
+  "@stylistic/multiline-ternary": [
+    "error",
+    "always-multiline",
+  ],
+  "@stylistic/new-parens": "error",
+  "@stylistic/no-extra-parens": [
+    "error",
+    "functions",
+  ],
+  "@stylistic/no-floating-decimal": "error",
+  "@stylistic/no-mixed-operators": [
+    "error",
+    {
+      "allowSamePrecedence": true,
+      "groups": [
+        [
+          "==",
+          "!=",
+          "===",
+          "!==",
+          ">",
+          ">=",
+          "<",
+          "<=",
+        ],
+        [
+          "&&",
+          "||",
+        ],
+        [
+          "in",
+          "instanceof",
+        ],
+      ],
+    },
+  ],
+  "@stylistic/no-mixed-spaces-and-tabs": "error",
+  "@stylistic/no-multi-spaces": "error",
+  "@stylistic/no-multiple-empty-lines": [
+    "error",
+    {
+      "max": 1,
+      "maxBOF": 0,
+      "maxEOF": 0,
+    },
+  ],
+  "@stylistic/no-tabs": "error",
+  "@stylistic/no-trailing-spaces": "error",
+  "@stylistic/no-whitespace-before-property": "error",
+  "@stylistic/object-curly-spacing": [
+    "error",
+    "always",
+  ],
+  "@stylistic/operator-linebreak": [
+    "error",
+    "before",
+  ],
+  "@stylistic/padded-blocks": [
+    "error",
+    {
+      "blocks": "never",
+      "classes": "never",
+      "switches": "never",
+    },
+  ],
+  "@stylistic/quote-props": [
+    "error",
+    "consistent-as-needed",
+  ],
+  "@stylistic/quotes": [
+    "error",
+    "single",
+    {
+      "allowTemplateLiterals": true,
+      "avoidEscape": false,
+    },
+  ],
+  "@stylistic/rest-spread-spacing": [
+    "error",
+    "never",
+  ],
+  "@stylistic/semi": [
+    "error",
+    "always",
+  ],
+  "@stylistic/semi-spacing": [
+    "error",
+    {
+      "after": true,
+      "before": false,
+    },
+  ],
+  "@stylistic/space-before-blocks": [
+    "error",
+    "always",
+  ],
+  "@stylistic/space-before-function-paren": [
+    "error",
+    {
+      "anonymous": "always",
+      "asyncArrow": "always",
+      "named": "never",
+    },
+  ],
+  "@stylistic/space-in-parens": [
+    "error",
+    "never",
+  ],
+  "@stylistic/space-infix-ops": "error",
+  "@stylistic/space-unary-ops": [
+    "error",
+    {
+      "nonwords": false,
+      "words": true,
+    },
+  ],
+  "@stylistic/spaced-comment": [
+    "error",
+    "always",
+    {
+      "block": {
+        "balanced": true,
+        "exceptions": [
+          "*",
+        ],
+        "markers": [
+          "!",
+        ],
+      },
+      "line": {
+        "exceptions": [
+          "/",
+          "#",
+        ],
+        "markers": [
+          "/",
+        ],
+      },
+    },
+  ],
+  "@stylistic/template-curly-spacing": "error",
+  "@stylistic/template-tag-spacing": [
+    "error",
+    "never",
+  ],
+  "@stylistic/type-annotation-spacing": [
+    "error",
+    {},
+  ],
+  "@stylistic/type-generic-spacing": "error",
+  "@stylistic/type-named-tuple-spacing": "error",
+  "@stylistic/wrap-iife": [
+    "error",
+    "any",
+    {
+      "functionPrototypeMethods": true,
+    },
+  ],
+  "@stylistic/yield-star-spacing": [
+    "error",
+    {
+      "after": true,
+      "before": false,
+    },
+  ],
+  "@typescript-eslint/adjacent-overload-signatures": "error",
+  "@typescript-eslint/consistent-type-assertions": [
+    "error",
+    {
+      "assertionStyle": "never",
+    },
+  ],
+  "@typescript-eslint/consistent-type-definitions": [
+    "error",
+    "interface",
+  ],
+  "@typescript-eslint/default-param-last": "error",
+  "@typescript-eslint/explicit-member-accessibility": [
+    "error",
+    {
+      "accessibility": "no-public",
+    },
+  ],
+  "@typescript-eslint/explicit-module-boundary-types": "off",
+  "@typescript-eslint/method-signature-style": [
+    "error",
+    "property",
+  ],
+  "@typescript-eslint/no-confusing-non-null-assertion": "error",
+  "@typescript-eslint/no-dupe-class-members": "error",
+  "@typescript-eslint/no-dynamic-delete": "error",
+  "@typescript-eslint/no-inferrable-types": [
+    "error",
+    {
+      "ignoreParameters": true,
+    },
+  ],
+  "@typescript-eslint/no-invalid-void-type": [
+    "error",
+    {
+      "allowAsThisParameter": true,
+    },
+  ],
+  "@typescript-eslint/no-magic-numbers": [
+    "error",
+    {
+      "ignore": [
+        -1,
+        0,
+        1,
+      ],
+      "ignoreEnums": true,
+      "ignoreNumericLiteralTypes": false,
+      "ignoreReadonlyClassProperties": true,
+    },
+  ],
+  "@typescript-eslint/no-non-null-assertion": "error",
+  "@typescript-eslint/no-require-imports": "error",
+  "@typescript-eslint/no-shadow": "error",
+  "@typescript-eslint/no-unused-vars": "off",
+  "@typescript-eslint/no-useless-constructor": "error",
+  "@typescript-eslint/prefer-for-of": "error",
+  "array-callback-return": "error",
+  "curly": "error",
+  "default-case": [
+    "error",
+    {
+      "commentPattern": "^skip\\sdefault",
+    },
+  ],
+  "default-case-last": "error",
+  "default-param-last": "off",
+  "dot-notation": "error",
+  "eqeqeq": "error",
+  "import/default": "error",
+  "import/export": "error",
+  "import/first": "error",
+  "import/named": "error",
+  "import/namespace": "error",
+  "import/newline-after-import": "error",
+  "import/no-absolute-path": "error",
+  "import/no-cycle": "error",
+  "import/no-deprecated": "error",
+  "import/no-duplicates": [
+    "error",
+    {
+      "considerQueryString": true,
+    },
+  ],
+  "import/no-empty-named-blocks": "error",
+  "import/no-import-module-exports": "error",
+  "import/no-named-as-default": "error",
+  "import/no-named-as-default-member": "off",
+  "import/no-self-import": "error",
+  "import/no-unresolved": "off",
+  "import/no-useless-path-segments": "error",
+  "no-alert": "error",
+  "no-caller": "error",
+  "no-constructor-return": "error",
+  "no-dupe-class-members": "off",
+  "no-duplicate-imports": "off",
+  "no-else-return": [
+    "error",
+    {
+      "allowElseIf": false,
+    },
+  ],
+  "no-eq-null": "error",
+  "no-eval": "error",
+  "no-extra-bind": "error",
+  "no-implied-eval": "error",
+  "no-iterator": "error",
+  "no-labels": "error",
+  "no-magic-numbers": "off",
+  "no-new-func": "error",
+  "no-param-reassign": "error",
+  "no-proto": "error",
+  "no-return-assign": "error",
+  "no-script-url": "error",
+  "no-self-compare": "error",
+  "no-sequences": "error",
+  "no-shadow": "off",
+  "no-throw-literal": "error",
+  "no-unmodified-loop-condition": "error",
+  "no-unused-vars": "off",
+  "no-useless-call": "error",
+  "no-useless-computed-key": "error",
+  "no-useless-concat": "error",
+  "no-useless-rename": "error",
+  "no-useless-return": "error",
+  "object-shorthand": [
+    "error",
+    "always",
+  ],
+  "prefer-template": "error",
+  "require-atomic-updates": "error",
+  "security/detect-bidi-characters": "error",
+  "security/detect-buffer-noassert": "error",
+  "security/detect-child-process": "error",
+  "security/detect-disable-mustache-escape": "error",
+  "security/detect-eval-with-expression": "error",
+  "security/detect-new-buffer": "error",
+  "security/detect-no-csrf-before-method-override": "error",
+  "security/detect-non-literal-fs-filename": "error",
+  "security/detect-non-literal-regexp": "error",
+  "security/detect-non-literal-require": "error",
+  "security/detect-object-injection": "off",
+  "security/detect-possible-timing-attacks": "error",
+  "security/detect-pseudoRandomBytes": "error",
+  "security/detect-unsafe-regex": "error",
+  "sort-imports": [
+    "error",
+    {
+      "ignoreDeclarationSort": true,
+    },
+  ],
+  "typescript-enum/no-const-enum": "error",
+  "typescript-enum/no-enum": "error",
+  "unused-imports/no-unused-imports": "error",
+  "unused-imports/no-unused-vars": [
+    "error",
+    {
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "vars": "all",
+      "varsIgnorePattern": "^_",
+    },
+  ],
+  "yoda": [
+    "error",
+    "never",
+    {
+      "exceptRange": true,
+    },
+  ],
+}
+`;
+
+exports[`buildConfig > 'base/commonJs' > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/no-require-imports": "off",
+  "@typescript-eslint/no-var-requires": "off",
+  "unicorn/prefer-module": "off",
+}
+`;
+
+exports[`buildConfig > 'base/eslint/recommended' > should configure the expected rules 1`] = `
+{
+  "constructor-super": "error",
+  "for-direction": "error",
+  "getter-return": "error",
+  "no-async-promise-executor": "error",
+  "no-case-declarations": "error",
+  "no-class-assign": "error",
+  "no-compare-neg-zero": "error",
+  "no-cond-assign": "error",
+  "no-const-assign": "error",
+  "no-constant-binary-expression": "error",
+  "no-constant-condition": "error",
+  "no-control-regex": "error",
+  "no-debugger": "error",
+  "no-delete-var": "error",
+  "no-dupe-args": "error",
+  "no-dupe-class-members": "error",
+  "no-dupe-else-if": "error",
+  "no-dupe-keys": "error",
+  "no-duplicate-case": "error",
+  "no-empty": "error",
+  "no-empty-character-class": "error",
+  "no-empty-pattern": "error",
+  "no-empty-static-block": "error",
+  "no-ex-assign": "error",
+  "no-extra-boolean-cast": "error",
+  "no-fallthrough": "error",
+  "no-func-assign": "error",
+  "no-global-assign": "error",
+  "no-import-assign": "error",
+  "no-invalid-regexp": "error",
+  "no-irregular-whitespace": "error",
+  "no-loss-of-precision": "error",
+  "no-misleading-character-class": "error",
+  "no-new-native-nonconstructor": "error",
+  "no-nonoctal-decimal-escape": "error",
+  "no-obj-calls": "error",
+  "no-octal": "error",
+  "no-prototype-builtins": "error",
+  "no-redeclare": "error",
+  "no-regex-spaces": "error",
+  "no-self-assign": "error",
+  "no-setter-return": "error",
+  "no-shadow-restricted-names": "error",
+  "no-sparse-arrays": "error",
+  "no-this-before-super": "error",
+  "no-undef": "error",
+  "no-unexpected-multiline": "error",
+  "no-unreachable": "error",
+  "no-unsafe-finally": "error",
+  "no-unsafe-negation": "error",
+  "no-unsafe-optional-chaining": "error",
+  "no-unused-labels": "error",
+  "no-unused-private-class-members": "error",
+  "no-unused-vars": "error",
+  "no-useless-backreference": "error",
+  "no-useless-catch": "error",
+  "no-useless-escape": "error",
+  "no-with": "error",
+  "require-yield": "error",
+  "use-isnan": "error",
+  "valid-typeof": "error",
+}
+`;
+
+exports[`buildConfig > 'base/typescript-eslint/base' > should configure the expected rules 1`] = `undefined`;
+
+exports[`buildConfig > 'base/typescript-eslint/eslint-recomme…' > should configure the expected rules 1`] = `
+{
+  "constructor-super": "off",
+  "getter-return": "off",
+  "no-const-assign": "off",
+  "no-dupe-args": "off",
+  "no-dupe-class-members": "off",
+  "no-dupe-keys": "off",
+  "no-func-assign": "off",
+  "no-import-assign": "off",
+  "no-new-native-nonconstructor": "off",
+  "no-new-symbol": "off",
+  "no-obj-calls": "off",
+  "no-redeclare": "off",
+  "no-setter-return": "off",
+  "no-this-before-super": "off",
+  "no-undef": "off",
+  "no-unreachable": "off",
+  "no-unsafe-negation": "off",
+  "no-var": "error",
+  "prefer-const": "error",
+  "prefer-rest-params": "error",
+  "prefer-spread": "error",
+}
+`;
+
+exports[`buildConfig > 'base/typescript-eslint/recommended' > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/ban-ts-comment": "error",
+  "@typescript-eslint/ban-types": "error",
+  "@typescript-eslint/no-array-constructor": "error",
+  "@typescript-eslint/no-duplicate-enum-values": "error",
+  "@typescript-eslint/no-explicit-any": "error",
+  "@typescript-eslint/no-extra-non-null-assertion": "error",
+  "@typescript-eslint/no-loss-of-precision": "error",
+  "@typescript-eslint/no-misused-new": "error",
+  "@typescript-eslint/no-namespace": "error",
+  "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+  "@typescript-eslint/no-this-alias": "error",
+  "@typescript-eslint/no-unnecessary-type-constraint": "error",
+  "@typescript-eslint/no-unsafe-declaration-merging": "error",
+  "@typescript-eslint/no-unused-vars": "error",
+  "@typescript-eslint/no-var-requires": "error",
+  "@typescript-eslint/prefer-as-const": "error",
+  "@typescript-eslint/triple-slash-reference": "error",
+  "no-array-constructor": "off",
+  "no-loss-of-precision": "off",
+  "no-unused-vars": "off",
+}
+`;

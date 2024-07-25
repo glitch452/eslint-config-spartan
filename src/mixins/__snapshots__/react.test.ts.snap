@@ -1,0 +1,125 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`react > should configure the expected rules when "noJsxRuntime" is not set 1`] = `
+{
+  "react-hooks/exhaustive-deps": "error",
+  "react-hooks/rules-of-hooks": "error",
+  "react/button-has-type": "error",
+  "react/display-name": 2,
+  "react/hook-use-state": "error",
+  "react/jsx-boolean-value": [
+    "error",
+    "never",
+    {
+      "assumeUndefinedIsFalse": true,
+    },
+  ],
+  "react/jsx-curly-brace-presence": [
+    "error",
+    "never",
+  ],
+  "react/jsx-fragments": "error",
+  "react/jsx-key": 2,
+  "react/jsx-no-comment-textnodes": 2,
+  "react/jsx-no-duplicate-props": 2,
+  "react/jsx-no-leaked-render": [
+    "error",
+    {
+      "validStrategies": [
+        "coerce",
+        "ternary",
+      ],
+    },
+  ],
+  "react/jsx-no-target-blank": 2,
+  "react/jsx-no-undef": 2,
+  "react/jsx-no-useless-fragment": "error",
+  "react/jsx-pascal-case": [
+    "error",
+    {
+      "allowNamespace": true,
+    },
+  ],
+  "react/jsx-uses-react": 0,
+  "react/jsx-uses-vars": 2,
+  "react/no-array-index-key": "error",
+  "react/no-children-prop": 2,
+  "react/no-danger-with-children": 2,
+  "react/no-deprecated": 2,
+  "react/no-direct-mutation-state": 2,
+  "react/no-find-dom-node": 2,
+  "react/no-is-mounted": 2,
+  "react/no-render-return-value": 2,
+  "react/no-string-refs": 2,
+  "react/no-unescaped-entities": 2,
+  "react/no-unknown-property": 2,
+  "react/no-unsafe": 0,
+  "react/prop-types": 2,
+  "react/react-in-jsx-scope": 0,
+  "react/require-render-return": 2,
+  "react/self-closing-comp": "error",
+  "react/void-dom-elements-no-children": "error",
+}
+`;
+
+exports[`react > should configure the expected rules when "noJsxRuntime" is true 1`] = `
+{
+  "react-hooks/exhaustive-deps": "error",
+  "react-hooks/rules-of-hooks": "error",
+  "react/button-has-type": "error",
+  "react/display-name": 2,
+  "react/hook-use-state": "error",
+  "react/jsx-boolean-value": [
+    "error",
+    "never",
+    {
+      "assumeUndefinedIsFalse": true,
+    },
+  ],
+  "react/jsx-curly-brace-presence": [
+    "error",
+    "never",
+  ],
+  "react/jsx-fragments": "error",
+  "react/jsx-key": 2,
+  "react/jsx-no-comment-textnodes": 2,
+  "react/jsx-no-duplicate-props": 2,
+  "react/jsx-no-leaked-render": [
+    "error",
+    {
+      "validStrategies": [
+        "coerce",
+        "ternary",
+      ],
+    },
+  ],
+  "react/jsx-no-target-blank": 2,
+  "react/jsx-no-undef": 2,
+  "react/jsx-no-useless-fragment": "error",
+  "react/jsx-pascal-case": [
+    "error",
+    {
+      "allowNamespace": true,
+    },
+  ],
+  "react/jsx-uses-react": 2,
+  "react/jsx-uses-vars": 2,
+  "react/no-array-index-key": "error",
+  "react/no-children-prop": 2,
+  "react/no-danger-with-children": 2,
+  "react/no-deprecated": 2,
+  "react/no-direct-mutation-state": 2,
+  "react/no-find-dom-node": 2,
+  "react/no-is-mounted": 2,
+  "react/no-render-return-value": 2,
+  "react/no-string-refs": 2,
+  "react/no-unescaped-entities": 2,
+  "react/no-unknown-property": 2,
+  "react/no-unsafe": 0,
+  "react/prop-types": 2,
+  "react/react-in-jsx-scope": 2,
+  "react/require-render-return": 2,
+  "react/self-closing-comp": "error",
+  "react/void-dom-elements-no-children": "error",
+}
+`;

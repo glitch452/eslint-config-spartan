@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`storybook > '0' > should configure the expected rules 1`] = `undefined`;
+
+exports[`storybook > '1' > should configure the expected rules 1`] = `
+{
+  "import/no-anonymous-default-export": "off",
+  "react-hooks/rules-of-hooks": "off",
+  "storybook/await-interactions": "error",
+  "storybook/context-in-play-function": "error",
+  "storybook/csf-component": "error",
+  "storybook/default-exports": "error",
+  "storybook/hierarchy-separator": "error",
+  "storybook/no-redundant-story-name": "error",
+  "storybook/no-stories-of": "error",
+  "storybook/prefer-pascal-case": "error",
+  "storybook/story-exports": "error",
+  "storybook/use-storybook-expect": "error",
+  "storybook/use-storybook-testing-library": "error",
+}
+`;
+
+exports[`storybook > '2' > should configure the expected rules 1`] = `
+{
+  "storybook/no-uninstalled-addons": "error",
+}
+`;

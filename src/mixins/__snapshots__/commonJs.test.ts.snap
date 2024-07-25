@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`commonJs > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/no-require-imports": "off",
+  "@typescript-eslint/no-var-requires": "off",
+  "unicorn/prefer-module": "off",
+}
+`;

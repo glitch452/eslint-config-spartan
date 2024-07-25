@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`chai > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/consistent-type-assertions": [
+    "error",
+    {
+      "assertionStyle": "as",
+      "objectLiteralTypeAssertions": "allow",
+    },
+  ],
+  "@typescript-eslint/no-explicit-any": "off",
+  "@typescript-eslint/no-magic-numbers": "off",
+  "@typescript-eslint/no-non-null-assertion": "off",
+  "chai-expect/missing-assertion": "error",
+  "chai-expect/no-inner-compare": "error",
+  "chai-expect/no-inner-literal": "error",
+  "chai-expect/terminating-properties": "error",
+  "chai-friendly/no-unused-expressions": "error",
+  "no-unused-expressions": "off",
+}
+`;

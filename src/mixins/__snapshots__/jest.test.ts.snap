@@ -1,0 +1,69 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`jest > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/consistent-type-assertions": [
+    "error",
+    {
+      "assertionStyle": "as",
+      "objectLiteralTypeAssertions": "allow",
+    },
+  ],
+  "@typescript-eslint/no-explicit-any": "off",
+  "@typescript-eslint/no-magic-numbers": "off",
+  "@typescript-eslint/no-non-null-assertion": "off",
+  "jest/consistent-test-it": [
+    "error",
+    {
+      "fn": "test",
+      "withinDescribe": "it",
+    },
+  ],
+  "jest/expect-expect": "error",
+  "jest/max-expects": [
+    "error",
+    {
+      "max": 1,
+    },
+  ],
+  "jest/no-alias-methods": "error",
+  "jest/no-commented-out-tests": "error",
+  "jest/no-conditional-expect": "error",
+  "jest/no-deprecated-functions": "error",
+  "jest/no-disabled-tests": "error",
+  "jest/no-done-callback": "error",
+  "jest/no-duplicate-hooks": "error",
+  "jest/no-export": "error",
+  "jest/no-focused-tests": "error",
+  "jest/no-identical-title": "error",
+  "jest/no-interpolation-in-snapshots": "error",
+  "jest/no-jasmine-globals": "error",
+  "jest/no-mocks-import": "error",
+  "jest/no-standalone-expect": "error",
+  "jest/no-test-prefixes": "error",
+  "jest/prefer-comparison-matcher": "error",
+  "jest/prefer-each": "error",
+  "jest/prefer-expect-resolves": "error",
+  "jest/prefer-mock-promise-shorthand": "error",
+  "jest/prefer-strict-equal": "error",
+  "jest/prefer-to-be": "error",
+  "jest/prefer-to-contain": "error",
+  "jest/prefer-to-have-length": "error",
+  "jest/require-hook": "error",
+  "jest/require-top-level-describe": [
+    "error",
+    {
+      "maxNumberOfTopLevelDescribes": 1,
+    },
+  ],
+  "jest/valid-describe-callback": "error",
+  "jest/valid-expect": "error",
+  "jest/valid-expect-in-promise": "error",
+  "jest/valid-title": [
+    "error",
+    {
+      "ignoreTypeOfDescribeName": true,
+    },
+  ],
+}
+`;

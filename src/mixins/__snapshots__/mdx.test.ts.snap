@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`mdx > 'base' > should configure the expected rules 1`] = `
+{
+  "mdx/remark": "error",
+  "no-unused-expressions": "error",
+  "react/react-in-jsx-scope": 0,
+  "unused-imports/no-unused-imports": "off",
+}
+`;
+
+exports[`mdx > 'code-blocks' > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/no-magic-numbers": "off",
+  "eol-last": "off",
+  "no-undef": "off",
+  "no-unused-expressions": "off",
+  "no-unused-vars": "off",
+  "padded-blocks": "off",
+  "strict": "off",
+  "unicode-bom": "off",
+  "unused-imports/no-unused-imports": "off",
+  "unused-imports/no-unused-vars": "off",
+}
+`;

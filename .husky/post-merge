@@ -1,0 +1,3 @@
+SCRIPT_PATH="$(git rev-parse --show-toplevel)/.husky"
+
+. "${SCRIPT_PATH}/change_warnings.sh"

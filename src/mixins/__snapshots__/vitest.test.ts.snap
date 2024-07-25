@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`vitest > should configure the expected rules 1`] = `
+{
+  "@typescript-eslint/consistent-type-assertions": [
+    "error",
+    {
+      "assertionStyle": "as",
+      "objectLiteralTypeAssertions": "allow",
+    },
+  ],
+  "@typescript-eslint/no-explicit-any": "off",
+  "@typescript-eslint/no-magic-numbers": "off",
+  "@typescript-eslint/no-non-null-assertion": "off",
+  "vitest/consistent-test-it": [
+    "error",
+    {
+      "fn": "test",
+      "withinDescribe": "it",
+    },
+  ],
+  "vitest/expect-expect": "error",
+  "vitest/max-expects": [
+    "error",
+    {
+      "max": 1,
+    },
+  ],
+  "vitest/no-commented-out-tests": "error",
+  "vitest/no-conditional-expect": "error",
+  "vitest/no-conditional-tests": "error",
+  "vitest/no-disabled-tests": "error",
+  "vitest/no-duplicate-hooks": "error",
+  "vitest/no-focused-tests": "error",
+  "vitest/no-identical-title": "error",
+  "vitest/no-import-node-test": "error",
+  "vitest/no-standalone-expect": "error",
+  "vitest/prefer-comparison-matcher": "error",
+  "vitest/prefer-each": "error",
+  "vitest/prefer-expect-resolves": "error",
+  "vitest/prefer-mock-promise-shorthand": "error",
+  "vitest/prefer-strict-equal": "error",
+  "vitest/prefer-to-be": "error",
+  "vitest/prefer-to-contain": "error",
+  "vitest/prefer-to-have-length": "error",
+  "vitest/require-hook": "error",
+  "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+  "vitest/require-top-level-describe": [
+    "error",
+    {
+      "maxNumberOfTopLevelDescribes": 1,
+    },
+  ],
+  "vitest/valid-describe-callback": "error",
+  "vitest/valid-expect": "error",
+  "vitest/valid-title": [
+    "error",
+    {
+      "ignoreTypeOfDescribeName": true,
+    },
+  ],
+}
+`;

@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`i18next > should configure the expected rules 1`] = `
+{
+  "i18next/no-literal-string": [
+    2,
+  ],
+}
+`;

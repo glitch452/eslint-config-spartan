@@ -1,0 +1,80 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  lint-format-test:
+    name: Lint, Format, Test
+    runs-on: ubuntu-latest
+
+    env:
+      ENV: ci
+      HUSKY: '0'
+
+    steps:
+      - name: Get Fetch Depth
+        id: fetch_depth
+        run: |
+          FETCH_DEPTH="$(( ${{ github.event.pull_request.commits }} + 2 ))"
+          echo "Fetch Depth: ${FETCH_DEPTH}"
+          echo "fetch_depth=${FETCH_DEPTH}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: ${{ steps.fetch_depth.outputs.fetch_depth }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate PR commit messages with commitlint
+        run: |
+          npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Check Formatting
+        run: npm run format:ci
+
+      - name: Run Typescript Type Checks
+        run: npm run type
+
+      - name: Run Linter
+        run: npm run lint:ci
+
+      - name: Run Unit Tests
+        id: unit_tests
+        run: npm run test:ci
+
+      - name: Run Build
+        run: npm run build
+
+      - name: Generate Unit Test Report
+        if: |
+          ( success() || failure() )
+          && ( steps.unit_tests.conclusion == 'success' || steps.unit_tests.conclusion == 'failure' )
+        uses: dorny/test-reporter@v1.8.0
+        with:
+          name: Vitest Report
+          path: reports/vitest-junit-report.xml
+          reporter: jest-junit
+          fail-on-error: false
+
+      - name: Report Coverage
+        if: |
+          ( success() || failure() )
+          && ( steps.unit_tests.conclusion == 'success' || steps.unit_tests.conclusion == 'failure' )
+        uses: davelosert/vitest-coverage-report-action@v2
