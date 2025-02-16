@@ -1,5 +1,9 @@
 # ESLint Config Spartan
 
+[![NPM License](https://img.shields.io/npm/l/eslint-config-spartan)](https://choosealicense.com/licenses/mit/)
+[![NPM Version](https://img.shields.io/npm/v/eslint-config-spartan)](https://www.npmjs.com/package/eslint-config-spartan)
+[![NPM Downloads](https://img.shields.io/npm/dw/eslint-config-spartan?logo=npm)](https://www.npmjs.com/package/eslint-config-spartan)
+
 <img src="assets/spartan-icon.jpg" width="150" height="150">
 
 `eslint-config-spartan` is an opinionated [eslint](https://eslint.org) configuration with separate configs (called
