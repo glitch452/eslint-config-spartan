@@ -19,7 +19,7 @@ jobs:
 
     env:
       ENV: ci
-      HUSKY: '0'
+      HUSKY: "0"
 
     steps:
       - name: Get Fetch Depth
@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
       - name: Install Dependencies
         run: npm ci
