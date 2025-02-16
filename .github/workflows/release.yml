@@ -21,6 +21,9 @@ jobs:
   publish:
     name: Publish to NPM
     runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/eslint-config-spartan
 
     steps:
       - name: Checkout
