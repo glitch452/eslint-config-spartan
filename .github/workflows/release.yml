@@ -18,8 +18,8 @@ env:
   HUSKY: '0'
 
 jobs:
-  test:
-    name: Publish to the release branch
+  publish:
+    name: Publish to NPM
     runs-on: ubuntu-latest
 
     steps:
