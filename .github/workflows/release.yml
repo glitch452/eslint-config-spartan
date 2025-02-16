@@ -47,5 +47,6 @@ jobs:
           registry-token: ${{ secrets.NPM_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           get-release-title-from-pr: true
+          prepend-version-to-release-title: true
           enable-github-release: true
           package-directory: dist
