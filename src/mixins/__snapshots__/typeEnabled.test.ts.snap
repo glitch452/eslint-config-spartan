@@ -32,13 +32,19 @@ exports[`typeEnabled > should configure the expected rules 1`] = `
   "@typescript-eslint/require-await": "error",
   "@typescript-eslint/restrict-plus-operands": "error",
   "@typescript-eslint/restrict-template-expressions": "error",
-  "@typescript-eslint/switch-exhaustiveness-check": "error",
+  "@typescript-eslint/switch-exhaustiveness-check": [
+    "error",
+    {
+      "requireDefaultForNonUnion": true,
+    },
+  ],
   "@typescript-eslint/unbound-method": [
     "error",
     {
       "ignoreStatic": true,
     },
   ],
+  "default-case": "off",
   "dot-notation": "off",
   "no-implied-eval": "off",
   "require-await": "off",
