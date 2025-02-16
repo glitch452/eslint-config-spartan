@@ -58,6 +58,7 @@ mixins) for various eslint plugins.
   - [Remark](#remark)
     - [Usage](#usage)
     - [Usage With Prettier](#usage-with-prettier)
+  - [License](#license)
 
 ## Philosophy
 
@@ -587,3 +588,8 @@ import { remark, remarkPrettier } from 'eslint-config-spartan/remark';
 
 export default { plugins: [remark, remarkPrettier] };
 ```
+
+## License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE) as defined by the
+[Open Source Initiative](https://opensource.org/license/mit).
