@@ -40,6 +40,7 @@ export function typeEnabled(options = {}) {
 
       // Disable JS rules that have TS versions below
       'dot-notation': 'off',
+      'default-case': 'off',
 
       '@typescript-eslint/dot-notation': 'error',
       '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
@@ -54,7 +55,7 @@ export function typeEnabled(options = {}) {
       '@typescript-eslint/prefer-nullish-coalescing': 'error',
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/prefer-reduce-type-parameter': 'error',
-      '@typescript-eslint/switch-exhaustiveness-check': 'error',
+      '@typescript-eslint/switch-exhaustiveness-check': ['error', { requireDefaultForNonUnion: true }],
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
     },
   };
