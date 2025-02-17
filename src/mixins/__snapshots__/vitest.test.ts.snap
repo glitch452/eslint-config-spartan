@@ -12,6 +12,7 @@ exports[`vitest > should configure the expected rules 1`] = `
   "@typescript-eslint/no-explicit-any": "off",
   "@typescript-eslint/no-magic-numbers": "off",
   "@typescript-eslint/no-non-null-assertion": "off",
+  "security/detect-non-literal-fs-filename": "off",
   "vitest/consistent-test-it": [
     "error",
     {

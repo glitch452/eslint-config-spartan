@@ -1,5 +1,6 @@
 import mochaPlugin from 'eslint-plugin-mocha';
 import typescriptEsLint from 'typescript-eslint';
+import securityPlugin from 'eslint-plugin-security';
 import { mocha } from './mocha.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -12,10 +13,12 @@ describe(mocha.name, () => {
 
   const validRules = [
     ...listRules(mochaPlugin.rules, prefixes.mocha),
+    ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(mochaPlugin.rules, prefixes.mocha),
+    ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
 
