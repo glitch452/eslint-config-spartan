@@ -65,5 +65,6 @@ exports[`jest > should configure the expected rules 1`] = `
       "ignoreTypeOfDescribeName": true,
     },
   ],
+  "security/detect-non-literal-fs-filename": "off",
 }
 `;

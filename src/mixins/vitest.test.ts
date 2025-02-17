@@ -1,5 +1,6 @@
 import vitestPlugin from 'eslint-plugin-vitest';
 import typescriptEsLint from 'typescript-eslint';
+import securityPlugin from 'eslint-plugin-security';
 import { vitest } from './vitest.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -12,10 +13,12 @@ describe(vitest.name, () => {
 
   const validRules = [
     ...listRules(vitestPlugin.rules, prefixes.vitest),
+    ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(vitestPlugin.rules, prefixes.vitest),
+    ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
 

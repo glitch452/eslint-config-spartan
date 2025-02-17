@@ -18,5 +18,6 @@ exports[`chai > should configure the expected rules 1`] = `
   "chai-expect/terminating-properties": "error",
   "chai-friendly/no-unused-expressions": "error",
   "no-unused-expressions": "off",
+  "security/detect-non-literal-fs-filename": "off",
 }
 `;
