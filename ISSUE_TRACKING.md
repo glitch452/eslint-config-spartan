@@ -9,3 +9,5 @@
   - v1.2.x requires eslint v9
 - eslint-plugin-cypress
   - v4.x.x requires eslint v9
+- eslint-plugin-unicorn
+  - v57.x.x requires eslint v9
