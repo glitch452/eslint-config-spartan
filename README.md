@@ -28,6 +28,7 @@ mixins) for various eslint plugins.
 - [ESLint Config Spartan](#eslint-config-spartan)
   - [Table of Contents](#table-of-contents)
   - [Philosophy](#philosophy)
+  - [Install](#install)
   - [Build Config](#build-config)
   - [Utilities](#utilities)
     - [Files](#files)
@@ -73,6 +74,12 @@ reader, where the consistency can help to more quickly parse though code. This c
 reviewer can focus more of their energy on the functionality of the code. Lastly, these can help to reduce diffs in git
 commits, which also helps with code review, since it's easier to focus in on what has actually changed, rather than what
 was simply reformatted.
+
+## Install
+
+```sh
+npm install --save-dev eslint@^8.57 eslint-config-spartan
+```
 
 ## Build Config
 
