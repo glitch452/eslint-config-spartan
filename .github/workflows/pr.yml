@@ -62,6 +62,9 @@ jobs:
       - name: Run Build
         run: npm run build
 
+      - name: Run Type Checks on the Build Output
+        run: npm run lint:dist
+
       - name: Generate Unit Test Report
         if: |
           ( success() || failure() )

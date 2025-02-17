@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "inspect": "npx @eslint/config-inspector",
     "lint:ci": "eslint . --max-warnings 0",
-    "lint:dist": "cd dist && npx @arethetypeswrong/cli -P",
+    "lint:dist": "npx @arethetypeswrong/cli --pack ./dist",
     "lint:nc": "eslint . --max-warnings 0 --report-unused-disable-directives --fix",
     "lint": "eslint . --max-warnings 0 --cache --report-unused-disable-directives --fix",
     "postbuild": "node scripts/copy-dist-files.mjs . dist && node scripts/prepare-package-json.mjs src dist",
