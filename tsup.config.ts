@@ -34,7 +34,7 @@ const tsupConfig = defineConfig({
   dts: true,
   entry: ['src/**/index.js'],
   format: ['cjs', 'esm'],
-  minify: true,
+  minify: false,
   outDir: 'dist',
   skipNodeModulesBundle: true,
   target: 'es2022',
