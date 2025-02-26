@@ -11,3 +11,5 @@
   - v4.x.x requires eslint v9
 - eslint-plugin-unicorn
   - v57.x.x requires eslint v9
+- @stylistic/eslint-plugin
+  - v4.x.x requires eslint v9
