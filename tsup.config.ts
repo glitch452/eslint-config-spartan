@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { Options, defineConfig } from 'tsup';
 
 const dateFormat = {
@@ -11,12 +12,29 @@ const dateFormat = {
   timeZone: 'America/Toronto',
 } satisfies Intl.DateTimeFormatOptions;
 
+interface PackageJson {
+  author: string;
+  homepage: string;
+  license: string;
+  name: string;
+}
+
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+const packageJson = JSON.parse(fs.readFileSync('./package.json').toString()) as PackageJson;
+
 const banner = ((_context) => {
   const lines = [
     '/*',
-    ` * ©${new Date().getFullYear()} David Dearden`,
+    ` * ${packageJson.name}`,
+    ` * ©${new Date().getFullYear()} ${packageJson.author}`,
+    ` * License: ${packageJson.license}`,
+    ` * Homepage: ${packageJson.homepage}`,
     ` * Build Date: ${new Date().toISOString()} (${new Date().toLocaleString('en-CA', dateFormat)})`,
   ];
+
+  if (process.env.BUILD_VERSION) {
+    lines.push(` * Version: ${process.env.BUILD_VERSION}`);
+  }
 
   if (process.env.GITHUB_SHA) {
     lines.push(` * Git Hash: ${process.env.GITHUB_SHA}`);
