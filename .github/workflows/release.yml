@@ -37,8 +37,18 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Get Next Version Details
+        id: version
+        uses: glitch452/easy-npm-publish@v0
+        with:
+          registry-token: ${{ secrets.NPM_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          dry-run: true
+
       - name: Run Build
         run: npm run build
+        env:
+          BUILD_VERSION: ${{ steps.version.outputs.next-version }}
 
       - name: Publish the Package to NPM
         id: publish
