@@ -20,7 +20,7 @@ export function regExp(options = {}) {
     ...regExpPlugin.configs['flat/recommended'],
     name: `${configNamePrefix}/${regExp.name}`,
     files: options.files ?? [files.jsTs],
-    settings: options.settings,
+    settings: options.settings ?? {},
     plugins: {
       [prefixes.regExp]: regExpPlugin,
     },

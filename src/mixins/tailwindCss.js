@@ -20,7 +20,7 @@ export function tailwindCss(options = {}) {
     ...tailwindCssPlugin.configs['flat/recommended'][0],
     name: `${configNamePrefix}/${tailwindCss.name}`,
     files: options.files ?? [files.jsxTsx],
-    settings: options.settings,
+    settings: options.settings ?? {},
     plugins: {
       [prefixes.tailwindCss]: tailwindCssPlugin,
     },
