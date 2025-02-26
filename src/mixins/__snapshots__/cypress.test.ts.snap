@@ -18,5 +18,6 @@ exports[`cypress > should configure the expected rules 1`] = `
   "cypress/no-unnecessary-waiting": "error",
   "cypress/unsafe-to-chain-command": "error",
   "security/detect-non-literal-fs-filename": "off",
+  "unicorn/consistent-function-scoping": "off",
 }
 `;

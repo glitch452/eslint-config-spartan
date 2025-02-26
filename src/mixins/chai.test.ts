@@ -2,6 +2,7 @@ import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
 import chaiExpectPlugin from 'eslint-plugin-chai-expect';
 import typescriptEsLint from 'typescript-eslint';
 import securityPlugin from 'eslint-plugin-security';
+import unicornPlugin from 'eslint-plugin-unicorn';
 import { Linter } from 'eslint';
 import { chai } from './chai.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
@@ -18,6 +19,7 @@ describe(chai.name, () => {
     ...listRules(chaiFriendlyPlugin.rules, prefixes.chaiFriendly),
     ...listRules(chaiExpectPlugin.rules, prefixes.chaiExpect),
     ...listRules(securityPlugin.rules, prefixes.security),
+    ...listRules(unicornPlugin.rules, prefixes.unicorn),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
@@ -25,6 +27,7 @@ describe(chai.name, () => {
     ...getDeprecatedRules(chaiFriendlyPlugin.rules, prefixes.chaiFriendly),
     ...getDeprecatedRules(chaiExpectPlugin.rules, prefixes.chaiExpect),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
+    ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
 
