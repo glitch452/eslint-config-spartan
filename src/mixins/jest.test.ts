@@ -1,6 +1,7 @@
 import jestPlugin from 'eslint-plugin-jest';
 import typescriptEsLint from 'typescript-eslint';
 import securityPlugin from 'eslint-plugin-security';
+import unicornPlugin from 'eslint-plugin-unicorn';
 import { jest } from './jest.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -14,11 +15,13 @@ describe(jest.name, () => {
   const validRules = [
     ...listRules(jestPlugin.rules, prefixes.jest),
     ...listRules(securityPlugin.rules, prefixes.security),
+    ...listRules(unicornPlugin.rules, prefixes.unicorn),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(jestPlugin.rules, prefixes.jest),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
+    ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
 

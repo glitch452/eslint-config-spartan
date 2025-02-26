@@ -1,6 +1,7 @@
 import cypressPlugin from 'eslint-plugin-cypress/flat';
 import typescriptEsLint from 'typescript-eslint';
 import securityPlugin from 'eslint-plugin-security';
+import unicornPlugin from 'eslint-plugin-unicorn';
 import { cypress } from './cypress.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -14,11 +15,13 @@ describe(cypress.name, () => {
   const validRules = [
     ...listRules(cypressPlugin.rules, prefixes.cypress),
     ...listRules(securityPlugin.rules, prefixes.security),
+    ...listRules(unicornPlugin.rules, prefixes.unicorn),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(cypressPlugin.rules, prefixes.cypress),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
+    ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
 
