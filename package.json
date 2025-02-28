@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist",
-    "format:ci": "prettier --check '**.{css,html,mjs,cjs,js,json,jsx,md,mdx,scss,ts,tsx,yaml,yml}'",
+    "format:ci": "prettier --check '**.{css,html,mjs,cjs,js,json,jsx,cjsx,mjsx,md,mdx,scss,cts,ts,tsx,ctsx,mtsx,yaml,yml}'",
     "format": "prettier --write .",
     "lint:ci": "eslint . --max-warnings 0",
     "lint:dist": "npx @arethetypeswrong/cli --pack ./dist",
@@ -22,13 +22,6 @@
     "test:w": "vitest",
     "test": "vitest run --coverage",
     "type": "tsc --noEmit -p tsconfig.json"
-  },
-  "lint-staged": {
-    "*.{md,mdx,mjs,cjs,js,jsx,cjsx,mjsx,mts,cts,ts,tsx,ctsx,mtsx}": [
-      "eslint --no-warn-ignored --max-warnings 0 --cache --report-unused-disable-directives --fix",
-      "prettier --write"
-    ],
-    "*.{html,json,yaml,yml}": "prettier --write"
   },
   "repository": {
     "type": "git",
