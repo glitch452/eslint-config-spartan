@@ -1,7 +1,6 @@
 import remarkPresetLintConsistent from 'remark-preset-lint-consistent';
 import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
 import remarkPresetLintMarkdownStyleGuide from 'remark-preset-lint-markdown-style-guide';
-import remarkLintNoDeadUrls from 'remark-lint-no-dead-urls';
 import remarkGfm from 'remark-gfm';
 import remarkPresetPrettier from 'remark-preset-prettier';
 import remarkLintNoUndefinedReferences from 'remark-lint-no-undefined-references';
@@ -23,7 +22,6 @@ export const remark = {
     remarkPresetLintConsistent,
     remarkPresetLintRecommended,
     remarkPresetLintMarkdownStyleGuide,
-    remarkLintNoDeadUrls,
     remarkGfm,
     [remarkLintNoFileNameIrregularCharacters, ['off']],
     [
