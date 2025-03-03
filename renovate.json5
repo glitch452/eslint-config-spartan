@@ -1,0 +1,79 @@
+{
+  // Docs: https://docs.renovatebot.com/configuration-options
+
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['config:recommended'],
+
+  timezone: 'Canada/Pacific',
+  dependencyDashboard: false,
+  branchNameStrict: true,
+  separateMajorMinor: false,
+  configMigration: true,
+  prHourlyLimit: 10,
+
+  packageRules: [
+    {
+      matchPackageNames: ['*'],
+      semanticCommits: 'enabled',
+      semanticCommitType: 'chore',
+    },
+
+    // Group minor and patch version updates into a single PR
+    {
+      groupName: 'all minor and patch dependencies',
+      groupSlug: 'all-minor-patch',
+      matchPackageNames: ['!typescript'],
+      matchUpdateTypes: ['minor', 'patch'],
+    },
+
+    // Wait a few months for Node to be stable
+    {
+      matchManagers: ['devcontainer', 'dockerfile', 'nvm'],
+      matchPackageNames: ['node'],
+      matchUpdateTypes: ['major'],
+      matchCurrentAge: '> 3 months',
+    },
+
+    // Update nvm and node types together
+    {
+      matchManagers: ['nvm', 'npm'],
+      matchPackageNames: ['node', '@types/node'],
+      matchUpdateTypes: ['major'],
+    },
+
+    // Ignore these. Keep them at the end of the packageRules to maintain precedence.
+    {
+      enabled: false,
+      matchManagers: ['npm'],
+      matchUpdateTypes: ['replacement'],
+      matchPackageNames: [
+        // Requires an update to typescript-eslint, which requires eslint v9
+        'eslint-plugin-vitest',
+      ],
+    },
+    {
+      enabled: false,
+      matchManagers: ['npm'],
+      matchUpdateTypes: ['major'],
+      matchPackageNames: [
+        'eslint',
+        // ^3 required for eslint-plugin-tailwindcss
+        'tailwindcss',
+        // These require eslint v9
+        '@stylistic/eslint-plugin',
+        'eslint-plugin-cypress',
+        'eslint-plugin-unicorn',
+        'typescript-eslint',
+      ],
+    },
+    {
+      enabled: false,
+      matchManagers: ['npm'],
+      matchUpdateTypes: ['major', 'minor'],
+      matchPackageNames: [
+        // These require eslint v9
+        '@eslint/compat',
+      ],
+    },
+  ],
+}
