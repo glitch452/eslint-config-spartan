@@ -1,5 +1,5 @@
 import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import { fixupPluginRules } from '@eslint/compat';
 import { files, warnToError } from '../utils/index.js';

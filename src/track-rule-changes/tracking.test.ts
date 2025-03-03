@@ -13,7 +13,7 @@ import mochaPlugin from 'eslint-plugin-mocha';
 import nextPlugin from '@next/eslint-plugin-next';
 import prettierConfig from 'eslint-config-prettier';
 import promisePlugin from 'eslint-plugin-promise';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactPlugin from 'eslint-plugin-react';
 import regExpPlugin from 'eslint-plugin-regexp';
 import securityPlugin from 'eslint-plugin-security';

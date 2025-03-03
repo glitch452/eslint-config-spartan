@@ -1,5 +1,5 @@
 import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import { react } from './react.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';

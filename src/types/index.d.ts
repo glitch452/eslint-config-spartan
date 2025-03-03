@@ -50,11 +50,6 @@ declare module 'eslint-plugin-cypress/flat' {
   export default module;
 }
 
-declare module 'eslint-plugin-react-hooks' {
-  const module: EsLintPlugin;
-  export default module;
-}
-
 declare module 'eslint-plugin-chai-friendly' {
   const module: EsLintPlugin;
   export default module;
