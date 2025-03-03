@@ -4,4 +4,8 @@ export default {
     'prettier --ignore-unknown --write',
   ],
   '*.{css,html,json,scss,yaml,yml}': 'prettier --ignore-unknown --write',
+  'renovate.json5': [
+    'prettier --ignore-unknown --write',
+    'npx --yes --package renovate -- renovate-config-validator --strict',
+  ],
 };
