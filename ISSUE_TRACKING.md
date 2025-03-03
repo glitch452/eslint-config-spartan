@@ -13,3 +13,5 @@
   - v57.x.x requires eslint v9
 - @stylistic/eslint-plugin
   - v4.x.x requires eslint v9
+- Migrate eslint-plugin-vitest to @vitest/eslint-plugin
+  - Requires typescript-eslint ^8.x.x
