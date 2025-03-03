@@ -1,5 +1,5 @@
 import storybookPlugin from 'eslint-plugin-storybook';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import { storybook } from './storybook.js';
 import { configSchema } from '../__test__/utils/configSchema.js';

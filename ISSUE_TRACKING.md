@@ -1,8 +1,5 @@
 # Issue Tracking
 
-- eslint-plugin-react-hooks
-  - Flat Config Support: <https://github.com/facebook/react/issues/28313>
-  - ESLint V9 support merged into canary release, full release soon: <https://github.com/facebook/react/pull/28773>
 - eslint-plugin-markdown / eslint-plugin-mdx
   - Unable to support type-enabled rules: <https://github.com/eslint/markdown/blob/main/examples/typescript/README.md>
 - @eslint/compat
