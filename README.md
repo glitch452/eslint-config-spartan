@@ -64,7 +64,7 @@ mixins) for various eslint plugins.
 ## Philosophy
 
 For the most part, `eslint-config-spartan` aims to be opinionated in areas that promote good practices and prevent
-common pitfalls and/or foot-guns. `eslint-config-spartan` tries not to be over opinionated in ares that are not related
+common pitfalls and/or foot-guns. `eslint-config-spartan` tries not to be over opinionated in areas that are not related
 to preventing errors; however, some of the opinions are also chosen for the sake of consistency, especially when
 auto-fix rules are available to help maintain the consistency without extra burden for the writer.
 
