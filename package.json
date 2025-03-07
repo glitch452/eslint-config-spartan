@@ -45,7 +45,7 @@
     "@types/eslint-plugin-mocha": "10.4.0",
     "@types/eslint-plugin-security": "3.0.0",
     "@types/eslint-plugin-tailwindcss": "3.17.0",
-    "eslint-config-prettier": "10.0.2",
+    "eslint-config-prettier": "10.1.0",
     "eslint-import-resolver-typescript": "3.8.3",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
