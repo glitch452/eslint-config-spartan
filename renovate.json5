@@ -2,43 +2,17 @@
   // Docs: https://docs.renovatebot.com/configuration-options
 
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['config:recommended'],
+  extends: ['github>glitch452/renovate-config', 'github>glitch452/renovate-config//presets/npm'],
 
-  timezone: 'Canada/Pacific',
-  dependencyDashboard: false,
-  branchNameStrict: true,
-  separateMajorMinor: false,
-  configMigration: true,
-  prHourlyLimit: 10,
+  // Run on Monday Mornings
+  schedule: ['* 0-6 * * 1'],
 
   packageRules: [
     {
-      matchPackageNames: ['*'],
-      semanticCommits: 'enabled',
-      semanticCommitType: 'chore',
-    },
-
-    // Group minor and patch version updates into a single PR
-    {
-      groupName: 'all minor and patch dependencies',
-      groupSlug: 'all-minor-patch',
-      matchPackageNames: ['!typescript'],
-      matchUpdateTypes: ['minor', 'patch'],
-    },
-
-    // Wait a few months for Node to be stable
-    {
-      matchManagers: ['devcontainer', 'dockerfile', 'nvm'],
-      matchPackageNames: ['node'],
-      matchUpdateTypes: ['major'],
-      matchCurrentAge: '> 3 months',
-    },
-
-    // Update nvm and node types together
-    {
-      matchManagers: ['nvm', 'npm'],
-      matchPackageNames: ['node', '@types/node'],
-      matchUpdateTypes: ['major'],
+      description: 'Put typescript into its own group',
+      groupName: 'Typescript',
+      groupSlug: 'typescript',
+      matchPackageNames: ['typescript'],
     },
 
     // Ignore these. Keep them at the end of the packageRules to maintain precedence.
