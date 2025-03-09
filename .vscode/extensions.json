@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "BlueGlassBlock.better-json5",
     "christian-kohler.npm-intellisense",
     "christian-kohler.path-intellisense",
     "dbaeumer.vscode-eslint",
@@ -7,6 +8,7 @@
     "esbenp.prettier-vscode",
     "matteopieroni.refresh-npm-packages",
     "oderwat.indent-rainbow",
+    "redhat.vscode-yaml",
     "streetsidesoftware.code-spell-checker",
     "vitest.explorer"
   ]
