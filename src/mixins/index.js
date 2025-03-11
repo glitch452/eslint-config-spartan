@@ -11,6 +11,7 @@ export * from './jsxA11y.js';
 export * from './mdx.js';
 export * from './mocha.js';
 export * from './nextJs.js';
+export * from './playwright.js';
 export * from './prettier.js';
 export * from './promise.js';
 export * from './react.js';
