@@ -1,6 +1,7 @@
 export * from './chai.js';
 export * from './commonJs.js';
 export * from './cypress.js';
+export * from './googleAppsScript.js';
 export * from './i18next.js';
 export * from './i18nJson.js';
 export * from './jest.js';
