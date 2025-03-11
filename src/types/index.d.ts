@@ -60,6 +60,11 @@ declare module 'eslint-plugin-chai-expect' {
   export default module;
 }
 
+declare module 'eslint-plugin-googleappsscript' {
+  const module: EsLintPlugin;
+  export default module;
+}
+
 declare module 'eslint-plugin-i18next' {
   const module: EsLintPlugin;
   export default module;
