@@ -17,6 +17,7 @@ export * from './react.js';
 export * from './regExp.js';
 export * from './storybook.js';
 export * from './tailwindCss.js';
+export * from './tanStackQuery.js';
 export * from './testEnvironmentAdjustments.js';
 export * from './testingLibraryReact.js';
 export * from './typeEnabled.js';

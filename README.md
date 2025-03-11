@@ -53,6 +53,7 @@ mixins) for various eslint plugins.
     - [Regular Expressions (RegExp)](#regular-expressions-regexp)
     - [Storybook](#storybook)
     - [Tailwind CSS](#tailwind-css)
+    - [TanStack Query](#tanstack-query)
     - [Testing Library / React](#testing-library--react)
     - [Type Enabled](#type-enabled)
     - [Unicorn](#unicorn)
@@ -505,6 +506,21 @@ Rule Prefixes:
 
 ```js
 import { tailwindCss } from 'eslint-config-spartan/mixins';
+```
+
+### TanStack Query
+
+The `tanStackQuery` mixin creates an ESLint config for
+[@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query) to assist with using the
+[TanStack Query](https://github.com/TanStack/query) hook for fetching, caching and updating asynchronous data in React,
+Solid, Svelte and Vue.
+
+Rule Prefixes:
+
+- The `@tanstack/eslint-plugin-query` rules are prefixed with `@tanstack/query`
+
+```js
+import { tanStackQuery } from 'eslint-config-spartan/mixins';
 ```
 
 ### Testing Library / React
