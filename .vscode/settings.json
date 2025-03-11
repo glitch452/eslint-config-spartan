@@ -59,6 +59,7 @@
     "postbuild",
     "remarkrc",
     "tailwindcss",
+    "tanstack",
     "toplevel",
     "tsup",
     "typecheck",

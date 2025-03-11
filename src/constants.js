@@ -22,6 +22,7 @@ export const prefixes = /** @type {const} */ ({
   storybook: 'storybook',
   stylistic: '@stylistic',
   tailwindCss: 'tailwindcss',
+  tanStackQuery: '@tanstack/query',
   testingLibrary: 'testing-library',
   typescriptEnum: 'typescript-enum',
   typescriptEsLint: '@typescript-eslint',
