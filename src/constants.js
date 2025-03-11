@@ -14,6 +14,7 @@ export const prefixes = /** @type {const} */ ({
   mdx: 'mdx',
   mocha: 'mocha',
   next: '@next/next',
+  playwright: 'playwright',
   promise: 'promise',
   react: 'react',
   reactHooks: 'react-hooks',

@@ -47,6 +47,7 @@ mixins) for various eslint plugins.
     - [Markdown and MDX](#markdown-and-mdx)
     - [Mocha](#mocha)
     - [NextJs](#nextjs)
+    - [Playwright](#playwright)
     - [Prettier](#prettier)
     - [Promise](#promise)
     - [React](#react)
@@ -416,6 +417,20 @@ Rule Prefixes:
 
 ```js
 import { nextJs } from 'eslint-config-spartan/mixins';
+```
+
+### Playwright
+
+The `playwright` mixin creates an ESLint config for
+[eslint-plugin-playwright](https://www.npmjs.com/package/eslint-plugin-playwright) to assist with using the
+[Playwright](https://github.com/microsoft/playwright) framework.
+
+Rule Prefixes:
+
+- The `eslint-plugin-playwright` rules are prefixed with `playwright`
+
+```js
+import { playwright } from 'eslint-config-spartan/mixins';
 ```
 
 ### Prettier
