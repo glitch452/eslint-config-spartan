@@ -1,6 +1,8 @@
 export const configNamePrefix = 'eslint-config-spartan';
 
 export const prefixes = /** @type {const} */ ({
+  angular: '@angular-eslint',
+  angularTemplate: '@angular-eslint/template',
   chaiExpect: 'chai-expect',
   chaiFriendly: 'chai-friendly',
   cypress: 'cypress',

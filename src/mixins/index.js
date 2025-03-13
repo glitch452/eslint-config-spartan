@@ -1,3 +1,4 @@
+export * from './angular.js';
 export * from './chai.js';
 export * from './commonJs.js';
 export * from './cypress.js';
