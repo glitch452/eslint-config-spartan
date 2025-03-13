@@ -22,6 +22,7 @@
 export const files = /** @type {const} */ ({
   cjs: '**/*.cjs?(x)',
   cypress: '**/*.cy.?(c|m)[jt]s',
+  html: '**/*.html',
   js: '**/*.?(c|m)js?(x)',
   json: '**/*.json',
   jsTs: '**/*.?(c|m)[jt]s?(x)',

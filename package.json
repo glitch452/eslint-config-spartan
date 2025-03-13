@@ -34,6 +34,9 @@
   },
   "homepage": "https://github.com/glitch452/eslint-config-spartan#readme",
   "dependencies": {
+    "@angular-eslint/eslint-plugin": "19.2.1",
+    "@angular-eslint/eslint-plugin-template": "19.2.1",
+    "@angular-eslint/template-parser": "19.2.1",
     "@eslint/compat": "1.1.1",
     "@eslint/eslintrc": "3.3.0",
     "@eslint/js": "9.22.0",

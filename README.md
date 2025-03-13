@@ -16,7 +16,7 @@ mixins) for various eslint plugins.
   v9.
 - **Module Type**: `ESM` and `CJS`
 
-> \[!NOTE]
+> [!NOTE]
 >
 > `eslint-config-spartan` aims to adhere to [semantic versioning](https://semver.org), however, while the initial
 > configuration and API structure is being crafted, it will release breaking changes as `minor` versions. This applies
@@ -34,6 +34,7 @@ mixins) for various eslint plugins.
     - [Files](#files)
     - [Merge Config](#merge-config)
   - [Mixins](#mixins)
+    - [Angular](#angular)
     - [Chai](#chai)
     - [Common Js](#common-js)
     - [Cypress](#cypress)
@@ -89,7 +90,7 @@ npm install --save-dev eslint@^8.57 eslint-config-spartan
 The primary export of this config is a function called `buildConfig`. This function returns the base config and can
 receive other configs or mixins as inputs, which are included in the final config array output.
 
-> \[!NOTE]
+> [!NOTE]
 >
 > This config does not enable any rules from `typescript-eslint` that require type information. These rules are
 > extremely useful, however they can cause performance issue in some code bases, so they have been separated into their
@@ -183,6 +184,34 @@ Mixins are functions which return an eslint config. Most of the mixins import a 
 The mixins have some inputs for convenience, i.e. choosing which files the mixin applies to, but the rules and config
 can be overridden in a subsequent config in the final config array.
 
+### Angular
+
+The `angular` mixin creates an ESLint config for
+[@angular-eslint/eslint-plugin](https://www.npmjs.com/package/@angular-eslint/eslint-plugin) and
+[@angular-eslint/eslint-plugin-template](https://www.npmjs.com/package/@angular-eslint/eslint-plugin-template) to assist
+with using the [Angular](https://angular.dev) framework.
+
+Rule Prefixes:
+
+- The `@angular-eslint/eslint-plugin` rules are prefixed with `@angular-eslint`
+- The `@angular-eslint/eslint-plugin-template` rules are prefixed with `@angular-eslint/template`
+
+```js
+import { angular } from 'eslint-config-spartan/mixins';
+```
+
+> [!TIP]
+>
+> To see linting errors and apply auto-fix rules on save for `.html` files in VS Code, add the `html` language to the
+> `validate` list in the VS Code settings for `eslint`.
+>
+> ```json
+> // .vscode/settings.json
+> {
+>   "eslint.validate": ["html"]
+> }
+> ```
+
 ### Chai
 
 The `chai` mixin creates an ESLint config for
@@ -195,7 +224,7 @@ Rule Prefixes:
 - The `eslint-plugin-chai-expect` rules are prefixed with `chai-expect`
 - The `eslint-plugin-chai-friendly` rules are prefixed with `chai-friendly`
 
-> \[!NOTE]
+> [!NOTE]
 >
 > Note: This config also adjusts some `@typescript-eslint` rules to make them more helpful for test files.
 
@@ -227,7 +256,7 @@ Rule Prefixes:
 
 - The `eslint-plugin-cypress` rules are prefixed with `cypress`
 
-> \[!NOTE]
+> [!NOTE]
 >
 > Note: This config also adjusts some `@typescript-eslint` rules to make them more helpful for test files.
 
@@ -270,7 +299,7 @@ export default buildConfig(
 );
 ```
 
-> \[!TIP]
+> [!TIP]
 >
 > To see linting errors and apply auto-fix rules on save for `.json` files in VS Code, add the `json` language to the
 > `validate` list in the VS Code settings for `eslint`.
@@ -305,7 +334,7 @@ Rule Prefixes:
 
 - The `eslint-plugin-jest` rules are prefixed with `jest`
 
-> \[!NOTE]
+> [!NOTE]
 >
 > Note: This config also adjusts some `@typescript-eslint` rules to make them more helpful for test files.
 
@@ -368,7 +397,7 @@ this document for more details.
 This creates two configurations, one to apply the recommended config for `.mdx`, `.md`, and `.markdown` files, and
 another to apply the recommended config to code blocks in those files.
 
-> \[!NOTE]
+> [!NOTE]
 >
 > - This config also adjusts some rules to accommodate mdx syntax and code blocks.
 > - The typescript-eslint rules that require type information cannot be used within code blocks, since the parser cannot
@@ -378,7 +407,7 @@ Rule Prefixes:
 
 - The `eslint-plugin-mdx` rules are prefixed with `mdx`.
 
-> \[!TIP]
+> [!TIP]
 >
 > To apply rules to the code blocks, the format for selecting the code block type is by first selecting the markdown
 > file itself, then adding the block type to the path. e.g. `*.{md,mdx}/js` to select all `js` code blocks within `.md`
@@ -393,7 +422,7 @@ import { mdx } from 'eslint-config-spartan/mixins';
 The `mocha` mixin creates an ESLint config for [eslint-plugin-mocha](https://www.npmjs.com/package/eslint-plugin-mocha)
 to assist with using the [Mocha](https://mochajs.org) test framework.
 
-> \[!NOTE]
+> [!NOTE]
 >
 > Note: This config also adjusts some `@typescript-eslint` rules to make them more helpful for test files.
 
@@ -438,11 +467,11 @@ import { playwright } from 'eslint-config-spartan/mixins';
 The `prettier` mixin creates an ESLint config for disabling rules which may interfere or conflict with
 [Prettier](https://prettier.io).
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 >
 > This config must come LAST in the list of configurations so that it can override other configs.
 
-> \[!NOTE]
+> [!NOTE]
 >
 > This config essentially re-exports [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) with
 > some adjustments. It also disables rules for
@@ -560,7 +589,7 @@ plugin itself since it only includes rules. i.e. it's meant to bs used with the 
 [Build Config](#build-config). It also disables base eslint rules that are replaced with the equivalent
 typescript-eslint rules.
 
-> \[!NOTE]
+> [!NOTE]
 >
 > Note: This config also adds an ignores property to prevent these rules from being applied to code blocks within
 > markdown files when the `mdx` mixin is being used since the parser cannot access that code.
@@ -596,7 +625,7 @@ Rule Prefixes:
 
 - The `eslint-plugin-vitest` rules are prefixed with `vitest`
 
-> \[!NOTE]
+> [!NOTE]
 >
 > Note: This config also adjusts some `@typescript-eslint` rules to make them more helpful for test files.
 
@@ -624,7 +653,7 @@ import { remark } from 'eslint-config-spartan/remark';
 export default { plugins: [remark] };
 ```
 
-> \[!NOTE]
+> [!NOTE]
 >
 > The [Markdown and MDX](#markdown-and-mdx) mixin is already configured to run `remark-lint` on the markdown and mdx
 > files. Once a `remarkrc` file is available, it will start reporting `remark-lint` errors through ESLint.
