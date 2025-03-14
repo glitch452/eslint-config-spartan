@@ -27,6 +27,7 @@ mixins) for various eslint plugins.
 
 - [ESLint Config Spartan](#eslint-config-spartan)
   - [Table of Contents](#table-of-contents)
+  - [What's New](#whats-new)
   - [Philosophy](#philosophy)
   - [Install](#install)
   - [Build Config](#build-config)
@@ -64,6 +65,11 @@ mixins) for various eslint plugins.
     - [Usage](#usage)
     - [Usage With Prettier](#usage-with-prettier)
   - [License](#license)
+
+## What's New
+
+Check out the [GitHub Releases](https://github.com/glitch452/eslint-config-spartan/releases) page for the latest release
+notes.
 
 ## Philosophy
 
