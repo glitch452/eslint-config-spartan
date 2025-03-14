@@ -48,6 +48,7 @@ mixins) for various eslint plugins.
     - [JSX Accessibility](#jsx-accessibility)
     - [Markdown and MDX](#markdown-and-mdx)
     - [Mocha](#mocha)
+    - [Naming Convention](#naming-convention)
     - [NextJs](#nextjs)
     - [Playwright](#playwright)
     - [Prettier](#prettier)
@@ -438,6 +439,16 @@ Rule Prefixes:
 
 ```js
 import { mocha } from 'eslint-config-spartan/mixins';
+```
+
+### Naming Convention
+
+The `namingConvention` mixin adds configuration for the
+[@typescript-eslint/naming-convention](https://typescript-eslint.io/rules/naming-convention) rule. Note: This mixin
+requires the `@typescript-eslint` plugin to be already configured.
+
+```js
+import { namingConvention } from 'eslint-config-spartan/mixins';
 ```
 
 ### NextJs

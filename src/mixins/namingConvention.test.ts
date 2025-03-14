@@ -1,0 +1,179 @@
+import typescriptEsLint from 'typescript-eslint';
+import { namingConvention } from './namingConvention.js';
+import { configSchema } from '../__test__/utils/configSchema.js';
+import { difference, intersection } from '../__test__/utils/sets.js';
+import { files } from '../utils/index.js';
+import { configNamePrefix, prefixes } from '../constants.js';
+import { getDeprecatedRules, getEnabledRules, getWarnRules, listRules } from '../__test__/utils/rules.js';
+
+describe(namingConvention.name, () => {
+  const configs = namingConvention();
+
+  const testTable = [
+    {
+      id: namingConvention.name,
+      filesOption: 'files',
+      expectedFiles: [files.jsTs],
+    },
+    {
+      id: `${namingConvention.name}TestFiles`,
+      filesOption: 'testFiles',
+      expectedFiles: [files.testSpec],
+    },
+  ] as const;
+
+  const validRules = listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint);
+  const deprecatedRules = getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint);
+
+  describe.each(testTable)('$id', (item) => {
+    const { id, expectedFiles, filesOption } = item;
+    const index = testTable.indexOf(item);
+    const config = configs[index];
+
+    it('should create a valid eslint config', () => {
+      const actual = () => configSchema.parse(config);
+      expect(actual).not.toThrow();
+    });
+
+    it('should produce the expected default configuration', () => {
+      expect(config.rules).toMatchSnapshot();
+    });
+
+    it('should set the name value', () => {
+      expect(config.name).toBe(`${configNamePrefix}/${id}`);
+    });
+
+    it('should set the default files value', () => {
+      expect(config.files).toStrictEqual(expectedFiles);
+    });
+
+    it('should set the given files value', () => {
+      const fileValue = ['files.txt'];
+      const actual = namingConvention({ [filesOption]: fileValue })[index].files;
+      expect(actual).toStrictEqual(fileValue);
+    });
+
+    it('should add the leading underscore config when the "privateUnderscore" option is set', () => {
+      const actual = namingConvention({ privateUnderscore: 'allowSingleOrDouble' })[index];
+      const expected = expect.arrayContaining([
+        expect.objectContaining({
+          selector: ['accessor', 'classProperty'],
+          modifiers: ['private'],
+          leadingUnderscore: 'allowSingleOrDouble',
+        }),
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should not add the leading underscore config when the "privateUnderscore" option is not set', () => {
+      const actual = namingConvention()[index];
+      const expected = expect.arrayContaining([
+        expect.objectContaining({
+          selector: ['accessor', 'classProperty'],
+          modifiers: ['private'],
+          leadingUnderscore: 'allowSingleOrDouble',
+        }),
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).not.toStrictEqual(expected);
+    });
+
+    it('should add the leading underscore config with snake case when the "privateUnderscore" and "useSnakeCaseVars" options are set', () => {
+      const actual = namingConvention({ privateUnderscore: 'allowSingleOrDouble', useSnakeCaseVars: true })[index];
+      const expected = expect.arrayContaining([
+        expect.objectContaining({
+          selector: ['accessor', 'classProperty'],
+          format: ['snake_case', 'UPPER_CASE'],
+          modifiers: ['private'],
+          leadingUnderscore: 'allowSingleOrDouble',
+        }),
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should allow StrictPascalCase for function names when the "react" option is set to true', () => {
+      const actual = namingConvention({ enableReactNaming: true })[index];
+      const expected = expect.arrayContaining([
+        expect.objectContaining({
+          selector: ['function', 'parameter', 'variable', 'classMethod', 'typeMethod', 'classProperty', 'typeProperty'],
+          format: ['strictCamelCase', 'StrictPascalCase'],
+          types: ['function'],
+        }),
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should not allow StrictPascalCase for function names when the "react" option is set to false', () => {
+      const actual = namingConvention({ enableReactNaming: false })[index];
+      const expected = expect.arrayContaining([
+        expect.objectContaining({
+          selector: ['function', 'parameter', 'variable', 'classMethod', 'typeMethod', 'classProperty', 'typeProperty'],
+          format: ['strictCamelCase'],
+          types: ['function'],
+        }),
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should enforce snake_case function parameter names when the "useSnakeCaseVars" option is set to true', () => {
+      const actual = namingConvention({ useSnakeCaseVars: true })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['parameter'],
+          format: ['snake_case', 'UPPER_CASE'],
+          modifiers: ['unused'],
+          leadingUnderscore: 'require',
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should enforce strictCamelCase function parameter names when the "useSnakeCaseVars" option is set to false', () => {
+      const actual = namingConvention({ useSnakeCaseVars: false })[index];
+      const expected = expect.arrayContaining([
+        { selector: ['parameter'], format: ['strictCamelCase'], modifiers: ['unused'], leadingUnderscore: 'require' },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should enforce snake_case variable names when the "useSnakeCaseVars" option is set to true', () => {
+      const actual = namingConvention({ useSnakeCaseVars: true })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['variable', 'parameter', 'accessor', 'classProperty', 'typeProperty'],
+          format: ['snake_case', 'UPPER_CASE'],
+          leadingUnderscore: 'allow',
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should enforce strictCamelCase variable names when the "useSnakeCaseVars" option is set to false', () => {
+      const actual = namingConvention({ useSnakeCaseVars: false })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['variable', 'parameter', 'accessor', 'classProperty', 'typeProperty'],
+          format: ['strictCamelCase'],
+          leadingUnderscore: 'allow',
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should only configure rules that exist', () => {
+      const configuredRules = Object.keys(config.rules ?? {});
+      const actual = difference(configuredRules, validRules);
+      expect(actual).toStrictEqual([]);
+    });
+
+    it('should not configure rules that are deprecated', () => {
+      const configuredAndEnabledRules = getEnabledRules(config.rules);
+      const actual = intersection(configuredAndEnabledRules, deprecatedRules);
+      expect(actual).toStrictEqual([]);
+    });
+
+    it('should not configure any rules as warn', () => {
+      const configuredAndWarnRules = getWarnRules(config.rules);
+      expect(configuredAndWarnRules).toStrictEqual([]);
+    });
+  });
+});
