@@ -1,0 +1,347 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`namingConvention > 'namingConvention' > should produce the expected default configuration 1`] = `
+{
+  "@typescript-eslint/naming-convention": [
+    "error",
+    {
+      "format": [
+        "UPPER_CASE",
+      ],
+      "selector": [
+        "enumMember",
+      ],
+    },
+    {
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": null,
+      "modifiers": [
+        "destructured",
+      ],
+      "selector": [
+        "variable",
+        "parameter",
+      ],
+    },
+    {
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": null,
+      "modifiers": [
+        "destructured",
+      ],
+      "selector": [
+        "variable",
+        "parameter",
+      ],
+      "types": [
+        "function",
+      ],
+    },
+    {
+      "format": [
+        "StrictPascalCase",
+      ],
+      "selector": "typeLike",
+    },
+    {
+      "filter": {
+        "match": false,
+        "regex": "toJSON",
+      },
+      "format": [
+        "strictCamelCase",
+      ],
+      "selector": [
+        "function",
+        "parameter",
+        "variable",
+        "classMethod",
+        "typeMethod",
+        "classProperty",
+        "typeProperty",
+      ],
+      "types": [
+        "function",
+      ],
+    },
+    {
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "require",
+      "modifiers": [
+        "unused",
+      ],
+      "selector": [
+        "parameter",
+      ],
+    },
+    {
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "require",
+      "modifiers": [
+        "unused",
+      ],
+      "selector": [
+        "parameter",
+      ],
+      "types": [
+        "function",
+      ],
+    },
+    {
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "allow",
+      "selector": [
+        "variable",
+        "parameter",
+        "accessor",
+        "classProperty",
+        "typeProperty",
+      ],
+    },
+    {
+      "format": null,
+      "modifiers": [
+        "requiresQuotes",
+      ],
+      "selector": [
+        "objectLiteralProperty",
+      ],
+    },
+    {
+      "format": [
+        "UPPER_CASE",
+      ],
+      "modifiers": [
+        "const",
+        "global",
+      ],
+      "selector": [
+        "variable",
+      ],
+      "types": [
+        "string",
+        "number",
+      ],
+    },
+    {
+      "custom": {
+        "match": true,
+        "regex": ".*(IS_|ARE_|WAS_|SHOULD_|HAS_|CAN_|DID_|WILL_|ALLOW_|USE_|REQUIRES_).*",
+      },
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": [
+        "UPPER_CASE",
+      ],
+      "modifiers": [
+        "const",
+        "global",
+      ],
+      "selector": [
+        "variable",
+      ],
+      "types": [
+        "boolean",
+      ],
+    },
+    {
+      "custom": {
+        "match": true,
+        "regex": "(^(is|are|was|should|has|can|did|will|allow|use|requires)([A-Z].*|$)|.*(Is|Are|Was|Should|Has|Can|Did|Will|Allow|Use|Requires).*)",
+      },
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "require",
+      "modifiers": [
+        "unused",
+      ],
+      "selector": [
+        "parameter",
+      ],
+      "types": [
+        "boolean",
+      ],
+    },
+    {
+      "custom": {
+        "match": true,
+        "regex": "(^(is|are|was|should|has|can|did|will|allow|use|requires)([A-Z].*|$)|.*(Is|Are|Was|Should|Has|Can|Did|Will|Allow|Use|Requires).*)",
+      },
+      "format": [
+        "strictCamelCase",
+      ],
+      "selector": [
+        "variable",
+        "parameter",
+        "classProperty",
+        "typeProperty",
+      ],
+      "types": [
+        "boolean",
+      ],
+    },
+  ],
+}
+`;
+
+exports[`namingConvention > 'namingConventionTestFiles' > should produce the expected default configuration 1`] = `
+{
+  "@typescript-eslint/naming-convention": [
+    "error",
+    {
+      "format": [
+        "UPPER_CASE",
+      ],
+      "selector": [
+        "enumMember",
+      ],
+    },
+    {
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": null,
+      "modifiers": [
+        "destructured",
+      ],
+      "selector": [
+        "variable",
+        "parameter",
+      ],
+    },
+    {
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": null,
+      "modifiers": [
+        "destructured",
+      ],
+      "selector": [
+        "variable",
+        "parameter",
+      ],
+      "types": [
+        "function",
+      ],
+    },
+    {
+      "format": [
+        "StrictPascalCase",
+      ],
+      "selector": "typeLike",
+    },
+    {
+      "filter": {
+        "match": false,
+        "regex": "toJSON",
+      },
+      "format": [
+        "strictCamelCase",
+      ],
+      "selector": [
+        "function",
+        "parameter",
+        "variable",
+        "classMethod",
+        "typeMethod",
+        "classProperty",
+        "typeProperty",
+      ],
+      "types": [
+        "function",
+      ],
+    },
+    {
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "require",
+      "modifiers": [
+        "unused",
+      ],
+      "selector": [
+        "parameter",
+      ],
+    },
+    {
+      "filter": {
+        "match": true,
+        "regex": ".+",
+      },
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "require",
+      "modifiers": [
+        "unused",
+      ],
+      "selector": [
+        "parameter",
+      ],
+      "types": [
+        "function",
+      ],
+    },
+    {
+      "format": [
+        "strictCamelCase",
+      ],
+      "leadingUnderscore": "allow",
+      "selector": [
+        "variable",
+        "parameter",
+        "accessor",
+        "classProperty",
+        "typeProperty",
+      ],
+    },
+    {
+      "format": null,
+      "modifiers": [
+        "requiresQuotes",
+      ],
+      "selector": [
+        "objectLiteralProperty",
+      ],
+    },
+    {
+      "format": [
+        "UPPER_CASE",
+      ],
+      "modifiers": [
+        "const",
+        "global",
+      ],
+      "selector": [
+        "variable",
+      ],
+      "types": [
+        "string",
+        "number",
+      ],
+    },
+  ],
+}
+`;
