@@ -1,7 +1,7 @@
 import { googleAppsScript } from './googleAppsScript.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 
 describe(googleAppsScript.name, () => {
   const config = googleAppsScript();
@@ -16,7 +16,7 @@ describe(googleAppsScript.name, () => {
   });
 
   it('should set the name value', () => {
-    expect(config.name).toBe(`${configNamePrefix}/${googleAppsScript.name}`);
+    expect(config.name).toBe(`${CONFIG_NAME_PREFIX}/${googleAppsScript.name}`);
   });
 
   it('should set the default files value', () => {

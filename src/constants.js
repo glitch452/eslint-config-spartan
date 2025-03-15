@@ -1,4 +1,4 @@
-export const configNamePrefix = 'eslint-config-spartan';
+export const CONFIG_NAME_PREFIX = 'eslint-config-spartan';
 
 export const prefixes = /** @type {const} */ ({
   angular: '@angular-eslint',

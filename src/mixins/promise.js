@@ -1,6 +1,6 @@
 import promisePlugin from 'eslint-plugin-promise';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -17,7 +17,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
 export function promise(options = {}) {
   return {
     ...promisePlugin.configs['flat/recommended'],
-    name: `${configNamePrefix}/${promise.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${promise.name}`,
     files: options.files ?? [files.jsTs],
     plugins: {
       [prefixes.promise]: promisePlugin,

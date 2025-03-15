@@ -1,4 +1,4 @@
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files } from '../utils/index.js';
 import typescriptEsLint from 'typescript-eslint';
 /** @import { Linter } from 'eslint' */
@@ -6,8 +6,8 @@ import typescriptEsLint from 'typescript-eslint';
 
 /** @typedef {NonNullable<ConfigWithExtends['languageOptions']>['parserOptions']} ConfigParserOptions */
 
-const tsRulesIndex = 2;
-const recommendedTypeCheckedRules = typescriptEsLint.configs.recommendedTypeCheckedOnly[tsRulesIndex].rules;
+const TS_RULES_INDEX = 2;
+const recommendedTypeCheckedRules = typescriptEsLint.configs.recommendedTypeCheckedOnly[TS_RULES_INDEX].rules;
 
 /**
  * The `typeEnabled` mixin creates an eslint config with type-enabled rules for
@@ -31,7 +31,7 @@ const recommendedTypeCheckedRules = typescriptEsLint.configs.recommendedTypeChec
  */
 export function typeEnabled(options = {}) {
   return {
-    name: `${configNamePrefix}/${typeEnabled.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${typeEnabled.name}`,
     files: options.files ?? [files.jsTs],
     ignores: options.ignores ?? [`${files.mdMdx}/**/*`],
     languageOptions: { parserOptions: options.parserOptions },

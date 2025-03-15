@@ -5,13 +5,13 @@ import { storybook } from './storybook.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { getDeprecatedRules, getEnabledRules, getWarnRules, listRules } from '../__test__/utils/rules.js';
 import { Rule } from 'eslint';
 
 describe(storybook.name, () => {
   const configs = storybook();
-  const testTable = configs.map((x, i) => ({ id: i.toString() }));
+  const testTable = configs.map((_, i) => ({ id: i.toString() }));
 
   const validRules = [
     ...listRules(storybookPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.storybook),
@@ -50,7 +50,7 @@ describe(storybook.name, () => {
     });
 
     it('should set the name value', () => {
-      expect(config.name).toContain(`${configNamePrefix}/${storybook.name}/${id}`);
+      expect(config.name).toContain(`${CONFIG_NAME_PREFIX}/${storybook.name}/${id}`);
     });
 
     it('should set the default files value', () => {

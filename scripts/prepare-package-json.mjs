@@ -6,7 +6,7 @@ import path from 'path';
 import fs from 'fs';
 import { Command } from '@commander-js/extra-typings';
 
-const FILE_NAME = /** @type {const} */ ({
+const fileName = /** @type {const} */ ({
   TYPES_ESM: 'index.d.ts',
   TYPES_CJS: 'index.d.cts',
   ESM: 'index.js',
@@ -35,7 +35,7 @@ const FILE_NAME = /** @type {const} */ ({
  * @yields {string}
  * @returns {IterableIterator<string>}
  */
-function* getEntrypointDirs(dir, relativeRoot = '.', entrypointFileName = FILE_NAME.ENTRYPOINT) {
+function* getEntrypointDirs(dir, relativeRoot = '.', entrypointFileName = fileName.ENTRYPOINT) {
   const dirContents = fs.readdirSync(dir, { withFileTypes: true });
 
   if (dirContents.find((c) => c.isFile() && c.name === entrypointFileName)) {
@@ -66,15 +66,15 @@ function createExports(entrypoints, buildDir = '.') {
     exports[key] = {
       // Note: `types` should be defined first. See https://nodejs.org/api/packages.html#community-conditions-definitions
       import: {
-        types: `./${path.join(buildDir, entrypoint, FILE_NAME.TYPES_ESM)}`,
-        import: `./${path.join(buildDir, entrypoint, FILE_NAME.ESM)}`,
+        types: `./${path.join(buildDir, entrypoint, fileName.TYPES_ESM)}`,
+        import: `./${path.join(buildDir, entrypoint, fileName.ESM)}`,
       },
       require: {
-        types: `./${path.join(buildDir, entrypoint, FILE_NAME.TYPES_CJS)}`,
-        require: `./${path.join(buildDir, entrypoint, FILE_NAME.CJS)}`,
+        types: `./${path.join(buildDir, entrypoint, fileName.TYPES_CJS)}`,
+        require: `./${path.join(buildDir, entrypoint, fileName.CJS)}`,
       },
       // Note: `default` should be defined last. See https://nodejs.org/api/packages.html#conditional-exports
-      default: `./${path.join(buildDir, entrypoint, FILE_NAME.ESM)}`,
+      default: `./${path.join(buildDir, entrypoint, fileName.ESM)}`,
     };
   }
 
@@ -88,9 +88,9 @@ function createExports(entrypoints, buildDir = '.') {
  */
 function preparePackageJson(packageJson, exports) {
   packageJson.type = 'module';
-  packageJson.types = FILE_NAME.TYPES_ESM;
-  packageJson.module = FILE_NAME.ESM;
-  packageJson.main = FILE_NAME.CJS;
+  packageJson.types = fileName.TYPES_ESM;
+  packageJson.module = fileName.ESM;
+  packageJson.main = fileName.CJS;
   packageJson.exports = exports;
 
   const propsToPurge = ['devDependencies', 'scripts', 'sideEffects', 'lint-staged'];

@@ -1,6 +1,6 @@
 import jestPlugin from 'eslint-plugin-jest';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 /** @import { Linter } from 'eslint' */
 
@@ -20,7 +20,7 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 export function jest(options = {}) {
   return {
     ...jestPlugin.configs['flat/recommended'],
-    name: `${configNamePrefix}/${jest.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${jest.name}`,
     files: options.files ?? [files.testSpec],
     rules: {
       ...warnToError(jestPlugin.configs['flat/recommended'].rules),

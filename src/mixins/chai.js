@@ -1,6 +1,6 @@
 import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
 import chaiExpectPlugin from 'eslint-plugin-chai-expect';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { files } from '../utils/index.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 /** @import { Linter } from 'eslint' */
@@ -23,7 +23,7 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
  */
 export function chai(options = {}) {
   return {
-    name: `${configNamePrefix}/${chai.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${chai.name}`,
     files: options.files ?? [files.testSpec, files.cypress],
     plugins: {
       [prefixes.chaiFriendly]: chaiFriendlyPlugin,

@@ -1,6 +1,6 @@
 import googleAppsScriptPlugin from 'eslint-plugin-googleappsscript';
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -16,7 +16,7 @@ import { configNamePrefix } from '../constants.js';
  */
 export function googleAppsScript(options = {}) {
   return {
-    name: `${configNamePrefix}/${googleAppsScript.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${googleAppsScript.name}`,
     files: options.files ?? [files.jsTs],
     languageOptions: {
       globals: Object.fromEntries(

@@ -1,6 +1,6 @@
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -18,7 +18,7 @@ import { configNamePrefix } from '../constants.js';
 export function jsxA11y(options = {}) {
   return {
     ...jsxA11yPlugin.flatConfigs.recommended,
-    name: `${configNamePrefix}/${jsxA11y.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${jsxA11y.name}`,
     files: options.files ?? [files.jsxTsx],
     rules: {
       ...jsxA11yPlugin.flatConfigs.recommended.rules,

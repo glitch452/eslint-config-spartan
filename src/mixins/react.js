@@ -3,7 +3,7 @@ import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import { fixupPluginRules } from '@eslint/compat';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -23,7 +23,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
 export function react(options = {}) {
   return {
     ...reactPlugin.configs.flat.recommended,
-    name: `${configNamePrefix}/${react.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${react.name}`,
     files: options.files ?? [files.jsTs],
     languageOptions: {
       ...reactPlugin.configs.flat.recommended.languageOptions,

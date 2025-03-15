@@ -1,23 +1,23 @@
 import { z } from 'zod';
 
-const initialEcmaVersion = 3;
-const initialEcmaYear = 2015;
-const nextYear = new Date().getFullYear() + 1;
-const minEcmaVersion = 5;
-const maxEcmaVersion = nextYear - initialEcmaYear + minEcmaVersion + 1;
+const INITIAL_ECMA_VERSION = 3;
+const INITIAL_ECMA_YEAR = 2015;
+const NEXT_YEAR = new Date().getFullYear() + 1;
+const MIN_ECMA_VERSION = 5;
+const MAX_ECMA_VERSION = NEXT_YEAR - INITIAL_ECMA_YEAR + MIN_ECMA_VERSION + 1;
 
 const ecmaVersionSchema = z.union([
   z.literal('latest'),
-  z.literal(initialEcmaVersion),
-  z.number().int().min(minEcmaVersion).max(maxEcmaVersion),
-  z.number().int().min(initialEcmaYear).max(nextYear),
+  z.literal(INITIAL_ECMA_VERSION),
+  z.number().int().min(MIN_ECMA_VERSION).max(MAX_ECMA_VERSION),
+  z.number().int().min(INITIAL_ECMA_YEAR).max(NEXT_YEAR),
 ]);
 const sourceTypeSchema = z.enum(['script', 'module', 'commonjs']);
 const globalConfSchema = z.boolean().or(z.enum(['off', 'readable', 'readonly', 'writable', 'writeable']));
 
-const minSeverity = 0;
-const maxSeverity = 2;
-const severitySchema = z.number().int().min(minSeverity).max(maxSeverity);
+const MIN_SEVERITY = 0;
+const MAX_SEVERITY = 2;
+const severitySchema = z.number().int().min(MIN_SEVERITY).max(MAX_SEVERITY);
 const stringSeveritySchema = z.enum(['off', 'warn', 'error']);
 
 const objectMetaPropertiesSchema = z.object({

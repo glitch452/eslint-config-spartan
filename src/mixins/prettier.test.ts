@@ -1,7 +1,7 @@
 import { prettier } from './prettier.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { intersection } from '../__test__/utils/sets.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { getEnabledRules } from '../__test__/utils/rules.js';
 
 describe(prettier.name, () => {
@@ -23,7 +23,7 @@ describe(prettier.name, () => {
   });
 
   it('should set the name value', () => {
-    expect(config.name).toBe(`${configNamePrefix}/${prettier.name}`);
+    expect(config.name).toBe(`${CONFIG_NAME_PREFIX}/${prettier.name}`);
   });
 
   it('should set the default files value', () => {

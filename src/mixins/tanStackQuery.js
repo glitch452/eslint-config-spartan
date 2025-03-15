@@ -1,6 +1,6 @@
 import tanStackQueryPlugin from '@tanstack/eslint-plugin-query';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -19,7 +19,7 @@ import { configNamePrefix } from '../constants.js';
 export function tanStackQuery(options = {}) {
   return {
     ...tanStackQueryPlugin.configs['flat/recommended'][0],
-    name: `${configNamePrefix}/${tanStackQuery.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${tanStackQuery.name}`,
     files: options.files ?? [files.jsTs],
     rules: warnToError(tanStackQueryPlugin.configs['flat/recommended'][0].rules),
   };

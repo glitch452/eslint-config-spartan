@@ -1,6 +1,6 @@
 import vitestPlugin from 'eslint-plugin-vitest';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 /** @import { Linter } from 'eslint' */
 
@@ -20,7 +20,7 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
  */
 export function vitest(options = {}) {
   return {
-    name: `${configNamePrefix}/${vitest.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${vitest.name}`,
     files: options.files ?? [files.testSpec],
     plugins: {
       [prefixes.vitest]: vitestPlugin,

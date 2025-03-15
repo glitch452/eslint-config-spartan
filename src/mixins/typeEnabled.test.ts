@@ -3,7 +3,7 @@ import { typeEnabled } from './typeEnabled.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import {
   getDeprecatedRules,
   getEnabledRules,
@@ -49,7 +49,7 @@ describe(typeEnabled.name, () => {
   });
 
   it('should set the name value', () => {
-    expect(config.name).toBe(`${configNamePrefix}/${typeEnabled.name}`);
+    expect(config.name).toBe(`${CONFIG_NAME_PREFIX}/${typeEnabled.name}`);
   });
 
   it('should set the default files value', () => {

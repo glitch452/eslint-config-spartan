@@ -6,7 +6,7 @@ import { vitest } from './vitest.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { getDeprecatedRules, getEnabledRules, getWarnRules, listRules } from '../__test__/utils/rules.js';
 
 describe(vitest.name, () => {
@@ -41,7 +41,7 @@ describe(vitest.name, () => {
   });
 
   it('should set the name value', () => {
-    expect(config.name).toBe(`${configNamePrefix}/${vitest.name}`);
+    expect(config.name).toBe(`${CONFIG_NAME_PREFIX}/${vitest.name}`);
   });
 
   it('should set the default files value', () => {

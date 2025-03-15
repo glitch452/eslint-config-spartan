@@ -1,6 +1,6 @@
 import i18nJsonPlugin from 'eslint-plugin-i18n-json';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -18,7 +18,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
  */
 export function i18nJson(options = {}) {
   return {
-    name: `${configNamePrefix}/${i18nJson.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${i18nJson.name}`,
     files: options.files ?? [files.json],
     plugins: {
       [prefixes.i18nJson]: i18nJsonPlugin,

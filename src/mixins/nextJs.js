@@ -1,6 +1,6 @@
 import nextPlugin from '@next/eslint-plugin-next';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -17,7 +17,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
  */
 export function nextJs(options = {}) {
   return {
-    name: `${configNamePrefix}/${nextJs.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${nextJs.name}`,
     files: options.files ?? [files.jsTs],
     plugins: { [prefixes.next]: nextPlugin },
     rules: warnToError(nextPlugin.configs.recommended.rules),

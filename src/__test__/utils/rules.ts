@@ -25,7 +25,7 @@ export function getWarnRules(rules: Partial<Record<string, Linter.RuleEntry>> = 
  * Extract a list of all the rule names with the given prefix prepended to them
  * @param rules
  * @param prefix
- * @param sort
+ * @param shouldSort
  */
 export function listRules(
   rules:
@@ -33,11 +33,11 @@ export function listRules(
     | Map<string, Linter.RuleEntry | Rule.RuleModule>
     | undefined,
   prefix?: string,
-  sort: boolean = false,
+  shouldSort: boolean = false,
 ): string[] {
   const keys = rules instanceof Map ? [...rules.keys()] : Object.keys(rules ?? {});
   const names = keys.map((x) => `${prefix ? `${prefix}/` : ''}${x}`);
-  return sort ? names.sort((a, b) => a.localeCompare(b)) : names;
+  return shouldSort ? names.sort((a, b) => a.localeCompare(b)) : names;
 }
 
 /**

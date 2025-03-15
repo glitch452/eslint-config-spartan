@@ -1,5 +1,5 @@
 import mochaPlugin from 'eslint-plugin-mocha';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files, warnToError } from '../utils/index.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 /** @import { Linter } from 'eslint' */
@@ -20,7 +20,7 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 export function mocha(options = {}) {
   return {
     ...mochaPlugin.configs.flat.recommended,
-    name: `${configNamePrefix}/${mocha.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${mocha.name}`,
     files: options.files ?? [files.testSpec, files.cypress],
     rules: {
       ...warnToError(mochaPlugin.configs.flat.recommended.rules),

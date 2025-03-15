@@ -1,5 +1,5 @@
 import cypressPlugin from 'eslint-plugin-cypress/flat';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files } from '../utils/index.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 /** @import { Linter } from 'eslint' */
@@ -20,7 +20,7 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 export function cypress(options = {}) {
   return {
     ...cypressPlugin.configs.recommended,
-    name: `${configNamePrefix}/${cypress.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${cypress.name}`,
     files: options.files ?? [files.cypress],
     rules: {
       ...cypressPlugin.configs.recommended.rules,

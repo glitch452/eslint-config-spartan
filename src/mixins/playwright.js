@@ -1,6 +1,6 @@
 import playwrightPlugin from 'eslint-plugin-playwright';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 /** @import { Linter } from 'eslint' */
 
@@ -19,7 +19,7 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 export function playwright(options = {}) {
   return {
     ...playwrightPlugin.configs['flat/recommended'],
-    name: `${configNamePrefix}/${playwright.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${playwright.name}`,
     files: options.files ?? [files.testSpec],
     rules: {
       ...warnToError(playwrightPlugin.configs['flat/recommended'].rules),
