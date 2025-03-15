@@ -1,4 +1,4 @@
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files, warnToError } from '../utils/index.js';
 import storybookPlugin from 'eslint-plugin-storybook';
 /** @import { Linter } from 'eslint' */
@@ -23,7 +23,7 @@ export function storybook(options = {}) {
         return {
           ...config,
           files: options.files ?? [files.stories],
-          name: `${configNamePrefix}/${storybook.name}/${i}-${config.name}`,
+          name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
           rules: {
             ...warnToError(/** @type {Partial<Linter.RulesRecord>} */ (config.rules)),
             'storybook/csf-component': 'error',
@@ -34,14 +34,14 @@ export function storybook(options = {}) {
         return {
           ...config,
           files: options.files ?? [files.storybookMain],
-          name: `${configNamePrefix}/${storybook.name}/${i}-${config.name}`,
+          name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
         };
       default:
         // Known other cases: 'storybook:recommended:setup'
         return {
           ...config,
           files: options.files ?? [files.stories],
-          name: `${configNamePrefix}/${storybook.name}/${i}-${config.name}`,
+          name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
         };
     }
   });

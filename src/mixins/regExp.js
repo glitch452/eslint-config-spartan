@@ -1,6 +1,6 @@
 import regExpPlugin from 'eslint-plugin-regexp';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -18,7 +18,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
 export function regExp(options = {}) {
   return {
     ...regExpPlugin.configs['flat/recommended'],
-    name: `${configNamePrefix}/${regExp.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${regExp.name}`,
     files: options.files ?? [files.jsTs],
     settings: options.settings ?? {},
     plugins: {

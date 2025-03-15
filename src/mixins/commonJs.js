@@ -1,6 +1,6 @@
 import globals from 'globals';
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -17,7 +17,7 @@ import { configNamePrefix } from '../constants.js';
  */
 export function commonJs(options = {}) {
   return {
-    name: `${configNamePrefix}/${commonJs.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${commonJs.name}`,
     files: options.files ?? [files.cjs],
     languageOptions: { sourceType: 'commonjs', globals: globals.node },
     rules: {

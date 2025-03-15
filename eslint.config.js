@@ -1,9 +1,10 @@
 import { files } from './src/utils/index.js';
-import { jsDoc, mdx, prettier, typeEnabled, vitest } from './src/mixins/index.js';
+import { jsDoc, mdx, namingConvention, prettier, typeEnabled, vitest } from './src/mixins/index.js';
 import { buildConfig } from './src/buildConfig.js';
 
 export default buildConfig(
   typeEnabled({ parserOptions: { tsconfigRootDir: import.meta.dirname, project: './tsconfig.json' } }),
+  namingConvention,
   vitest,
   jsDoc,
   mdx,

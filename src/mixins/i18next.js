@@ -1,6 +1,6 @@
 import i18nextPlugin from 'eslint-plugin-i18next';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -16,7 +16,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
  */
 export function i18next(options = {}) {
   return {
-    name: `${configNamePrefix}/${i18next.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${i18next.name}`,
     files: options.files ?? [files.jsTs],
     plugins: {
       [prefixes.i18next]: i18nextPlugin,

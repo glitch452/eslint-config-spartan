@@ -1,6 +1,6 @@
 import * as mdxPlugin from 'eslint-plugin-mdx';
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -40,7 +40,7 @@ export function mdx(options = {}) {
   return [
     {
       ...mdxPlugin.flat,
-      name: `${configNamePrefix}/${mdx.name}/base`,
+      name: `${CONFIG_NAME_PREFIX}/${mdx.name}/base`,
       processor: mdxPlugin.createRemarkProcessor({ lintCodeBlocks: true }),
       files: options.files ?? [files.mdMdx],
       rules: {
@@ -51,7 +51,7 @@ export function mdx(options = {}) {
     },
     {
       ...mdxPlugin.flatCodeBlocks,
-      name: `${configNamePrefix}/${mdx.name}/code-blocks`,
+      name: `${CONFIG_NAME_PREFIX}/${mdx.name}/code-blocks`,
       files: options.codeBlocksFiles ?? [`${files.mdMdx}/**/*`],
       rules: {
         ...mdxPlugin.flatCodeBlocks.rules,

@@ -1,6 +1,6 @@
 import tailwindCssPlugin from 'eslint-plugin-tailwindcss';
 import { files, warnToError } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -18,7 +18,7 @@ import { configNamePrefix, prefixes } from '../constants.js';
 export function tailwindCss(options = {}) {
   return {
     ...tailwindCssPlugin.configs['flat/recommended'][0],
-    name: `${configNamePrefix}/${tailwindCss.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${tailwindCss.name}`,
     files: options.files ?? [files.jsxTsx],
     settings: options.settings ?? {},
     plugins: {

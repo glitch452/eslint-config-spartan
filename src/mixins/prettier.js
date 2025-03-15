@@ -1,5 +1,5 @@
 import prettierConfig from 'eslint-config-prettier';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import stylistic from '@stylistic/eslint-plugin';
 /** @import { Linter } from 'eslint' */
 /** @import StylisticPlugin from '@stylistic/eslint-plugin' */
@@ -49,7 +49,7 @@ const additionalRules = ['tailwindcss/classnames-order'].map((name) => /** @type
  */
 export function prettier(options = {}) {
   return {
-    name: `${configNamePrefix}/${prettier.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${prettier.name}`,
     ...(options.files && { files: options.files }),
     rules: Object.fromEntries([
       ...originalRules,

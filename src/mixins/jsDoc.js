@@ -1,6 +1,6 @@
 import jsDocPlugin from 'eslint-plugin-jsdoc';
 import { files } from '../utils/index.js';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -22,17 +22,17 @@ import { configNamePrefix, prefixes } from '../constants.js';
 export function jsDoc(options = {}) {
   return [
     {
-      name: `${configNamePrefix}/${jsDoc.name}/Ts`,
+      name: `${CONFIG_NAME_PREFIX}/${jsDoc.name}/Ts`,
       files: options.filesTs ?? [files.ts],
       rules: jsDocPlugin.configs['flat/recommended-typescript-error'].rules,
     },
     {
-      name: `${configNamePrefix}/${jsDoc.name}/Js`,
+      name: `${CONFIG_NAME_PREFIX}/${jsDoc.name}/Js`,
       files: options.filesJs ?? [files.js],
       rules: jsDocPlugin.configs['flat/recommended-typescript-flavor-error'].rules,
     },
     {
-      name: `${configNamePrefix}/${jsDoc.name}/JsTs`,
+      name: `${CONFIG_NAME_PREFIX}/${jsDoc.name}/JsTs`,
       files: options.filesBoth ?? [files.jsTs],
       plugins: { [prefixes.jsDoc]: jsDocPlugin },
       rules: {

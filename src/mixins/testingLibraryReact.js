@@ -1,5 +1,5 @@
 import { fixupPluginRules } from '@eslint/compat';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { files, warnToError } from '../utils/index.js';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 /** @import { Linter } from 'eslint' */
@@ -21,7 +21,7 @@ export function testingLibraryReact(options = {}) {
   return {
     ...testingLibraryPlugin.configs['flat/react'],
     files: options.files ?? [files.testSpec],
-    name: `${configNamePrefix}/${testingLibraryReact.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${testingLibraryReact.name}`,
     plugins: { [prefixes.testingLibrary]: fixupPluginRules(testingLibraryPlugin) },
     rules: {
       ...warnToError(testingLibraryPlugin.configs['flat/react'].rules),

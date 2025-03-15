@@ -1,6 +1,6 @@
 import jestDomPlugin from 'eslint-plugin-jest-dom';
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -17,7 +17,7 @@ import { configNamePrefix } from '../constants.js';
 export function jestDom(options = {}) {
   return {
     ...jestDomPlugin.configs['flat/recommended'],
-    name: `${configNamePrefix}/${jestDom.name}`,
+    name: `${CONFIG_NAME_PREFIX}/${jestDom.name}`,
     files: options.files ?? [files.testSpec],
   };
 }

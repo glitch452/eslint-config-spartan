@@ -1,5 +1,5 @@
 import { files } from '../utils/index.js';
-import { configNamePrefix } from '../constants.js';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
 /**
@@ -17,7 +17,7 @@ import { configNamePrefix } from '../constants.js';
 export function namingConvention(options = {}) {
   return [
     {
-      name: `${configNamePrefix}/${namingConvention.name}`,
+      name: `${CONFIG_NAME_PREFIX}/${namingConvention.name}`,
       files: options.files ?? [files.jsTs],
       ignores: options.ignores ?? [`${files.mdMdx}/**/*`],
       rules: {
@@ -32,7 +32,7 @@ export function namingConvention(options = {}) {
       },
     },
     {
-      name: `${configNamePrefix}/${namingConvention.name}TestFiles`,
+      name: `${CONFIG_NAME_PREFIX}/${namingConvention.name}TestFiles`,
       files: options.testFiles ?? [files.testSpec],
       ignores: options.ignores ?? [`${files.mdMdx}/**/*`],
       rules: {

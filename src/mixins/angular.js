@@ -1,7 +1,7 @@
 import angularPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import angularParser from '@angular-eslint/template-parser';
-import { configNamePrefix, prefixes } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { files } from '../utils/index.js';
 /** @import { Linter, ESLint } from 'eslint' */
 
@@ -23,7 +23,7 @@ import { files } from '../utils/index.js';
 export function angular(options = {}) {
   return [
     {
-      name: `${configNamePrefix}/${angular.name}`,
+      name: `${CONFIG_NAME_PREFIX}/${angular.name}`,
       files: options.files ?? [files.jsTs],
       plugins: {
         [prefixes.angular]: /** @type {ESLint.Plugin} */ (angularPlugin),
@@ -39,7 +39,7 @@ export function angular(options = {}) {
       },
     },
     {
-      name: `${configNamePrefix}/${angular.name}Template`,
+      name: `${CONFIG_NAME_PREFIX}/${angular.name}Template`,
       files: options.templateFiles ?? [files.html],
       plugins: {
         [prefixes.angularTemplate]: /** @type {ESLint.Plugin} */ (/** @type {unknown} */ (angularTemplatePlugin)),

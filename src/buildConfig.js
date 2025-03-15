@@ -8,7 +8,7 @@ import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import typescriptEnumPlugin from 'eslint-plugin-typescript-enum';
 import { files as filesUtil, mergeConfig, warnToError } from './utils/index.js';
 import { commonJs } from './mixins/index.js';
-import { configNamePrefix, prefixes } from './constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from './constants.js';
 /** @import { Linter, ESLint } from 'eslint' */
 /** @import { DeepConfig } from './utils/types.js' */
 
@@ -47,18 +47,18 @@ export function buildConfig(...configs) {
   return mergeConfig(
     {
       ...eslint.configs.recommended,
-      name: `${configNamePrefix}/base/eslint/recommended`,
+      name: `${CONFIG_NAME_PREFIX}/base/eslint/recommended`,
       files,
     },
     /** @type {Linter.Config[]} */ (
       typescriptEsLint.configs.recommended.map((c) => ({
         ...c,
-        name: `${configNamePrefix}/base/${c.name}`,
+        name: `${CONFIG_NAME_PREFIX}/base/${c.name}`,
         files,
       }))
     ),
     {
-      name: `${configNamePrefix}/base`,
+      name: `${CONFIG_NAME_PREFIX}/base`,
       files,
       plugins: {
         [prefixes.import]: fixupPluginRules(importPlugin),
@@ -195,7 +195,7 @@ export function buildConfig(...configs) {
         '@typescript-eslint/prefer-for-of': 'error',
       },
     },
-    { ...commonJs(), name: `${configNamePrefix}/base/${commonJs.name}` },
+    { ...commonJs(), name: `${CONFIG_NAME_PREFIX}/base/${commonJs.name}` },
     ...configs,
   );
 }
