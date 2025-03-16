@@ -9,8 +9,8 @@ import { getDeprecatedRules, getEnabledRules, getWarnRules, listRules } from '..
 describe(i18nJson.name, () => {
   const config = i18nJson();
 
-  const validRules = [...listRules(i18nJsonPlugin.rules, prefixes.i18nJson)];
-  const deprecatedRules = [...getDeprecatedRules(i18nJsonPlugin.rules, prefixes.i18nJson)];
+  const validRules = listRules(i18nJsonPlugin.rules, prefixes.i18nJson);
+  const deprecatedRules = getDeprecatedRules(i18nJsonPlugin.rules, prefixes.i18nJson);
 
   it('should create a valid eslint config', () => {
     const actual = () => configSchema.parse(config);
