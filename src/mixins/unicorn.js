@@ -3,7 +3,7 @@ import { files } from '../utils/index.js';
 import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 /** @import { Linter } from 'eslint' */
 
-const rules = { ...unicornPlugin.configs['flat/recommended'].rules };
+const rules = { ...unicornPlugin.configs.recommended.rules };
 // Remove overrides for built-in eslint rules
 delete rules['no-negated-condition'];
 delete rules['no-nested-ternary'];
@@ -21,7 +21,7 @@ delete rules['no-nested-ternary'];
  */
 export function unicorn(options = {}) {
   return {
-    ...unicornPlugin.configs['flat/recommended'],
+    ...unicornPlugin.configs.recommended,
     name: `${CONFIG_NAME_PREFIX}/${unicorn.name}`,
     files: options.files ?? [files.jsTs],
     plugins: {

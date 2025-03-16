@@ -10,9 +10,12 @@ import { Linter } from 'eslint';
 describe(regExp.name, () => {
   const config = regExp();
 
-  const validRules = [...new Linter().getRules().keys(), ...listRules(regExpPlugin.rules, prefixes.regExp)];
+  const validRules = [
+    ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
+    ...listRules(regExpPlugin.rules, prefixes.regExp),
+  ];
   const deprecatedRules = [
-    ...getDeprecatedRules(new Linter().getRules()),
+    ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(regExpPlugin.rules, prefixes.regExp),
   ];
 

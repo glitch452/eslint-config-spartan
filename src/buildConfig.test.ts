@@ -1,5 +1,5 @@
 import typescriptEsLint from 'typescript-eslint';
-import stylistic from '@stylistic/eslint-plugin';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import securityPlugin from 'eslint-plugin-security';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
@@ -19,8 +19,6 @@ import {
 import { buildConfig } from './buildConfig.js';
 import { Linter } from 'eslint';
 
-const stylisticPlugin = stylistic as unknown as (typeof stylistic)['default'];
-
 describe(buildConfig.name, () => {
   const configs = buildConfig();
 
@@ -36,7 +34,7 @@ describe(buildConfig.name, () => {
   ] as const;
 
   const validRules = [
-    ...new Linter().getRules().keys(),
+    ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
     ...listRules(stylisticPlugin.rules as any, prefixes.stylistic),
     ...listRules(importPlugin.rules, prefixes.import),
@@ -46,7 +44,7 @@ describe(buildConfig.name, () => {
     ...listRules(unicornPlugin.rules, prefixes.unicorn),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(new Linter().getRules()),
+    ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
     ...getDeprecatedRules(importPlugin.rules, prefixes.import),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),

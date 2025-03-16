@@ -14,6 +14,7 @@ export const testEnvironmentAdjustments = /** @type {const} */ ({
   '@typescript-eslint/no-explicit-any': 'off',
   '@typescript-eslint/no-magic-numbers': 'off',
   '@typescript-eslint/no-non-null-assertion': 'off',
+  '@typescript-eslint/no-unsafe-type-assertion': 'off',
   'security/detect-non-literal-fs-filename': 'off',
   'unicorn/consistent-function-scoping': 'off',
 });

@@ -25,12 +25,12 @@ describe(angular.name, () => {
   ] as const;
 
   const validRules = [
-    ...listRules(angularPlugin.rules, prefixes.angular),
-    ...listRules(angularTemplatePlugin.rules, prefixes.angularTemplate),
+    ...listRules(angularPlugin.rules as any, prefixes.angular),
+    ...listRules(angularTemplatePlugin.rules as any, prefixes.angularTemplate),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(angularPlugin.rules, prefixes.angular),
-    ...getDeprecatedRules(angularTemplatePlugin.rules, prefixes.angularTemplate),
+    ...getDeprecatedRules(angularPlugin.rules as any, prefixes.angular),
+    ...getDeprecatedRules(angularTemplatePlugin.rules as any, prefixes.angularTemplate),
   ];
 
   it('should test all the returned configs', () => {

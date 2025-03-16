@@ -635,12 +635,12 @@ import { unicorn } from 'eslint-config-spartan/mixins';
 ### Vitest
 
 The `vitest` mixin creates an ESLint config for
-[eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest) to assist with using the
+[@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin) to assist with using the
 [Vitest](https://vitest.dev) Testing Framework.
 
 Rule Prefixes:
 
-- The `eslint-plugin-vitest` rules are prefixed with `vitest`
+- The `@vitest/eslint-plugin` rules are prefixed with `vitest`
 
 > [!NOTE]
 >

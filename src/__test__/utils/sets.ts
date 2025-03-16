@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-types
 type Widen<T> = T | (TSReset.WidenLiteral<T> & {});
 
 /**

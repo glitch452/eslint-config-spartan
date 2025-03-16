@@ -3,7 +3,7 @@ import { jsDoc, mdx, namingConvention, prettier, typeEnabled, vitest } from './s
 import { buildConfig } from './src/buildConfig.js';
 
 export default buildConfig(
-  typeEnabled({ parserOptions: { tsconfigRootDir: import.meta.dirname, project: './tsconfig.json' } }),
+  typeEnabled({ parserOptions: { tsconfigRootDir: import.meta.dirname, projectService: true } }),
   namingConvention,
   vitest,
   jsDoc,

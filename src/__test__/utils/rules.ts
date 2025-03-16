@@ -69,7 +69,7 @@ export function getTypeInfoRequiredRules(
   const entries = rules instanceof Map ? [...rules.entries()] : Object.entries(rules ?? {});
   return (
     entries
-      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions, @typescript-eslint/no-unsafe-type-assertion
       .filter(([, rule]) => (rule.meta?.docs as Docs).requiresTypeChecking)
       .map(([name]) => `${prefix ? `${prefix}/` : ''}${name}`)
   );

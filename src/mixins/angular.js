@@ -26,8 +26,8 @@ export function angular(options = {}) {
       name: `${CONFIG_NAME_PREFIX}/${angular.name}`,
       files: options.files ?? [files.jsTs],
       plugins: {
-        [prefixes.angular]: /** @type {ESLint.Plugin} */ (angularPlugin),
-        [prefixes.angularTemplate]: /** @type {ESLint.Plugin} */ (/** @type {unknown} */ (angularTemplatePlugin)),
+        [prefixes.angular]: /** @type {any} */ (angularPlugin),
+        [prefixes.angularTemplate]: /** @type {any} */ (angularTemplatePlugin),
       },
       processor: '@angular-eslint/template/extract-inline-html',
       rules: {
@@ -42,7 +42,7 @@ export function angular(options = {}) {
       name: `${CONFIG_NAME_PREFIX}/${angular.name}Template`,
       files: options.templateFiles ?? [files.html],
       plugins: {
-        [prefixes.angularTemplate]: /** @type {ESLint.Plugin} */ (/** @type {unknown} */ (angularTemplatePlugin)),
+        [prefixes.angularTemplate]: /** @type {any} */ (angularTemplatePlugin),
       },
       languageOptions: { parser: angularParser },
       rules: /** @type {Partial<Linter.RulesRecord>} */ (angularTemplatePlugin.configs.recommended.rules),

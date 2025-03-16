@@ -19,7 +19,7 @@ interface PackageJson {
   name: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions, @typescript-eslint/no-unsafe-type-assertion
 const packageJson = JSON.parse(fs.readFileSync('./package.json').toString()) as PackageJson;
 
 const banner = ((_context) => {

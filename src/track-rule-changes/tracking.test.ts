@@ -18,16 +18,14 @@ import reactPlugin from 'eslint-plugin-react';
 import regExpPlugin from 'eslint-plugin-regexp';
 import securityPlugin from 'eslint-plugin-security';
 import storybookPlugin from 'eslint-plugin-storybook';
-import stylistic from '@stylistic/eslint-plugin';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 import tailwindCssPlugin from 'eslint-plugin-tailwindcss';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import typescriptEnumPlugin from 'eslint-plugin-typescript-enum';
 import typescriptEsLint from 'typescript-eslint';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
-import vitestPlugin from 'eslint-plugin-vitest';
-
-const stylisticPlugin = stylistic as unknown as (typeof stylistic)['default'];
+import vitestPlugin from '@vitest/eslint-plugin';
 
 describe('Track changes in available plugin rules', () => {
   const testTable = [
@@ -63,8 +61,8 @@ describe('Track changes in available plugin rules', () => {
     },
     { name: 'eslint-plugin-unicorn', rules: listRules(unicornPlugin.rules, prefixes.unicorn, true) },
     { name: 'eslint-plugin-unused-imports', rules: listRules(unusedImportsPlugin.rules, prefixes.unusedImports, true) },
-    { name: 'eslint-plugin-vitest', rules: listRules(vitestPlugin.rules, prefixes.vitest, true) },
-    { name: 'eslint', rules: listRules(new Linter().getRules(), undefined, true) },
+    { name: '@vitest/eslint-plugin', rules: listRules(vitestPlugin.rules, prefixes.vitest, true) },
+    { name: 'eslint', rules: listRules(new Linter({ configType: 'eslintrc' }).getRules(), undefined, true) },
     {
       name: 'typescript-eslint',
       rules: listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint, true),
