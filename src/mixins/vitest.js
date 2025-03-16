@@ -1,4 +1,4 @@
-import vitestPlugin from 'eslint-plugin-vitest';
+import vitestPlugin from '@vitest/eslint-plugin';
 import { files } from '../utils/index.js';
 import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
@@ -6,12 +6,12 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
 
 /**
  * The `vitest` mixin creates an ESLint config for
- * [eslint-plugin-vitest](https://www.npmjs.com/package/eslint-plugin-vitest) to assist with using the
+ * [@vitest/eslint-plugin](https://www.npmjs.com/package/@vitest/eslint-plugin) to assist with using the
  * [Vitest](https://vitest.dev) Testing Framework.
  *
  * Rule Prefixes:
  *
- * - The `eslint-plugin-vitest` rules are prefixed with `vitest`
+ * - The `@vitest/eslint-plugin` rules are prefixed with `vitest`
  *
  * Note: This config also adjusts some `@typescript-eslint` rules to make them more helpful for test files.
  * @param {object} options

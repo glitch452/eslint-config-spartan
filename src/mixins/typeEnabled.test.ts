@@ -17,11 +17,11 @@ describe(typeEnabled.name, () => {
   const config = typeEnabled();
 
   const validRules = [
-    ...new Linter().getRules().keys(),
+    ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(new Linter().getRules()),
+    ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const typeInfoRequiredRules = getTypeInfoRequiredRules(

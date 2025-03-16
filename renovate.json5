@@ -19,34 +19,10 @@
     {
       enabled: false,
       matchManagers: ['npm'],
-      matchUpdateTypes: ['replacement'],
-      matchPackageNames: [
-        // Requires an update to typescript-eslint, which requires eslint v9
-        'eslint-plugin-vitest',
-      ],
-    },
-    {
-      enabled: false,
-      matchManagers: ['npm'],
       matchUpdateTypes: ['major'],
       matchPackageNames: [
-        'eslint',
         // ^3 required for eslint-plugin-tailwindcss
         'tailwindcss',
-        // These require eslint v9
-        '@stylistic/eslint-plugin',
-        'eslint-plugin-cypress',
-        'eslint-plugin-unicorn',
-        'typescript-eslint',
-      ],
-    },
-    {
-      enabled: false,
-      matchManagers: ['npm'],
-      matchUpdateTypes: ['major', 'minor'],
-      matchPackageNames: [
-        // These require eslint v9
-        '@eslint/compat',
       ],
     },
   ],

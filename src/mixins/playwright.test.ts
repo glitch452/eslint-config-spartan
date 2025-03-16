@@ -14,14 +14,14 @@ describe(playwright.name, () => {
   const config = playwright();
 
   const validRules = [
-    ...new Linter().getRules().keys(),
+    ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
     ...listRules(playwrightPlugin.rules, prefixes.playwright),
     ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(unicornPlugin.rules, prefixes.unicorn),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(new Linter().getRules()),
+    ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(playwrightPlugin.rules, prefixes.playwright),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),

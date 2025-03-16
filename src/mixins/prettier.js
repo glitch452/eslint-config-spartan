@@ -1,11 +1,8 @@
 import prettierConfig from 'eslint-config-prettier';
 import { CONFIG_NAME_PREFIX } from '../constants.js';
-import stylistic from '@stylistic/eslint-plugin';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 /** @import { Linter } from 'eslint' */
 /** @import StylisticPlugin from '@stylistic/eslint-plugin' */
-
-/** @type {StylisticPlugin['default']} */
-const stylisticPlugin = /** @type {any} */ (stylistic);
 
 const allowedRules = ['curly', 'no-floating-decimal', '@typescript-eslint/member-delimiter-style'];
 

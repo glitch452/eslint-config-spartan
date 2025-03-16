@@ -12,6 +12,7 @@ exports[`mocha > should configure the expected rules 1`] = `
   "@typescript-eslint/no-explicit-any": "off",
   "@typescript-eslint/no-magic-numbers": "off",
   "@typescript-eslint/no-non-null-assertion": "off",
+  "@typescript-eslint/no-unsafe-type-assertion": "off",
   "mocha/consistent-spacing-between-blocks": "error",
   "mocha/handle-done-callback": "error",
   "mocha/max-top-level-suites": [

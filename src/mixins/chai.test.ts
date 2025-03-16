@@ -15,7 +15,7 @@ describe(chai.name, () => {
   const config = chai();
 
   const validRules = [
-    ...new Linter().getRules().keys(),
+    ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
     ...listRules(chaiFriendlyPlugin.rules, prefixes.chaiFriendly),
     ...listRules(chaiExpectPlugin.rules, prefixes.chaiExpect),
     ...listRules(securityPlugin.rules, prefixes.security),
@@ -23,7 +23,7 @@ describe(chai.name, () => {
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(new Linter().getRules()),
+    ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(chaiFriendlyPlugin.rules, prefixes.chaiFriendly),
     ...getDeprecatedRules(chaiExpectPlugin.rules, prefixes.chaiExpect),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),

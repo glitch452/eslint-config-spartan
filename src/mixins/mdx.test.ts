@@ -19,14 +19,14 @@ describe(mdx.name, () => {
   ] as const;
 
   const validRules = [
-    ...new Linter().getRules().keys(),
+    ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
     ...listRules(mdxPlugin.rules, prefixes.mdx),
     ...listRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...listRules(reactPlugin.rules, prefixes.react),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(new Linter().getRules()),
+    ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(mdxPlugin.rules, prefixes.mdx),
     ...getDeprecatedRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...getDeprecatedRules(reactPlugin.rules, prefixes.react),
