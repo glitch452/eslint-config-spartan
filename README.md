@@ -12,16 +12,8 @@ mixins) for various eslint plugins.
 **Details:**
 
 - **Config Format:** `Flat config` No support for the `eslintrc` format.
-- **ESLint Version:** `^8.57.1` Migration to v9 will happen once the ecosystem of plugins have been updated to support
-  v9.
+- **ESLint Version:** `^9.22.0`
 - **Module Type**: `ESM` and `CJS`
-
-> [!NOTE]
->
-> `eslint-config-spartan` aims to adhere to [semantic versioning](https://semver.org), however, while the initial
-> configuration and API structure is being crafted, it will release breaking changes as `minor` versions. This applies
-> to versions `0.x.x`. Once it reaches version `1.0.0`, it will be considered stable, and breaking changes will be
-> released as new `major` versions.
 
 ## Table of Contents
 
@@ -89,7 +81,7 @@ was simply reformatted.
 ## Install
 
 ```sh
-npm install --save-dev eslint@^8.57 eslint-config-spartan
+npm install --save-dev eslint eslint-config-spartan
 ```
 
 ## Build Config
