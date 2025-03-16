@@ -21,6 +21,6 @@ export function i18next(options = {}) {
     plugins: {
       [prefixes.i18next]: i18nextPlugin,
     },
-    rules: i18nextPlugin.configs.recommended.rules,
+    rules: i18nextPlugin.configs['flat/recommended'].rules,
   };
 }
