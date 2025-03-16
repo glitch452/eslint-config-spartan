@@ -1,5 +1,84 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Track changes in available plugin rules > should snapshot the list of rules for "'@angular-eslint/eslint-plugin'" 1`] = `
+[
+  "@angular-eslint/component-class-suffix",
+  "@angular-eslint/component-max-inline-declarations",
+  "@angular-eslint/component-selector",
+  "@angular-eslint/consistent-component-styles",
+  "@angular-eslint/contextual-decorator",
+  "@angular-eslint/contextual-lifecycle",
+  "@angular-eslint/directive-class-suffix",
+  "@angular-eslint/directive-selector",
+  "@angular-eslint/no-async-lifecycle-method",
+  "@angular-eslint/no-attribute-decorator",
+  "@angular-eslint/no-conflicting-lifecycle",
+  "@angular-eslint/no-duplicates-in-metadata-arrays",
+  "@angular-eslint/no-empty-lifecycle-method",
+  "@angular-eslint/no-forward-ref",
+  "@angular-eslint/no-input-prefix",
+  "@angular-eslint/no-input-rename",
+  "@angular-eslint/no-inputs-metadata-property",
+  "@angular-eslint/no-lifecycle-call",
+  "@angular-eslint/no-output-native",
+  "@angular-eslint/no-output-on-prefix",
+  "@angular-eslint/no-output-rename",
+  "@angular-eslint/no-outputs-metadata-property",
+  "@angular-eslint/no-pipe-impure",
+  "@angular-eslint/no-queries-metadata-property",
+  "@angular-eslint/pipe-prefix",
+  "@angular-eslint/prefer-on-push-component-change-detection",
+  "@angular-eslint/prefer-output-readonly",
+  "@angular-eslint/prefer-signals",
+  "@angular-eslint/prefer-standalone",
+  "@angular-eslint/relative-url-prefix",
+  "@angular-eslint/require-lifecycle-on-prototype",
+  "@angular-eslint/require-localize-metadata",
+  "@angular-eslint/runtime-localize",
+  "@angular-eslint/sort-lifecycle-methods",
+  "@angular-eslint/use-component-selector",
+  "@angular-eslint/use-component-view-encapsulation",
+  "@angular-eslint/use-injectable-provided-in",
+  "@angular-eslint/use-lifecycle-interface",
+  "@angular-eslint/use-pipe-transform-interface",
+]
+`;
+
+exports[`Track changes in available plugin rules > should snapshot the list of rules for "'@angular-eslint/eslint-plugin-template'" 1`] = `
+[
+  "@angular-eslint/template/alt-text",
+  "@angular-eslint/template/attributes-order",
+  "@angular-eslint/template/banana-in-box",
+  "@angular-eslint/template/button-has-type",
+  "@angular-eslint/template/click-events-have-key-events",
+  "@angular-eslint/template/conditional-complexity",
+  "@angular-eslint/template/cyclomatic-complexity",
+  "@angular-eslint/template/elements-content",
+  "@angular-eslint/template/eqeqeq",
+  "@angular-eslint/template/i18n",
+  "@angular-eslint/template/interactive-supports-focus",
+  "@angular-eslint/template/label-has-associated-control",
+  "@angular-eslint/template/mouse-events-have-key-events",
+  "@angular-eslint/template/no-any",
+  "@angular-eslint/template/no-autofocus",
+  "@angular-eslint/template/no-call-expression",
+  "@angular-eslint/template/no-distracting-elements",
+  "@angular-eslint/template/no-duplicate-attributes",
+  "@angular-eslint/template/no-inline-styles",
+  "@angular-eslint/template/no-interpolation-in-attributes",
+  "@angular-eslint/template/no-negated-async",
+  "@angular-eslint/template/no-positive-tabindex",
+  "@angular-eslint/template/prefer-control-flow",
+  "@angular-eslint/template/prefer-ngsrc",
+  "@angular-eslint/template/prefer-self-closing-tags",
+  "@angular-eslint/template/prefer-static-string-properties",
+  "@angular-eslint/template/role-has-required-aria",
+  "@angular-eslint/template/table-scope",
+  "@angular-eslint/template/use-track-by-function",
+  "@angular-eslint/template/valid-aria",
+]
+`;
+
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'@next/eslint-plugin-next'" 1`] = `
 [
   "@next/next/google-font-display",
@@ -124,6 +203,16 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "@stylistic/wrap-iife",
   "@stylistic/wrap-regex",
   "@stylistic/yield-star-spacing",
+]
+`;
+
+exports[`Track changes in available plugin rules > should snapshot the list of rules for "'@tanstack/eslint-plugin-query'" 1`] = `
+[
+  "@tanstack/query/exhaustive-deps",
+  "@tanstack/query/infinite-query-property-order",
+  "@tanstack/query/no-rest-destructuring",
+  "@tanstack/query/no-unstable-deps",
+  "@tanstack/query/stable-query-client",
 ]
 `;
 
@@ -1080,6 +1169,60 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "mocha/prefer-arrow-callback",
   "mocha/valid-suite-description",
   "mocha/valid-test-description",
+]
+`;
+
+exports[`Track changes in available plugin rules > should snapshot the list of rules for "'eslint-plugin-playwright'" 1`] = `
+[
+  "playwright/expect-expect",
+  "playwright/max-expects",
+  "playwright/max-nested-describe",
+  "playwright/missing-playwright-await",
+  "playwright/no-commented-out-tests",
+  "playwright/no-conditional-expect",
+  "playwright/no-conditional-in-test",
+  "playwright/no-duplicate-hooks",
+  "playwright/no-element-handle",
+  "playwright/no-eval",
+  "playwright/no-focused-test",
+  "playwright/no-force-option",
+  "playwright/no-get-by-title",
+  "playwright/no-hooks",
+  "playwright/no-nested-step",
+  "playwright/no-networkidle",
+  "playwright/no-nth-methods",
+  "playwright/no-page-pause",
+  "playwright/no-raw-locators",
+  "playwright/no-restricted-matchers",
+  "playwright/no-skipped-test",
+  "playwright/no-slowed-test",
+  "playwright/no-standalone-expect",
+  "playwright/no-unsafe-references",
+  "playwright/no-useless-await",
+  "playwright/no-useless-not",
+  "playwright/no-wait-for-selector",
+  "playwright/no-wait-for-timeout",
+  "playwright/prefer-comparison-matcher",
+  "playwright/prefer-equality-matcher",
+  "playwright/prefer-hooks-in-order",
+  "playwright/prefer-hooks-on-top",
+  "playwright/prefer-locator",
+  "playwright/prefer-lowercase-title",
+  "playwright/prefer-native-locators",
+  "playwright/prefer-strict-equal",
+  "playwright/prefer-to-be",
+  "playwright/prefer-to-contain",
+  "playwright/prefer-to-have-count",
+  "playwright/prefer-to-have-length",
+  "playwright/prefer-web-first-assertions",
+  "playwright/require-hook",
+  "playwright/require-soft-assertions",
+  "playwright/require-to-throw-message",
+  "playwright/require-top-level-describe",
+  "playwright/valid-describe-callback",
+  "playwright/valid-expect",
+  "playwright/valid-expect-in-promise",
+  "playwright/valid-title",
 ]
 `;
 
