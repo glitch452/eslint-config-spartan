@@ -13,7 +13,6 @@ import remarkLintNoFileNameIrregularCharacters from 'remark-lint-no-file-name-ir
  * - [remark-preset-lint-consistent](https://www.npmjs.com/package/remark-preset-lint-consistent)
  * - [remark-preset-lint-recommended](https://www.npmjs.com/package/remark-preset-lint-recommended)
  * - [remark-preset-lint-markdown-style-guide](https://www.npmjs.com/package/remark-preset-lint-markdown-style-guide)
- * - [remark-lint-no-dead-urls](https://www.npmjs.com/package/remark-lint-no-dead-urls)
  * - [remark-gfm](https://www.npmjs.com/package/remark-gfm)
  * @type {import('unified').Preset}
  */
