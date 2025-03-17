@@ -141,12 +141,11 @@ function getVariableNameComponents({ useSnakeCaseVars }) {
       format: null,
       modifiers: ['requiresQuotes'],
     },
-    // Constant primitive variables declared at the top-level must be UPPER_CASE
+    // Always allow UPPER_CASE for top-level constants
     {
       selector: ['variable'],
-      format: ['UPPER_CASE'],
+      format: useSnakeCaseVars ? ['UPPER_CASE', 'snake_case'] : ['UPPER_CASE', 'strictCamelCase'],
       modifiers: ['const', 'global'],
-      types: ['string', 'number'],
     },
   ];
 }
