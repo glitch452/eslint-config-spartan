@@ -115,7 +115,7 @@ export function buildConfig(...configs) {
         'typescript-enum/no-const-enum': 'error',
 
         /* -- Stylistic Rules -- */
-        ...stylisticPlugin.configs['recommended-flat'].rules,
+        ...stylisticPlugin.configs.recommended.rules,
         '@stylistic/arrow-parens': ['error', 'always'],
         '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: false }],
         '@stylistic/jsx-curly-spacing': ['error', { when: 'never', children: true }],
