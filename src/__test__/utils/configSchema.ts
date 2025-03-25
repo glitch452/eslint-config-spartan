@@ -73,6 +73,26 @@ const linterOptionsSchema = z
   })
   .optional();
 
+const externalSpecifierSchema = z.object({
+  name: z.string().optional(),
+  url: z.string().optional(),
+});
+
+const replacedBySchema = z.object({
+  message: z.string().optional(),
+  url: z.string().optional(),
+  plugin: externalSpecifierSchema.optional(),
+  rule: externalSpecifierSchema.optional(),
+});
+
+const deprecatedInfoSchema = z.object({
+  message: z.string().optional(),
+  url: z.string().optional(),
+  replacedBy: replacedBySchema.array().optional(),
+  deprecatedSince: z.string().optional(),
+  availableUntil: z.string().nullable().optional(),
+});
+
 const ruleMetaDataSchema = z
   .object({
     docs: z
@@ -87,9 +107,9 @@ const ruleMetaDataSchema = z
       .partial(),
     messages: z.record(z.string()),
     // Added z.null() added to accommodate the cypress plugin
-    fixable: z.enum(['code', 'whitespace']).or(z.null()),
+    fixable: z.enum(['code', 'whitespace']).nullable(),
     schema: z.unknown(),
-    deprecated: z.boolean(),
+    deprecated: z.boolean().or(deprecatedInfoSchema),
     replacedBy: z.string().array().readonly(),
     // Added 'error' to accommodate the security plugin
     type: z.enum(['problem', 'suggestion', 'layout', 'error']),
