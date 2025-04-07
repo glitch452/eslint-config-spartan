@@ -626,6 +626,7 @@ exports[`buildConfig > 'base/typescript-eslint/eslint-recomme…' > should confi
   "no-unreachable": "off",
   "no-unsafe-negation": "off",
   "no-var": "error",
+  "no-with": "off",
   "prefer-const": "error",
   "prefer-rest-params": "error",
   "prefer-spread": "error",
