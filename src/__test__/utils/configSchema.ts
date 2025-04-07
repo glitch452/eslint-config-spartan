@@ -88,7 +88,7 @@ const replacedBySchema = z.object({
 const deprecatedInfoSchema = z.object({
   message: z.string().optional(),
   url: z.string().optional(),
-  replacedBy: replacedBySchema.array().optional(),
+  replacedBy: z.string().or(replacedBySchema).array().optional(),
   deprecatedSince: z.string().optional(),
   availableUntil: z.string().nullable().optional(),
 });
