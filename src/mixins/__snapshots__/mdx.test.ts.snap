@@ -4,7 +4,7 @@ exports[`mdx > 'base' > should configure the expected rules 1`] = `
 {
   "mdx/remark": "error",
   "no-unused-expressions": "error",
-  "react/react-in-jsx-scope": 0,
+  "react/react-in-jsx-scope": "off",
   "unused-imports/no-unused-imports": "off",
 }
 `;
@@ -12,6 +12,7 @@ exports[`mdx > 'base' > should configure the expected rules 1`] = `
 exports[`mdx > 'code-blocks' > should configure the expected rules 1`] = `
 {
   "@typescript-eslint/no-magic-numbers": "off",
+  "@typescript-eslint/no-unused-vars": "off",
   "eol-last": "off",
   "no-undef": "off",
   "no-unused-expressions": "off",
