@@ -120,8 +120,8 @@ import { files } from 'eslint-config-spartan/utils';
 export default buildConfig(
   typeEnabled({
     parserOptions: {
-      tsconfigRootDir: __dirname,
-      project: './tsconfig.json',
+      tsconfigRootDir: import.meta.dirname,
+      projectService: true,
     },
   }),
   jsDoc,
