@@ -114,11 +114,11 @@ receive other configs or mixins as inputs, which are included in the final confi
 ```js
 // eslint.config.js
 import { buildConfig } from 'eslint-config-spartan';
-import { jsDoc, prettier, typeChecked } from 'eslint-config-spartan/mixins';
+import { jsDoc, prettier, typeEnabled } from 'eslint-config-spartan/mixins';
 import { files } from 'eslint-config-spartan/utils';
 
 export default buildConfig(
-  typeChecked({
+  typeEnabled({
     parserOptions: {
       tsconfigRootDir: __dirname,
       project: './tsconfig.json',
