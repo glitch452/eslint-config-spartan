@@ -159,6 +159,80 @@ describe(namingConvention.name, () => {
       expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
     });
 
+    it('should allow UPPER_CASE variable names when the "allowUpperCaseVars" option is set to true', () => {
+      const nonSnakeCaseVars = ['strictCamelCase', 'UPPER_CASE'];
+      const actual = namingConvention({ allowUpperCaseVars: true, privateUnderscore: 'allow' })[index];
+      const components: any[] = [
+        {
+          selector: ['accessor', 'classProperty'],
+          format: nonSnakeCaseVars,
+          modifiers: ['private'],
+          leadingUnderscore: 'allow',
+        },
+        {
+          selector: ['variable', 'parameter', 'accessor', 'classProperty', 'typeProperty'],
+          format: nonSnakeCaseVars,
+          leadingUnderscore: 'allow',
+        },
+      ];
+      if (index === 0) {
+        components.push(
+          {
+            selector: ['parameter'],
+            format: nonSnakeCaseVars,
+            modifiers: ['unused'],
+            types: ['boolean'],
+            // eslint-disable-next-line vitest/no-conditional-expect
+            custom: { regex: expect.any(String), match: true },
+            leadingUnderscore: 'require',
+          },
+          {
+            selector: ['variable', 'parameter', 'classProperty', 'typeProperty'],
+            format: nonSnakeCaseVars,
+            types: ['boolean'],
+            // eslint-disable-next-line vitest/no-conditional-expect
+            custom: { regex: expect.any(String), match: true },
+          },
+        );
+      }
+      const expected = expect.arrayContaining(components);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should allow UPPER_CASE function names when the "allowUpperCaseFuncNames" option is set to true', () => {
+      const nonSnakeCaseNames = ['strictCamelCase', 'UPPER_CASE'];
+      const actual = namingConvention({ allowUpperCaseFuncNames: true })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['function', 'parameter', 'variable', 'classMethod', 'typeMethod', 'classProperty', 'typeProperty'],
+          format: nonSnakeCaseNames,
+          types: ['function'],
+          filter: { regex: 'toJSON', match: false },
+        },
+        {
+          selector: ['parameter'],
+          format: nonSnakeCaseNames,
+          modifiers: ['unused'],
+          leadingUnderscore: 'require',
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should allow UPPER_CASE function names when the "allowUpperCaseFuncNames" and "enableReactNaming" options are set to true', () => {
+      const reactNames = ['strictCamelCase', 'StrictPascalCase', 'UPPER_CASE'];
+      const actual = namingConvention({ allowUpperCaseFuncNames: true, enableReactNaming: true })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['function', 'parameter', 'variable', 'classMethod', 'typeMethod', 'classProperty', 'typeProperty'],
+          format: reactNames,
+          types: ['function'],
+          filter: { regex: 'toJSON', match: false },
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
     it('should only configure rules that exist', () => {
       const configuredRules = Object.keys(config.rules ?? {});
       const actual = difference(configuredRules, validRules);
