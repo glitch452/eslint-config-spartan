@@ -10,6 +10,8 @@ import { CONFIG_NAME_PREFIX } from '../constants.js';
  * @param {Linter.Config['files']=} options.testFiles Set the files for the test files variation of this config, which disables the boolean conventions. By default, this applies to all `js/ts` extension variants with `test.ext` and `spec.ext`.
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
  * @param {boolean=} options.enableReactNaming Allow PascalCase for function names to accommodate react components
+ * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
+ * @param {boolean=} options.allowUpperCaseFuncNames Allow UPPER_CASE for function names
  * @param {('forbid' | 'require' | 'requireDouble' | 'allow' | 'allowDouble' | 'allowSingleOrDouble')=} options.privateUnderscore Enforce the presence or absence of a leading underscore for private class members
  * @param {Linter.Config['ignores']=} options.ignores Set the ignores for this config. By default, this applies to all `.md/*` and `.mdx/*` to ignore code within markdown file code blocks.
  * @returns {Linter.Config[]}
@@ -76,15 +78,22 @@ function getBaseComponents() {
 /**
  * @param {object} options
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
+ * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
  * @param {('forbid' | 'require' | 'requireDouble' | 'allow' | 'allowDouble' | 'allowSingleOrDouble')=} options.privateUnderscore Enforce the presence or absence of a leading underscore for private class members
  */
-function getPrivateMembersComponents({ useSnakeCaseVars, privateUnderscore }) {
+function getPrivateMembersComponents({ useSnakeCaseVars, privateUnderscore, allowUpperCaseVars }) {
+  const snakeCaseVars = ['snake_case', 'UPPER_CASE'];
+  const nonSnakeCaseVars = ['strictCamelCase'];
+  if (allowUpperCaseVars) {
+    nonSnakeCaseVars.push('UPPER_CASE');
+  }
+
   return !privateUnderscore
     ? []
     : [
         {
           selector: ['accessor', 'classProperty'],
-          format: useSnakeCaseVars ? ['snake_case', 'UPPER_CASE'] : ['strictCamelCase'],
+          format: useSnakeCaseVars ? snakeCaseVars : nonSnakeCaseVars,
           modifiers: ['private'],
           leadingUnderscore: privateUnderscore,
         },
@@ -95,20 +104,30 @@ function getPrivateMembersComponents({ useSnakeCaseVars, privateUnderscore }) {
  * @param {object} options
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
  * @param {boolean=} options.enableReactNaming Allow PascalCase for function names to accommodate react components
+ * @param {boolean=} options.allowUpperCaseFuncNames Allow UPPER_CASE for function names
  */
-function getFunctionComponents({ useSnakeCaseVars, enableReactNaming }) {
+function getFunctionComponents({ useSnakeCaseVars, enableReactNaming, allowUpperCaseFuncNames }) {
+  const reactNames = ['strictCamelCase', 'StrictPascalCase'];
+  const snakeCaseNames = ['snake_case', 'UPPER_CASE'];
+  const nonSnakeCaseNames = ['strictCamelCase'];
+
+  if (allowUpperCaseFuncNames) {
+    reactNames.push('UPPER_CASE');
+    nonSnakeCaseNames.push('UPPER_CASE');
+  }
+
   return [
     // Functions must use strictCamelCase
     {
       selector: ['function', 'parameter', 'variable', 'classMethod', 'typeMethod', 'classProperty', 'typeProperty'],
-      format: enableReactNaming ? ['strictCamelCase', 'StrictPascalCase'] : ['strictCamelCase'],
+      format: enableReactNaming ? reactNames : nonSnakeCaseNames,
       types: ['function'], // To scope 'parameter', 'classProperty', 'typeProperty' and 'variable'
       filter: { regex: 'toJSON', match: false },
     },
     // Unused function parameters must begin with an underscore
     {
       selector: ['parameter'],
-      format: useSnakeCaseVars ? ['snake_case', 'UPPER_CASE'] : ['strictCamelCase'],
+      format: useSnakeCaseVars ? snakeCaseNames : nonSnakeCaseNames,
       modifiers: ['unused'],
       leadingUnderscore: 'require',
     },
@@ -126,13 +145,20 @@ function getFunctionComponents({ useSnakeCaseVars, enableReactNaming }) {
 /**
  * @param {object} options
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
+ * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
  */
-function getVariableNameComponents({ useSnakeCaseVars }) {
+function getVariableNameComponents({ useSnakeCaseVars, allowUpperCaseVars }) {
+  const snakeCaseVars = ['snake_case', 'UPPER_CASE'];
+  const nonSnakeCaseVars = ['strictCamelCase'];
+  if (allowUpperCaseVars) {
+    nonSnakeCaseVars.push('UPPER_CASE');
+  }
+
   return [
     // Variables in general
     {
       selector: ['variable', 'parameter', 'accessor', 'classProperty', 'typeProperty'],
-      format: useSnakeCaseVars ? ['snake_case', 'UPPER_CASE'] : ['strictCamelCase'],
+      format: useSnakeCaseVars ? snakeCaseVars : nonSnakeCaseVars,
       leadingUnderscore: 'allow',
     },
     // Allow an exception for names that are quoted (i.e. 'Content-Type')
@@ -153,8 +179,14 @@ function getVariableNameComponents({ useSnakeCaseVars }) {
 /**
  * @param {object} options
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
+ * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
  */
-function getBooleanComponents({ useSnakeCaseVars }) {
+function getBooleanComponents({ useSnakeCaseVars, allowUpperCaseVars }) {
+  const nonSnakeCaseVars = ['strictCamelCase'];
+  if (allowUpperCaseVars) {
+    nonSnakeCaseVars.push('UPPER_CASE');
+  }
+
   const indicators = ['is', 'are', 'was', 'should', 'has', 'can', 'did', 'will', 'allow', 'use', 'requires'];
   const indicatorsUpperFirst = indicators.map((x) => `${x[0].toUpperCase()}${x.slice(1)}`);
 
@@ -218,7 +250,7 @@ function getBooleanComponents({ useSnakeCaseVars }) {
       // Handle unused parameter booleans
       {
         selector: ['parameter'],
-        format: ['strictCamelCase'],
+        format: nonSnakeCaseVars,
         modifiers: ['unused'],
         types: ['boolean'],
         custom: { regex: camelCasePattern, match: true },
@@ -227,7 +259,7 @@ function getBooleanComponents({ useSnakeCaseVars }) {
       // Handle general case booleans
       {
         selector: ['variable', 'parameter', 'classProperty', 'typeProperty'],
-        format: ['strictCamelCase'],
+        format: nonSnakeCaseVars,
         types: ['boolean'],
         custom: { regex: camelCasePattern, match: true },
       },
