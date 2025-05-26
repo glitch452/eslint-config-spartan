@@ -52,6 +52,7 @@ export function unicorn(options = {}) {
       'unicorn/no-unreadable-iife': 'off',
       'unicorn/no-useless-length-check': 'off',
       'unicorn/prefer-dom-node-dataset': 'off',
+      'unicorn/prefer-import-meta-properties': 'error',
       'unicorn/prefer-node-protocol': 'off',
       'unicorn/prefer-number-properties': 'off',
       'unicorn/prefer-query-selector': 'off',
