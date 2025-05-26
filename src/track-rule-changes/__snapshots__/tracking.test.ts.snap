@@ -492,6 +492,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "no-this-before-super",
   "no-throw-literal",
   "no-trailing-spaces",
+  "no-unassigned-vars",
   "no-undef",
   "no-undef-init",
   "no-undefined",
