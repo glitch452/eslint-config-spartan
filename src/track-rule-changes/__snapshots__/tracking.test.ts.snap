@@ -1151,11 +1151,12 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
 
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'eslint-plugin-mocha'" 1`] = `
 [
+  "mocha/consistent-interface",
   "mocha/consistent-spacing-between-blocks",
   "mocha/handle-done-callback",
   "mocha/max-top-level-suites",
-  "mocha/no-async-describe",
-  "mocha/no-empty-description",
+  "mocha/no-async-suite",
+  "mocha/no-empty-title",
   "mocha/no-exclusive-tests",
   "mocha/no-exports",
   "mocha/no-global-tests",
@@ -1169,12 +1170,11 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "mocha/no-return-from-async",
   "mocha/no-setup-in-describe",
   "mocha/no-sibling-hooks",
-  "mocha/no-skipped-tests",
   "mocha/no-synchronous-tests",
   "mocha/no-top-level-hooks",
   "mocha/prefer-arrow-callback",
-  "mocha/valid-suite-description",
-  "mocha/valid-test-description",
+  "mocha/valid-suite-title",
+  "mocha/valid-test-title",
 ]
 `;
 
