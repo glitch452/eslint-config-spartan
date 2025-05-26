@@ -15,6 +15,14 @@
       matchPackageNames: ['typescript'],
     },
 
+    {
+      description: 'Group commander packages',
+      groupName: 'Commander',
+      groupSlug: 'commander',
+      matchPackageNames: ['commander', '@commander-js/**'],
+      matchUpdateTypes: ['major'],
+    },
+
     // Ignore these. Keep them at the end of the packageRules to maintain precedence.
     {
       enabled: false,
