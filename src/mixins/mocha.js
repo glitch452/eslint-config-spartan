@@ -18,12 +18,13 @@ import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
  * @returns {Linter.Config}
  */
 export function mocha(options = {}) {
+  const configs = /** @type {{ recommended: Linter.Config, all: Linter.Config }} */ (mochaPlugin.configs);
   return {
-    ...mochaPlugin.configs.flat.recommended,
+    ...configs.recommended,
     name: `${CONFIG_NAME_PREFIX}/${mocha.name}`,
     files: options.files ?? [files.testSpec, files.cypress],
     rules: {
-      ...warnToError(mochaPlugin.configs.flat.recommended.rules),
+      ...warnToError(configs.recommended.rules),
       'mocha/prefer-arrow-callback': 'error',
       'mocha/no-mocha-arrows': 'off',
       ...testEnvironmentAdjustments,
