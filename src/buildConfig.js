@@ -125,8 +125,8 @@ export function buildConfig(...configs) {
 
         /* -- JS Rules -- */
         'array-callback-return': 'error',
-        'default-case': ['error', { commentPattern: '^skip\\sdefault' }],
         'default-case-last': 'error',
+        'default-case': ['error', { commentPattern: '^skip\\sdefault' }],
         'dot-notation': 'error',
         'no-alert': 'error',
         'no-caller': 'error',
@@ -146,6 +146,7 @@ export function buildConfig(...configs) {
         'no-self-compare': 'error',
         'no-sequences': 'error',
         'no-throw-literal': 'error',
+        'no-unassigned-vars': 'error',
         'no-unmodified-loop-condition': 'error',
         'no-useless-call': 'error',
         'no-useless-computed-key': 'error',
