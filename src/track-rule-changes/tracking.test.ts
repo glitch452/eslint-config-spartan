@@ -6,7 +6,7 @@ import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 import angularPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
-import cypressPlugin from 'eslint-plugin-cypress/flat';
+import cypressPlugin from 'eslint-plugin-cypress';
 import i18nextPlugin from 'eslint-plugin-i18next';
 import i18nJsonPlugin from 'eslint-plugin-i18n-json';
 import importPlugin from 'eslint-plugin-import';
