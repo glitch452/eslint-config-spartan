@@ -30,7 +30,7 @@ declare module 'eslint-plugin-typescript-enum' {
   export default module;
 }
 
-declare module 'eslint-plugin-cypress/flat' {
+declare module 'eslint-plugin-cypress' {
   const module: EsLintPlugin;
   export default module;
 }

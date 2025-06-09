@@ -1,4 +1,4 @@
-import cypressPlugin from 'eslint-plugin-cypress/flat';
+import cypressPlugin from 'eslint-plugin-cypress';
 import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files } from '../utils/index.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
