@@ -187,7 +187,7 @@ function getBooleanComponents({ useSnakeCaseVars, allowUpperCaseVars }) {
     nonSnakeCaseVars.push('UPPER_CASE');
   }
 
-  const indicators = ['is', 'are', 'was', 'should', 'has', 'can', 'did', 'will', 'allow', 'use', 'requires'];
+  const indicators = ['is', 'are', 'was', 'should', 'has', 'can', 'did', 'will', 'allow', 'use', 'requires', 'does'];
   const indicatorsUpperFirst = indicators.map((x) => `${x[0].toUpperCase()}${x.slice(1)}`);
 
   const lowerSnakePattern = `.*(${indicators.map((x) => `${x}_`).join('|')}).*`;
