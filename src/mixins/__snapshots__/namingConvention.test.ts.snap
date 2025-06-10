@@ -139,7 +139,7 @@ exports[`namingConvention > 'namingConvention' > should produce the expected def
     {
       "custom": {
         "match": true,
-        "regex": ".*(IS_|ARE_|WAS_|SHOULD_|HAS_|CAN_|DID_|WILL_|ALLOW_|USE_|REQUIRES_).*",
+        "regex": ".*(IS_|ARE_|WAS_|SHOULD_|HAS_|CAN_|DID_|WILL_|ALLOW_|USE_|REQUIRES_|DOES_).*",
       },
       "filter": {
         "match": true,
@@ -162,7 +162,7 @@ exports[`namingConvention > 'namingConvention' > should produce the expected def
     {
       "custom": {
         "match": true,
-        "regex": "(^(is|are|was|should|has|can|did|will|allow|use|requires)([A-Z].*|$)|.*(Is|Are|Was|Should|Has|Can|Did|Will|Allow|Use|Requires).*)",
+        "regex": "(^(is|are|was|should|has|can|did|will|allow|use|requires|does)([A-Z].*|$)|.*(Is|Are|Was|Should|Has|Can|Did|Will|Allow|Use|Requires|Does).*)",
       },
       "format": [
         "strictCamelCase",
@@ -181,7 +181,7 @@ exports[`namingConvention > 'namingConvention' > should produce the expected def
     {
       "custom": {
         "match": true,
-        "regex": "(^(is|are|was|should|has|can|did|will|allow|use|requires)([A-Z].*|$)|.*(Is|Are|Was|Should|Has|Can|Did|Will|Allow|Use|Requires).*)",
+        "regex": "(^(is|are|was|should|has|can|did|will|allow|use|requires|does)([A-Z].*|$)|.*(Is|Are|Was|Should|Has|Can|Did|Will|Allow|Use|Requires|Does).*)",
       },
       "format": [
         "strictCamelCase",
