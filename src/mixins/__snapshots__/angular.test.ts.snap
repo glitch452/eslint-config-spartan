@@ -2,7 +2,6 @@
 
 exports[`angular > 'angular' > should configure the expected rules 1`] = `
 {
-  "@angular-eslint/component-class-suffix": "error",
   "@angular-eslint/component-selector": [
     "error",
     {
@@ -28,6 +27,7 @@ exports[`angular > 'angular' > should configure the expected rules 1`] = `
   "@angular-eslint/no-output-on-prefix": "error",
   "@angular-eslint/no-output-rename": "error",
   "@angular-eslint/no-outputs-metadata-property": "error",
+  "@angular-eslint/prefer-inject": "error",
   "@angular-eslint/prefer-standalone": "error",
   "@angular-eslint/use-lifecycle-interface": "error",
   "@angular-eslint/use-pipe-transform-interface": "error",
