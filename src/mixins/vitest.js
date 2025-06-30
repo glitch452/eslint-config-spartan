@@ -2,7 +2,7 @@ import vitestPlugin from '@vitest/eslint-plugin';
 import { files } from '../utils/index.js';
 import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { testEnvironmentAdjustments } from './testEnvironmentAdjustments.js';
-/** @import { Linter } from 'eslint' */
+/** @import { Linter, ESLint } from 'eslint' */
 
 /**
  * The `vitest` mixin creates an ESLint config for
@@ -23,7 +23,7 @@ export function vitest(options = {}) {
     name: `${CONFIG_NAME_PREFIX}/${vitest.name}`,
     files: options.files ?? [files.testSpec],
     plugins: {
-      [prefixes.vitest]: vitestPlugin,
+      [prefixes.vitest]: /** @type {Record<string, ESLint.Plugin>} */ (vitestPlugin),
     },
     settings: { vitest: { typecheck: true } },
     languageOptions: { globals: vitestPlugin.environments.env.globals },

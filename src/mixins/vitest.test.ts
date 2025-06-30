@@ -13,13 +13,13 @@ describe(vitest.name, () => {
   const config = vitest();
 
   const validRules = [
-    ...listRules(vitestPlugin.rules, prefixes.vitest),
+    ...listRules(vitestPlugin.rules as any, prefixes.vitest),
     ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(unicornPlugin.rules, prefixes.unicorn),
     ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(vitestPlugin.rules, prefixes.vitest),
+    ...getDeprecatedRules(vitestPlugin.rules as any, prefixes.vitest),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
     ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
