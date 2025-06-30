@@ -80,7 +80,7 @@ describe('Track changes in available plugin rules', () => {
     },
     { name: 'eslint-plugin-unicorn', rules: listRules(unicornPlugin.rules, prefixes.unicorn, true) },
     { name: 'eslint-plugin-unused-imports', rules: listRules(unusedImportsPlugin.rules, prefixes.unusedImports, true) },
-    { name: '@vitest/eslint-plugin', rules: listRules(vitestPlugin.rules, prefixes.vitest, true) },
+    { name: '@vitest/eslint-plugin', rules: listRules(vitestPlugin.rules as any, prefixes.vitest, true) },
   ] as const;
 
   it.each(testTable)('should snapshot the list of rules for "$name"', ({ rules }) => {
