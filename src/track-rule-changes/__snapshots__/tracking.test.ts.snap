@@ -265,6 +265,8 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "vitest/padding-around-describe-blocks",
   "vitest/padding-around-expect-groups",
   "vitest/padding-around-test-blocks",
+  "vitest/prefer-called-once",
+  "vitest/prefer-called-times",
   "vitest/prefer-called-with",
   "vitest/prefer-comparison-matcher",
   "vitest/prefer-describe-function-title",
@@ -298,6 +300,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "vitest/valid-expect",
   "vitest/valid-expect-in-promise",
   "vitest/valid-title",
+  "vitest/warn-todo",
 ]
 `;
 
