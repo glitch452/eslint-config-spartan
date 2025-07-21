@@ -6,6 +6,11 @@ const NEXT_YEAR = new Date().getFullYear() + 1;
 const MIN_ECMA_VERSION = 5;
 const MAX_ECMA_VERSION = NEXT_YEAR - INITIAL_ECMA_YEAR + MIN_ECMA_VERSION + 1;
 
+const isFunctionSchema = z
+  .any()
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  .refine((val: unknown): val is Function => typeof val === 'function');
+
 const ecmaVersionSchema = z.union([
   z.literal('latest'),
   z.literal(INITIAL_ECMA_VERSION),
@@ -29,14 +34,14 @@ const objectMetaPropertiesSchema = z.object({
 });
 
 const esTreeParserSchema = z.union([
-  objectMetaPropertiesSchema.extend({ parse: z.function() }),
-  objectMetaPropertiesSchema.extend({ parseForESLint: z.function() }),
+  objectMetaPropertiesSchema.extend({ parse: isFunctionSchema }),
+  objectMetaPropertiesSchema.extend({ parseForESLint: isFunctionSchema }),
 ]);
 
 const processorSchema = objectMetaPropertiesSchema.extend({
   supportsAutofix: z.boolean().optional(),
-  preprocess: z.function(),
-  postprocess: z.function(),
+  preprocess: isFunctionSchema,
+  postprocess: isFunctionSchema,
 });
 
 const parserOptionsSchema = z
@@ -60,7 +65,7 @@ const languageOptionsSchema = z
   .object({
     ecmaVersion: ecmaVersionSchema,
     sourceType: sourceTypeSchema,
-    globals: z.record(globalConfSchema),
+    globals: z.record(z.string(), globalConfSchema),
     parser: esTreeParserSchema,
     parserOptions: parserOptionsSchema,
   })
@@ -101,11 +106,11 @@ const ruleMetaDataSchema = z
         category: z.string(),
         // Added z.string() to accommodate storybook plugin
         // Added z.record(z.unknown()) to accommodate typescript-eslint plugin
-        recommended: z.union([z.boolean(), z.string(), z.record(z.unknown())]),
+        recommended: z.union([z.boolean(), z.string(), z.record(z.string(), z.unknown())]),
         url: z.string(),
       })
       .partial(),
-    messages: z.record(z.string()),
+    messages: z.record(z.string(), z.string()),
     // Added z.null() added to accommodate the cypress plugin
     fixable: z.enum(['code', 'whitespace']).nullable(),
     schema: z.unknown(),
@@ -118,18 +123,19 @@ const ruleMetaDataSchema = z
   .partial();
 
 const ruleModuleSchema = z.object({
-  create: z.function(),
+  create: isFunctionSchema,
   meta: ruleMetaDataSchema.optional(),
 });
 
 const pluginSchema = z
   .object({
-    configs: z.record(z.unknown()),
+    configs: z.record(z.string(), z.unknown()),
     environments: z.record(
-      z.object({ globals: z.record(globalConfSchema), parserOptions: parserOptionsSchema }).partial(),
+      z.string(),
+      z.object({ globals: z.record(z.string(), globalConfSchema), parserOptions: parserOptionsSchema }).partial(),
     ),
-    processors: z.record(processorSchema),
-    rules: z.record(ruleModuleSchema),
+    processors: z.record(z.string(), processorSchema),
+    rules: z.record(z.string(), ruleModuleSchema),
   })
   .partial();
 
@@ -141,8 +147,8 @@ export const configSchema = z
     languageOptions: languageOptionsSchema,
     linterOptions: linterOptionsSchema,
     processor: z.string().or(processorSchema),
-    plugins: z.record(pluginSchema),
+    plugins: z.record(z.string(), pluginSchema),
     rules: z.unknown(),
-    settings: z.record(z.unknown()),
+    settings: z.record(z.string(), z.unknown()),
   })
   .partial();
