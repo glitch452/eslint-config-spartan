@@ -112,7 +112,7 @@
     "eslint": "^9.27.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.10"
   },
   "keywords": [
     "config",
