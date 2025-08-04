@@ -1221,6 +1221,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "playwright/no-unsafe-references",
   "playwright/no-useless-await",
   "playwright/no-useless-not",
+  "playwright/no-wait-for-navigation",
   "playwright/no-wait-for-selector",
   "playwright/no-wait-for-timeout",
   "playwright/prefer-comparison-matcher",
@@ -1243,6 +1244,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "playwright/valid-describe-callback",
   "playwright/valid-expect",
   "playwright/valid-expect-in-promise",
+  "playwright/valid-test-tags",
   "playwright/valid-title",
 ]
 `;
