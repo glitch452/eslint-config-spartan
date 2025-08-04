@@ -109,7 +109,7 @@
     "zod": "4.0.14"
   },
   "peerDependencies": {
-    "eslint": "^9.27.0"
+    "eslint": "^9.32.0"
   },
   "engines": {
     "node": ">=20.10"
