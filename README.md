@@ -12,7 +12,7 @@ mixins) for various eslint plugins.
 **Details:**
 
 - **Config Format:** `Flat config` No support for the `eslintrc` format.
-- **ESLint Version:** `^9.27.0`
+- **ESLint Version:** `^9.32.0`
 - **Module Type**: `ESM` and `CJS`
 
 ## Table of Contents
