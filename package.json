@@ -69,7 +69,7 @@
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
-    "eslint-plugin-regexp": "2.9.0",
+    "eslint-plugin-regexp": "2.9.1",
     "eslint-plugin-security": "3.0.1",
     "eslint-plugin-storybook": "0.12.0",
     "eslint-plugin-tailwindcss": "3.18.2",
@@ -86,7 +86,7 @@
     "remark-preset-lint-recommended": "7.0.1",
     "remark-preset-prettier": "2.0.2",
     "tailwindcss": "3.4.17",
-    "typescript-eslint": "8.38.0"
+    "typescript-eslint": "8.39.0"
   },
   "devDependencies": {
     "@commander-js/extra-typings": "14.0.0",
@@ -99,7 +99,7 @@
     "commander": "14.0.0",
     "eslint": "9.32.0",
     "husky": "9.1.7",
-    "lint-staged": "16.1.2",
+    "lint-staged": "16.1.4",
     "minimatch": "10.0.3",
     "prettier": "3.6.2",
     "rimraf": "6.0.1",
