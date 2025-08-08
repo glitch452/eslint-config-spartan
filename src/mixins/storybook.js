@@ -1,10 +1,13 @@
-import { CONFIG_NAME_PREFIX } from '../constants.js';
+import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { files, warnToError } from '../utils/index.js';
 import storybookExport from 'eslint-plugin-storybook';
-/** @import { Linter } from 'eslint' */
+/** @import { ESLint, Linter } from 'eslint' */
 
 // @ts-expect-error: The types use .default, but the actual object does not
 const storybookPlugin = /** @type {typeof storybookExport.default} */ (storybookExport);
+
+/** @type {Record<string, ESLint.Plugin>} */
+const plugins = /** @type {any} */ ({ [prefixes.storybook]: storybookPlugin });
 
 /**
  * The `storybook` mixin creates an ESLint config for
@@ -25,6 +28,7 @@ export function storybook(options = {}) {
       case 'storybook:recommended:stories-rules':
         return {
           ...config,
+          plugins,
           files: options.files ?? [files.stories],
           name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
           rules: {
@@ -36,6 +40,7 @@ export function storybook(options = {}) {
       case 'storybook:recommended:main-rules':
         return {
           ...config,
+          plugins,
           files: options.mainFiles ?? [files.storybookMain],
           name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
         };
@@ -43,6 +48,7 @@ export function storybook(options = {}) {
         // Known other cases: 'storybook:recommended:setup'
         return {
           ...config,
+          plugins,
           files: options.files ?? [files.stories],
           name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
         };
