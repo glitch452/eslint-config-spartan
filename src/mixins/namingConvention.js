@@ -10,6 +10,7 @@ import { CONFIG_NAME_PREFIX } from '../constants.js';
  * @param {Linter.Config['files']=} options.testFiles Set the files for the test files variation of this config, which disables the boolean conventions. By default, this applies to all `js/ts` extension variants with `test.ext` and `spec.ext`.
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
  * @param {boolean=} options.enableReactNaming Allow PascalCase for function names to accommodate react components
+ * @param {boolean | 'non-strict'=} options.enableStoryNaming Allow StrictPascalCase for top-level constant names to accommodate storybook stories
  * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
  * @param {boolean=} options.allowUpperCaseFuncNames Allow UPPER_CASE for function names
  * @param {('forbid' | 'require' | 'requireDouble' | 'allow' | 'allowDouble' | 'allowSingleOrDouble')=} options.privateUnderscore Enforce the presence or absence of a leading underscore for private class members
@@ -146,12 +147,19 @@ function getFunctionComponents({ useSnakeCaseVars, enableReactNaming, allowUpper
  * @param {object} options
  * @param {boolean=} options.useSnakeCaseVars Enforce snake_case for variable names
  * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
+ * @param {boolean | 'non-strict'=} options.enableStoryNaming Allow StrictPascalCase for top-level constant names to accommodate storybook stories
  */
-function getVariableNameComponents({ useSnakeCaseVars, allowUpperCaseVars }) {
+function getVariableNameComponents({ useSnakeCaseVars, allowUpperCaseVars, enableStoryNaming }) {
   const snakeCaseVars = ['snake_case', 'UPPER_CASE'];
   const nonSnakeCaseVars = ['strictCamelCase'];
+  const topLevelConstants = useSnakeCaseVars ? snakeCaseVars : ['UPPER_CASE', ...nonSnakeCaseVars];
+
   if (allowUpperCaseVars) {
     nonSnakeCaseVars.push('UPPER_CASE');
+  }
+
+  if (enableStoryNaming) {
+    topLevelConstants.push(enableStoryNaming === 'non-strict' ? 'PascalCase' : 'StrictPascalCase');
   }
 
   return [
@@ -170,7 +178,7 @@ function getVariableNameComponents({ useSnakeCaseVars, allowUpperCaseVars }) {
     // Always allow UPPER_CASE for top-level constants
     {
       selector: ['variable'],
-      format: useSnakeCaseVars ? ['UPPER_CASE', 'snake_case'] : ['UPPER_CASE', 'strictCamelCase'],
+      format: topLevelConstants,
       modifiers: ['const', 'global'],
     },
   ];
