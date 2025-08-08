@@ -7,7 +7,6 @@
 
   "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
 
-  "eslint.validate": ["json", "markdown"],
   "eslint.format.enable": false,
   "eslint.useFlatConfig": true,
   // The following rules are auto-fixable, but can be inconvenient when they run on save.
