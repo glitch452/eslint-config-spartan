@@ -37,12 +37,6 @@ describe(storybook.name, () => {
     expect(testTable).toHaveLength(configs.length);
   });
 
-  it('should add the expected plugins to the configs', () => {
-    const actual = new Set(configs.flatMap((x) => Object.keys(x.plugins ?? {})));
-    const expected = new Set([prefixes.storybook]);
-    expect(actual).toStrictEqual(expected);
-  });
-
   describe.each(testTable)('$id', (item) => {
     const { id, expectedFiles, filesOverride, mainFilesOverride, expectedFilesOverride } = item;
     const index = testTable.indexOf(item);
@@ -51,6 +45,12 @@ describe(storybook.name, () => {
     it('should create a valid eslint config', () => {
       const actual = () => configSchema.parse(config);
       expect(actual).not.toThrow();
+    });
+
+    it('should add the expected plugins to the config', () => {
+      const actual = new Set(Object.keys(config.plugins ?? {}));
+      const expected = new Set([prefixes.storybook]);
+      expect(actual).toStrictEqual(expected);
     });
 
     it('should configure the expected rules', () => {
