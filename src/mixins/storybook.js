@@ -1,7 +1,10 @@
 import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files, warnToError } from '../utils/index.js';
-import storybookPlugin from 'eslint-plugin-storybook';
+import storybookExport from 'eslint-plugin-storybook';
 /** @import { Linter } from 'eslint' */
+
+// @ts-expect-error: The types use .default, but the actual object does not
+const storybookPlugin = /** @type {typeof storybookExport.default} */ (storybookExport);
 
 /**
  * The `storybook` mixin creates an ESLint config for
