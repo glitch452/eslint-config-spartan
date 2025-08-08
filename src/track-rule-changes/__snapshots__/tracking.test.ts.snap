@@ -1502,6 +1502,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "storybook/meta-inline-properties",
   "storybook/meta-satisfies-type",
   "storybook/no-redundant-story-name",
+  "storybook/no-renderer-packages",
   "storybook/no-stories-of",
   "storybook/no-title-property-in-meta",
   "storybook/no-uninstalled-addons",
