@@ -36,7 +36,7 @@ export function storybook(options = {}) {
       case 'storybook:recommended:main-rules':
         return {
           ...config,
-          files: options.files ?? [files.storybookMain],
+          files: options.mainFiles ?? [files.storybookMain],
           name: `${CONFIG_NAME_PREFIX}/${storybook.name}/${i}-${config.name}`,
         };
       default:
