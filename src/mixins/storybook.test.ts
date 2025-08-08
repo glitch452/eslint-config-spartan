@@ -13,7 +13,14 @@ const storybookPlugin = storybookExport as unknown as typeof storybookExport.def
 
 describe(storybook.name, () => {
   const configs = storybook();
-  const testTable = configs.map((_, i) => ({ id: i.toString() }));
+
+  const testTable = configs.map((config, i) => ({
+    id: i.toString(),
+    expectedFiles: config.name?.endsWith('main-rules') ? files.storybookMain : files.stories,
+    filesOverride: ['files.txt'],
+    mainFilesOverride: ['mainFiles.txt'],
+    expectedFilesOverride: config.name?.endsWith('main-rules') ? ['mainFiles.txt'] : ['files.txt'],
+  }));
 
   const validRules = [
     ...listRules(storybookPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.storybook),
@@ -37,10 +44,9 @@ describe(storybook.name, () => {
   });
 
   describe.each(testTable)('$id', (item) => {
-    const { id } = item;
+    const { id, expectedFiles, filesOverride, mainFilesOverride, expectedFilesOverride } = item;
     const index = testTable.indexOf(item);
     const config = configs[index];
-    const expectedFiles = config.name?.endsWith('main-rules') ? files.storybookMain : files.stories;
 
     it('should create a valid eslint config', () => {
       const actual = () => configSchema.parse(config);
@@ -61,9 +67,8 @@ describe(storybook.name, () => {
     });
 
     it('should set the given files value', () => {
-      const fileValue = ['files.txt'];
-      const actual = storybook({ files: fileValue })[index].files;
-      expect(actual).toStrictEqual(fileValue);
+      const actual = storybook({ files: filesOverride, mainFiles: mainFilesOverride })[index].files;
+      expect(actual).toStrictEqual(expectedFilesOverride);
     });
 
     it('should only configure rules that exist', () => {
