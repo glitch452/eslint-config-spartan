@@ -233,6 +233,42 @@ describe(namingConvention.name, () => {
       expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
     });
 
+    it('should allow StrictPascalCase top-level constant names when the "enableStoryNaming" option is set to true', () => {
+      const actual = namingConvention({ enableStoryNaming: true })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['variable'],
+          format: ['UPPER_CASE', 'strictCamelCase', 'StrictPascalCase'],
+          modifiers: ['const', 'global'],
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should allow PascalCase top-level constant names when the "enableStoryNaming" option is set to "non-strict"', () => {
+      const actual = namingConvention({ enableStoryNaming: 'non-strict' })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['variable'],
+          format: ['UPPER_CASE', 'strictCamelCase', 'PascalCase'],
+          modifiers: ['const', 'global'],
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should allow StrictPascalCase top-level constant names when the "enableStoryNaming" and "useSnakeCaseVars" options are set to true', () => {
+      const actual = namingConvention({ enableStoryNaming: true, useSnakeCaseVars: true })[index];
+      const expected = expect.arrayContaining([
+        {
+          selector: ['variable'],
+          format: ['snake_case', 'UPPER_CASE', 'StrictPascalCase'],
+          modifiers: ['const', 'global'],
+        },
+      ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
     it('should only configure rules that exist', () => {
       const configuredRules = Object.keys(config.rules ?? {});
       const actual = difference(configuredRules, validRules);
