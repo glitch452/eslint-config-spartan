@@ -12,6 +12,7 @@ exports[`storybook > '1' > should configure the expected rules 1`] = `
   "storybook/default-exports": "error",
   "storybook/hierarchy-separator": "error",
   "storybook/no-redundant-story-name": "error",
+  "storybook/no-renderer-packages": "error",
   "storybook/no-stories-of": "error",
   "storybook/prefer-pascal-case": "error",
   "storybook/story-exports": "error",
