@@ -14,11 +14,17 @@ describe(namingConvention.name, () => {
       id: namingConvention.name,
       filesOption: 'files',
       expectedFiles: [files.jsTs],
+      extraConfigsOption: [{ test: 'extraConfigsOption' }],
+      extraTestFileConfigs: [{ test: 'extraTestFileConfigs' }],
+      expectedExtraConfigs: [{ test: 'extraConfigsOption' }],
     },
     {
       id: `${namingConvention.name}TestFiles`,
       filesOption: 'testFiles',
       expectedFiles: [files.testSpec],
+      extraConfigsOption: [{ test: 'extraConfigsOption' }],
+      extraTestFileConfigs: [{ test: 'extraTestFileConfigs' }],
+      expectedExtraConfigs: [{ test: 'extraTestFileConfigs' }],
     },
   ] as const;
 
@@ -26,7 +32,7 @@ describe(namingConvention.name, () => {
   const deprecatedRules = getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint);
 
   describe.each(testTable)('$id', (item) => {
-    const { id, expectedFiles, filesOption } = item;
+    const { id, expectedFiles, filesOption, extraConfigsOption, extraTestFileConfigs, expectedExtraConfigs } = item;
     const index = testTable.indexOf(item);
     const config = configs[index];
 
@@ -266,6 +272,15 @@ describe(namingConvention.name, () => {
           modifiers: ['const', 'global'],
         },
       ]);
+      expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
+    });
+
+    it('should append the values provided via the "extraConfigs" option', () => {
+      const actual = namingConvention({
+        extraConfigs: extraConfigsOption as any,
+        extraTestFileConfigs: extraTestFileConfigs as any,
+      })[index];
+      const expected = expect.arrayContaining(expectedExtraConfigs as any);
       expect(actual.rules!['@typescript-eslint/naming-convention']).toStrictEqual(expected);
     });
 

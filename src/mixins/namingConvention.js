@@ -13,6 +13,8 @@ import { CONFIG_NAME_PREFIX } from '../constants.js';
  * @param {boolean | 'non-strict'=} options.enableStoryNaming Allow StrictPascalCase for top-level constant names to accommodate storybook stories
  * @param {boolean=} options.allowUpperCaseVars Allow UPPER_CASE for variable names
  * @param {boolean=} options.allowUpperCaseFuncNames Allow UPPER_CASE for function names
+ * @param {Array<Record<string, unknown>>=} options.extraConfigs Extra configuration blocks to append to the generated non-test-file config
+ * @param {Array<Record<string, unknown>>=} options.extraTestFileConfigs Extra configuration blocks to append to the generated test file config
  * @param {('forbid' | 'require' | 'requireDouble' | 'allow' | 'allowDouble' | 'allowSingleOrDouble')=} options.privateUnderscore Enforce the presence or absence of a leading underscore for private class members
  * @param {Linter.Config['ignores']=} options.ignores Set the ignores for this config. By default, this applies to all `.md/*` and `.mdx/*` to ignore code within markdown file code blocks.
  * @returns {Linter.Config[]}
@@ -31,6 +33,7 @@ export function namingConvention(options = {}) {
           ...getFunctionComponents(options),
           ...getVariableNameComponents(options),
           ...getBooleanComponents(options),
+          ...(options.extraConfigs ?? []),
         ],
       },
     },
@@ -45,6 +48,7 @@ export function namingConvention(options = {}) {
           ...getPrivateMembersComponents(options),
           ...getFunctionComponents(options),
           ...getVariableNameComponents(options),
+          ...(options.extraTestFileConfigs ?? []),
         ],
       },
     },
