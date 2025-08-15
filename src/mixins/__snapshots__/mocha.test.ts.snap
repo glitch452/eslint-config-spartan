@@ -43,5 +43,6 @@ exports[`mocha > should configure the expected rules 1`] = `
   "mocha/valid-test-title": "off",
   "security/detect-non-literal-fs-filename": "off",
   "unicorn/consistent-function-scoping": "off",
+  "unicorn/no-null": "off",
 }
 `;

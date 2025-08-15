@@ -17,4 +17,5 @@ export const testEnvironmentAdjustments = /** @type {const} */ ({
   '@typescript-eslint/no-unsafe-type-assertion': 'off',
   'security/detect-non-literal-fs-filename': 'off',
   'unicorn/consistent-function-scoping': 'off',
+  'unicorn/no-null': 'off',
 });
