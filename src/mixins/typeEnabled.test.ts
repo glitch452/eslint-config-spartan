@@ -18,14 +18,14 @@ describe(typeEnabled.name, () => {
 
   const validRules = [
     ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
-    ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
-    ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const typeInfoRequiredRules = getTypeInfoRequiredRules(
-    typescriptEsLint.plugin.rules as any,
+    (typescriptEsLint.plugin as any).rules,
     prefixes.typescriptEsLint,
   );
 

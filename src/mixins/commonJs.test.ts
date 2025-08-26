@@ -12,11 +12,11 @@ describe(commonJs.name, () => {
   const config = commonJs();
 
   const validRules = [
-    ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
     ...listRules(unicornPlugin.rules, prefixes.unicorn),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
     ...getDeprecatedRules(unicornPlugin.rules as any, prefixes.unicorn),
   ];
 

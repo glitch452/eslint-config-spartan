@@ -28,8 +28,8 @@ describe(namingConvention.name, () => {
     },
   ] as const;
 
-  const validRules = listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint);
-  const deprecatedRules = getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint);
+  const validRules = listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint);
+  const deprecatedRules = getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint);
 
   describe.each(testTable)('$id', (item) => {
     const { id, expectedFiles, filesOption, extraConfigsOption, extraTestFileConfigs, expectedExtraConfigs } = item;
