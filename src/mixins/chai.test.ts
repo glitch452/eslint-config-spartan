@@ -20,7 +20,7 @@ describe(chai.name, () => {
     ...listRules(chaiExpectPlugin.rules, prefixes.chaiExpect),
     ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(unicornPlugin.rules, prefixes.unicorn),
-    ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
@@ -28,7 +28,7 @@ describe(chai.name, () => {
     ...getDeprecatedRules(chaiExpectPlugin.rules, prefixes.chaiExpect),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
-    ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
 
   it('should create a valid eslint config', () => {

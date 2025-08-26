@@ -35,7 +35,7 @@ describe(buildConfig.name, () => {
 
   const validRules = [
     ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
-    ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
     ...listRules(stylisticPlugin.rules as any, prefixes.stylistic),
     ...listRules(importPlugin.rules, prefixes.import),
     ...listRules(securityPlugin.rules, prefixes.security),
@@ -45,14 +45,14 @@ describe(buildConfig.name, () => {
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
-    ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
     ...getDeprecatedRules(importPlugin.rules, prefixes.import),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...getDeprecatedRules(typescriptEnumPlugin.rules, prefixes.typescriptEnum),
   ];
   const typeInfoRequiredRules = getTypeInfoRequiredRules(
-    typescriptEsLint.plugin.rules as any,
+    (typescriptEsLint.plugin as any).rules,
     prefixes.typescriptEsLint,
   );
 

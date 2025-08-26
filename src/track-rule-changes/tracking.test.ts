@@ -78,7 +78,7 @@ describe('Track changes in available plugin rules', () => {
     },
     {
       name: 'typescript-eslint',
-      rules: listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint, true),
+      rules: listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint, true),
     },
     { name: 'eslint-plugin-unicorn', rules: listRules(unicornPlugin.rules, prefixes.unicorn, true) },
     { name: 'eslint-plugin-unused-imports', rules: listRules(unusedImportsPlugin.rules, prefixes.unusedImports, true) },

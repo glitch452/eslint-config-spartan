@@ -16,13 +16,13 @@ describe(jest.name, () => {
     ...listRules(jestPlugin.rules, prefixes.jest),
     ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(unicornPlugin.rules, prefixes.unicorn),
-    ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(jestPlugin.rules, prefixes.jest),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
-    ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
 
   it('should create a valid eslint config', () => {

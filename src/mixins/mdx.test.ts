@@ -23,14 +23,14 @@ describe(mdx.name, () => {
     ...listRules(mdxPlugin.rules, prefixes.mdx),
     ...listRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...listRules(reactPlugin.rules, prefixes.react),
-    ...listRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules(mdxPlugin.rules, prefixes.mdx),
     ...getDeprecatedRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...getDeprecatedRules(reactPlugin.rules, prefixes.react),
-    ...getDeprecatedRules(typescriptEsLint.plugin.rules as any, prefixes.typescriptEsLint),
+    ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
 
   it('should test all the returned configs', () => {
