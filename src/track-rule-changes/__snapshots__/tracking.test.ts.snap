@@ -70,6 +70,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "@angular-eslint/template/no-call-expression",
   "@angular-eslint/template/no-distracting-elements",
   "@angular-eslint/template/no-duplicate-attributes",
+  "@angular-eslint/template/no-empty-control-flow",
   "@angular-eslint/template/no-inline-styles",
   "@angular-eslint/template/no-interpolation-in-attributes",
   "@angular-eslint/template/no-negated-async",
