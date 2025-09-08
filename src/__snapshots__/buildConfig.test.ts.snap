@@ -90,9 +90,6 @@ exports[`buildConfig > 'base' > should configure the expected rules 1`] = `
       "ignoredNodes": [
         "TSUnionType",
         "TSIntersectionType",
-        "TSTypeParameterInstantiation",
-        "FunctionExpression > .params[decorators.length > 0]",
-        "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
       ],
       "offsetTernaryExpressions": true,
       "outerIIFEBody": 1,
