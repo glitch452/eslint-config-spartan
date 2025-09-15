@@ -58,6 +58,7 @@ exports[`jsDoc > 'Js' > should configure the expected rules 1`] = `
   "jsdoc/sort-tags": "off",
   "jsdoc/tag-lines": "error",
   "jsdoc/text-escaping": "off",
+  "jsdoc/type-formatting": "off",
   "jsdoc/valid-types": "error",
 }
 `;
@@ -139,6 +140,7 @@ exports[`jsDoc > 'Ts' > should configure the expected rules 1`] = `
   "jsdoc/sort-tags": "off",
   "jsdoc/tag-lines": "error",
   "jsdoc/text-escaping": "off",
+  "jsdoc/type-formatting": "off",
   "jsdoc/valid-types": "error",
 }
 `;
