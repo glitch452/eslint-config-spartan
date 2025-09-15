@@ -1114,6 +1114,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "jsdoc/sort-tags",
   "jsdoc/tag-lines",
   "jsdoc/text-escaping",
+  "jsdoc/type-formatting",
   "jsdoc/valid-types",
 ]
 `;
