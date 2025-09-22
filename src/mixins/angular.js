@@ -26,7 +26,9 @@ export function angular(options = {}) {
       name: `${CONFIG_NAME_PREFIX}/${angular.name}`,
       files: options.files ?? [files.jsTs],
       plugins: {
+        // eslint-disable-next-line jsdoc/reject-any-type
         [prefixes.angular]: /** @type {any} */ (angularPlugin),
+        // eslint-disable-next-line jsdoc/reject-any-type
         [prefixes.angularTemplate]: /** @type {any} */ (angularTemplatePlugin),
       },
       processor: '@angular-eslint/template/extract-inline-html',
@@ -42,6 +44,7 @@ export function angular(options = {}) {
       name: `${CONFIG_NAME_PREFIX}/${angular.name}Template`,
       files: options.templateFiles ?? [files.html],
       plugins: {
+        // eslint-disable-next-line jsdoc/reject-any-type
         [prefixes.angularTemplate]: /** @type {any} */ (angularTemplatePlugin),
       },
       languageOptions: { parser: angularParser },

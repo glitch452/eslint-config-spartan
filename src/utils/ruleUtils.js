@@ -53,14 +53,14 @@ export function isError(entry) {
 }
 
 /**
- * @template {any[]} Options
+ * @template {unknown[]} Options
  * @param {Readonly<Linter.RuleEntry<Options>>} entry
  * @param {Linter.RuleSeverity} severity
  * @returns {Linter.RuleEntry<Options>}
  */
 export function setSeverity(entry, severity) {
   if (Array.isArray(entry)) {
-    const options = /** @type {Partial<Options>} */ (entry.slice(1));
+    const options = /** @type {Options} */ (entry.slice(1));
     return [severity, ...options];
   }
   return severity;
