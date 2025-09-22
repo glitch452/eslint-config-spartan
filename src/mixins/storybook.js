@@ -7,6 +7,7 @@ import storybookExport from 'eslint-plugin-storybook';
 const storybookPlugin = /** @type {typeof storybookExport.default} */ (storybookExport);
 
 /** @type {Record<string, ESLint.Plugin>} */
+// eslint-disable-next-line jsdoc/reject-any-type
 const plugins = /** @type {any} */ ({ [prefixes.storybook]: storybookPlugin });
 
 /**
