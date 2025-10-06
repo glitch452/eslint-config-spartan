@@ -38,6 +38,7 @@ exports[`vitest > should configure the expected rules 1`] = `
   "vitest/no-identical-title": "error",
   "vitest/no-import-node-test": "error",
   "vitest/no-standalone-expect": "error",
+  "vitest/prefer-called-exactly-once-with": "error",
   "vitest/prefer-comparison-matcher": "error",
   "vitest/prefer-each": "error",
   "vitest/prefer-expect-resolves": "error",
