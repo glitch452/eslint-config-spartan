@@ -1400,8 +1400,35 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
 
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'eslint-plugin-react-hooks'" 1`] = `
 [
+  "react-hooks/automatic-effect-dependencies",
+  "react-hooks/capitalized-calls",
+  "react-hooks/component-hook-factories",
+  "react-hooks/config",
+  "react-hooks/error-boundaries",
   "react-hooks/exhaustive-deps",
+  "react-hooks/fbt",
+  "react-hooks/fire",
+  "react-hooks/gating",
+  "react-hooks/globals",
+  "react-hooks/hooks",
+  "react-hooks/immutability",
+  "react-hooks/incompatible-library",
+  "react-hooks/invariant",
+  "react-hooks/memoized-effect-dependencies",
+  "react-hooks/no-deriving-state-in-effects",
+  "react-hooks/no-unused-directives",
+  "react-hooks/preserve-manual-memoization",
+  "react-hooks/purity",
+  "react-hooks/refs",
+  "react-hooks/rule-suppression",
   "react-hooks/rules-of-hooks",
+  "react-hooks/set-state-in-effect",
+  "react-hooks/set-state-in-render",
+  "react-hooks/static-components",
+  "react-hooks/syntax",
+  "react-hooks/todo",
+  "react-hooks/unsupported-syntax",
+  "react-hooks/use-memo",
 ]
 `;
 

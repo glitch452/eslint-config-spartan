@@ -1,5 +1,6 @@
 import storybookExport from 'eslint-plugin-storybook';
-import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
+// eslint-disable-next-line import/default
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import { storybook } from './storybook.js';
 import { configSchema } from '../__test__/utils/configSchema.js';

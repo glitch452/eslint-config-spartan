@@ -59,3 +59,8 @@ declare module 'eslint-plugin-promise' {
   const module: EsLintPlugin;
   export default module;
 }
+
+declare module 'eslint-plugin-react-hooks' {
+  const module: EsLintPlugin;
+  export default module;
+}
