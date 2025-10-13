@@ -6,6 +6,7 @@ import path from 'path';
 import fs from 'fs';
 import { Command } from '@commander-js/extra-typings';
 
+// eslint-disable-next-line jsdoc/valid-types
 const fileName = /** @type {const} */ ({
   TYPES_ESM: 'index.d.ts',
   TYPES_CJS: 'index.d.cts',
@@ -14,7 +15,6 @@ const fileName = /** @type {const} */ ({
   ENTRYPOINT: 'index.js',
 });
 
-/* eslint-disable jsdoc/valid-types -- `import` is ok for an interface property */
 /**
  * @typedef {{
  *   types?: ExportsEntry;
@@ -24,7 +24,6 @@ const fileName = /** @type {const} */ ({
  *   default?: ExportsEntry;
  * } | string} ExportsEntry
  */
-/* eslint-enable jsdoc/valid-types */
 
 /**
  * A generator which walks directories starting at {@link dir} and yields relative directory paths for each directory
