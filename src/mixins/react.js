@@ -1,5 +1,4 @@
 import reactPlugin from 'eslint-plugin-react';
-// eslint-disable-next-line import/default
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import { fixupPluginRules } from '@eslint/compat';
