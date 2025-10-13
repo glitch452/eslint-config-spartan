@@ -70,6 +70,10 @@ exports[`jsDoc > 'Js' > should configure the expected rules 1`] = `
   "jsdoc/sort-tags": "off",
   "jsdoc/tag-lines": "error",
   "jsdoc/text-escaping": "off",
+  "jsdoc/ts-method-signature-style": "off",
+  "jsdoc/ts-no-empty-object-type": "error",
+  "jsdoc/ts-no-unnecessary-template-expression": "off",
+  "jsdoc/ts-prefer-function-type": "off",
   "jsdoc/type-formatting": "off",
   "jsdoc/valid-types": "error",
 }
@@ -164,6 +168,10 @@ exports[`jsDoc > 'Ts' > should configure the expected rules 1`] = `
   "jsdoc/sort-tags": "off",
   "jsdoc/tag-lines": "error",
   "jsdoc/text-escaping": "off",
+  "jsdoc/ts-method-signature-style": "off",
+  "jsdoc/ts-no-empty-object-type": "error",
+  "jsdoc/ts-no-unnecessary-template-expression": "off",
+  "jsdoc/ts-prefer-function-type": "off",
   "jsdoc/type-formatting": "off",
   "jsdoc/valid-types": "error",
 }
