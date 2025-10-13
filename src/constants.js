@@ -1,5 +1,6 @@
 export const CONFIG_NAME_PREFIX = 'eslint-config-spartan';
 
+// eslint-disable-next-line jsdoc/valid-types
 export const prefixes = /** @type {const} */ ({
   angular: '@angular-eslint',
   angularTemplate: '@angular-eslint/template',
