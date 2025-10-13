@@ -1416,7 +1416,6 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "react-hooks/invariant",
   "react-hooks/memoized-effect-dependencies",
   "react-hooks/no-deriving-state-in-effects",
-  "react-hooks/no-unused-directives",
   "react-hooks/preserve-manual-memoization",
   "react-hooks/purity",
   "react-hooks/refs",
@@ -1429,6 +1428,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "react-hooks/todo",
   "react-hooks/unsupported-syntax",
   "react-hooks/use-memo",
+  "react-hooks/void-use-memo",
 ]
 `;
 
