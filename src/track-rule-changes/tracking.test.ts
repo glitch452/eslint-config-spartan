@@ -2,7 +2,6 @@ import { Linter } from 'eslint';
 import { listRules } from '../__test__/utils/rules.js';
 import { prefixes } from '../constants.js';
 import * as mdxPlugin from 'eslint-plugin-mdx';
-// eslint-disable-next-line import/default
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import angularPlugin from '@angular-eslint/eslint-plugin';
 import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
