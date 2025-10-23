@@ -6,7 +6,6 @@
  * This is imported by configs which are meant to be targeted to files containing test code.
  * @satisfies {Linter.Config['rules']}
  */
-// eslint-disable-next-line jsdoc/valid-types
 export const testEnvironmentAdjustments = /** @type {const} */ ({
   '@typescript-eslint/consistent-type-assertions': [
     'error',

@@ -7,7 +7,6 @@ const allowedRules = ['curly', 'no-floating-decimal', '@typescript-eslint/member
 
 const originalRules = Object.entries(prettierConfig.rules).filter(([name]) => !allowedRules.includes(name));
 
-/* eslint-disable jsdoc/valid-types */
 const stylisticVersionOfRules = originalRules
   .filter(([name]) => name.startsWith('@typescript-eslint') || !name.includes('/'))
   .map(
@@ -30,7 +29,6 @@ const additionalStylisticRules = [
 ].map((name) => /** @type {const} */ ([`@stylistic/${name}`, 'off']));
 
 const additionalRules = ['tailwindcss/classnames-order'].map((name) => /** @type {const} */ ([name, 'off']));
-/* eslint-enable jsdoc/valid-types */
 
 /**
  * The `prettier` mixin creates an ESLint config for disabling rules which may interfere or conflict with

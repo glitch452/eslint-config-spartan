@@ -19,7 +19,6 @@
  * See <https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html> for more information.
  * @satisfies {Record<string, string>}
  */
-// eslint-disable-next-line jsdoc/valid-types
 export const files = /** @type {const} */ ({
   cjs: '**/*.cjs?(x)',
   cypress: '**/*.cy.?(c|m)[jt]s',
