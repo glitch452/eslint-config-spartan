@@ -12,6 +12,8 @@ concurrency:
 permissions:
   contents: write
   pull-requests: read
+  # Required for OIDC
+  id-token: write
 
 env:
   ENV: ci
@@ -39,9 +41,8 @@ jobs:
 
       - name: Get Next Version Details
         id: version
-        uses: glitch452/easy-npm-publish@v0
+        uses: glitch452/easy-npm-publish@v1
         with:
-          registry-token: ${{ secrets.NPM_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           dry-run: true
 
@@ -52,9 +53,8 @@ jobs:
 
       - name: Publish the Package to NPM
         id: publish
-        uses: glitch452/easy-npm-publish@v0
+        uses: glitch452/easy-npm-publish@v1
         with:
-          registry-token: ${{ secrets.NPM_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           get-release-title-from-pr: true
           prepend-version-to-release-title: true
