@@ -1,4 +1,4 @@
-import storybookExport from 'eslint-plugin-storybook';
+import storybookPlugin from 'eslint-plugin-storybook';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import { storybook } from './storybook.js';
@@ -8,8 +8,6 @@ import { files } from '../utils/index.js';
 import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { getDeprecatedRules, getEnabledRules, getWarnRules, listRules } from '../__test__/utils/rules.js';
 import { Rule } from 'eslint';
-
-const storybookPlugin = storybookExport as unknown as typeof storybookExport.default;
 
 describe(storybook.name, () => {
   const configs = storybook();

@@ -20,7 +20,7 @@ import promisePlugin from 'eslint-plugin-promise';
 import reactPlugin from 'eslint-plugin-react';
 import regExpPlugin from 'eslint-plugin-regexp';
 import securityPlugin from 'eslint-plugin-security';
-import storybookExport from 'eslint-plugin-storybook';
+import storybookPlugin from 'eslint-plugin-storybook';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import tailwindCssPlugin from 'eslint-plugin-tailwindcss';
 import tanStackQueryPlugin from '@tanstack/eslint-plugin-query';
@@ -30,8 +30,6 @@ import typescriptEsLint from 'typescript-eslint';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import vitestPlugin from '@vitest/eslint-plugin';
-
-const storybookPlugin = storybookExport as unknown as typeof storybookExport.default;
 
 describe('Track changes in available plugin rules', () => {
   const testTable = [
