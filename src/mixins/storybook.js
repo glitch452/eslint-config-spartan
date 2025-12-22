@@ -1,10 +1,7 @@
 import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { files, warnToError } from '../utils/index.js';
-import storybookExport from 'eslint-plugin-storybook';
+import storybookPlugin from 'eslint-plugin-storybook';
 /** @import { ESLint, Linter } from 'eslint' */
-
-// @ts-expect-error: The types use .default, but the actual object does not
-const storybookPlugin = /** @type {typeof storybookExport.default} */ (storybookExport);
 
 /** @type {Record<string, ESLint.Plugin>} */
 // eslint-disable-next-line jsdoc/reject-any-type
