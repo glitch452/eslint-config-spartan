@@ -235,6 +235,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
 
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'@vitest/eslint-plugin'" 1`] = `
 [
+  "vitest/consistent-each-for",
   "vitest/consistent-test-filename",
   "vitest/consistent-test-it",
   "vitest/consistent-vitest-vi",
@@ -263,6 +264,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "vitest/no-standalone-expect",
   "vitest/no-test-prefixes",
   "vitest/no-test-return-statement",
+  "vitest/no-unneeded-async-expect-function",
   "vitest/padding-around-after-all-blocks",
   "vitest/padding-around-after-each-blocks",
   "vitest/padding-around-all",
@@ -300,7 +302,9 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "vitest/prefer-to-have-length",
   "vitest/prefer-todo",
   "vitest/prefer-vi-mocked",
+  "vitest/require-awaited-expect-poll",
   "vitest/require-hook",
+  "vitest/require-import-vi-mock",
   "vitest/require-local-test-context-for-concurrent-snapshots",
   "vitest/require-mock-type-parameters",
   "vitest/require-to-throw-message",
@@ -1116,6 +1120,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "jsdoc/require-property-description",
   "jsdoc/require-property-name",
   "jsdoc/require-property-type",
+  "jsdoc/require-rejects",
   "jsdoc/require-returns",
   "jsdoc/require-returns-check",
   "jsdoc/require-returns-description",
@@ -1247,6 +1252,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "playwright/no-slowed-test",
   "playwright/no-standalone-expect",
   "playwright/no-unsafe-references",
+  "playwright/no-unused-locators",
   "playwright/no-useless-await",
   "playwright/no-useless-not",
   "playwright/no-wait-for-navigation",
@@ -1610,6 +1616,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "testing-library/prefer-query-matchers",
   "testing-library/prefer-screen-queries",
   "testing-library/prefer-user-event",
+  "testing-library/prefer-user-event-setup",
   "testing-library/render-result-naming-convention",
 ]
 `;
@@ -1867,9 +1874,11 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "@typescript-eslint/no-unsafe-type-assertion",
   "@typescript-eslint/no-unsafe-unary-minus",
   "@typescript-eslint/no-unused-expressions",
+  "@typescript-eslint/no-unused-private-class-members",
   "@typescript-eslint/no-unused-vars",
   "@typescript-eslint/no-use-before-define",
   "@typescript-eslint/no-useless-constructor",
+  "@typescript-eslint/no-useless-default-assignment",
   "@typescript-eslint/no-useless-empty-export",
   "@typescript-eslint/no-var-requires",
   "@typescript-eslint/no-wrapper-object-types",
