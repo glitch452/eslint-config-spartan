@@ -98,6 +98,7 @@ exports[`typeEnabled > should track the list of type information required rules 
   "@typescript-eslint/no-unsafe-return",
   "@typescript-eslint/no-unsafe-type-assertion",
   "@typescript-eslint/no-unsafe-unary-minus",
+  "@typescript-eslint/no-useless-default-assignment",
   "@typescript-eslint/non-nullable-type-assertion-style",
   "@typescript-eslint/only-throw-error",
   "@typescript-eslint/prefer-destructuring",
