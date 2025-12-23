@@ -37,7 +37,10 @@ exports[`vitest > should configure the expected rules 1`] = `
   "vitest/no-focused-tests": "error",
   "vitest/no-identical-title": "error",
   "vitest/no-import-node-test": "error",
+  "vitest/no-interpolation-in-snapshots": "error",
+  "vitest/no-mocks-import": "error",
   "vitest/no-standalone-expect": "error",
+  "vitest/no-unneeded-async-expect-function": "error",
   "vitest/prefer-called-exactly-once-with": "error",
   "vitest/prefer-comparison-matcher": "error",
   "vitest/prefer-each": "error",
@@ -57,6 +60,7 @@ exports[`vitest > should configure the expected rules 1`] = `
   ],
   "vitest/valid-describe-callback": "error",
   "vitest/valid-expect": "error",
+  "vitest/valid-expect-in-promise": "error",
   "vitest/valid-title": [
     "error",
     {
