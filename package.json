@@ -37,7 +37,7 @@
     "@angular-eslint/eslint-plugin": "21.1.0",
     "@angular-eslint/eslint-plugin-template": "21.1.0",
     "@angular-eslint/template-parser": "21.1.0",
-    "@eslint/compat": "1.4.1",
+    "@eslint/compat": "2.0.0",
     "@eslint/eslintrc": "3.3.3",
     "@eslint/js": "9.39.2",
     "@next/eslint-plugin-next": "16.1.0",
