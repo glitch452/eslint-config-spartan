@@ -72,7 +72,7 @@ jobs:
         if: |
           ( success() || failure() )
           && ( steps.unit_tests.conclusion == 'success' || steps.unit_tests.conclusion == 'failure' )
-        uses: dorny/test-reporter@v2.3.0
+        uses: dorny/test-reporter@v2.5.0
         with:
           name: Vitest Report
           path: reports/vitest-junit-report.xml
