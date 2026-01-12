@@ -308,6 +308,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "vitest/require-hook",
   "vitest/require-local-test-context-for-concurrent-snapshots",
   "vitest/require-mock-type-parameters",
+  "vitest/require-test-timeout",
   "vitest/require-to-throw-message",
   "vitest/require-top-level-describe",
   "vitest/valid-describe-callback",
