@@ -22,7 +22,8 @@ export function testingLibraryReact(options = {}) {
     ...testingLibraryPlugin.configs['flat/react'],
     files: options.files ?? [files.testSpec],
     name: `${CONFIG_NAME_PREFIX}/${testingLibraryReact.name}`,
-    plugins: { [prefixes.testingLibrary]: fixupPluginRules(testingLibraryPlugin) },
+    // eslint-disable-next-line jsdoc/reject-any-type
+    plugins: { [prefixes.testingLibrary]: fixupPluginRules(/** @type {any} */ (testingLibraryPlugin)) },
     rules: {
       ...warnToError(testingLibraryPlugin.configs['flat/react'].rules),
       'testing-library/prefer-explicit-assert': 'error',
