@@ -121,6 +121,7 @@ exports[`typeEnabled > should track the list of type information required rules 
   "@typescript-eslint/restrict-template-expressions",
   "@typescript-eslint/return-await",
   "@typescript-eslint/strict-boolean-expressions",
+  "@typescript-eslint/strict-void-return",
   "@typescript-eslint/switch-exhaustiveness-check",
   "@typescript-eslint/unbound-method",
   "@typescript-eslint/use-unknown-in-catch-callback-variable",
