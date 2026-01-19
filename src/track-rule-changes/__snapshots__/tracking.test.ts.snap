@@ -1230,6 +1230,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
 
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'eslint-plugin-playwright'" 1`] = `
 [
+  "playwright/consistent-spacing-between-blocks",
   "playwright/expect-expect",
   "playwright/max-expects",
   "playwright/max-nested-describe",
@@ -1249,6 +1250,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "playwright/no-nth-methods",
   "playwright/no-page-pause",
   "playwright/no-raw-locators",
+  "playwright/no-restricted-locators",
   "playwright/no-restricted-matchers",
   "playwright/no-skipped-test",
   "playwright/no-slowed-test",
@@ -1915,6 +1917,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "@typescript-eslint/return-await",
   "@typescript-eslint/sort-type-constituents",
   "@typescript-eslint/strict-boolean-expressions",
+  "@typescript-eslint/strict-void-return",
   "@typescript-eslint/switch-exhaustiveness-check",
   "@typescript-eslint/triple-slash-reference",
   "@typescript-eslint/typedef",
