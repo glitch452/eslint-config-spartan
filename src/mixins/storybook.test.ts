@@ -1,6 +1,7 @@
 import storybookPlugin from 'eslint-plugin-storybook';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
+import importXPlugin from 'eslint-plugin-import-x';
 import { storybook } from './storybook.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -24,11 +25,13 @@ describe(storybook.name, () => {
     ...listRules(storybookPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.storybook),
     ...listRules(reactHooksPlugin.rules, prefixes.reactHooks),
     ...listRules(importPlugin.rules, prefixes.import),
+    ...listRules(importXPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.importX),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(storybookPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.storybook),
     ...getDeprecatedRules(reactHooksPlugin.rules, prefixes.reactHooks),
     ...getDeprecatedRules(importPlugin.rules, prefixes.import),
+    ...getDeprecatedRules(importXPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.importX),
   ];
 
   it('should test all the returned configs', () => {
