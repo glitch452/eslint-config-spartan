@@ -33,6 +33,7 @@ export function storybook(options = {}) {
             ...warnToError(/** @type {Partial<Linter.RulesRecord>} */ (config.rules)),
             'storybook/csf-component': 'error',
             'storybook/no-stories-of': 'error',
+            'import/no-anonymous-default-export': 'off',
           },
         };
       case 'storybook:recommended:main-rules':

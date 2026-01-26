@@ -9,6 +9,7 @@ export const prefixes = /** @type {const} */ ({
   i18next: 'i18next',
   i18nJson: 'i18n-json',
   import: 'import',
+  importX: 'import-x',
   jest: 'jest',
   jestDom: 'jest-dom',
   jsDoc: 'jsdoc',
