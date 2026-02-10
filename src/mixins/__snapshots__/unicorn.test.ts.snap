@@ -23,6 +23,7 @@ exports[`unicorn > should configure the expected rules 1`] = `
   "unicorn/explicit-length-check": "off",
   "unicorn/filename-case": "off",
   "unicorn/import-style": "off",
+  "unicorn/isolated-functions": "error",
   "unicorn/new-for-builtins": "error",
   "unicorn/no-abusive-eslint-disable": "error",
   "unicorn/no-accessor-recursion": "error",
