@@ -45,7 +45,6 @@
     "@tanstack/eslint-plugin-query": "5.91.4",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/eslint-plugin-jsx-a11y": "6.10.1",
-    "@types/eslint-plugin-mocha": "11.1.87",
     "@types/eslint-plugin-security": "3.0.1",
     "@types/eslint-plugin-tailwindcss": "3.17.0",
     "@vitest/eslint-plugin": "1.6.7",
