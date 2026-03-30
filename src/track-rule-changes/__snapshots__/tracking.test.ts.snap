@@ -316,6 +316,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "vitest/require-test-timeout",
   "vitest/require-to-throw-message",
   "vitest/require-top-level-describe",
+  "vitest/unbound-method",
   "vitest/valid-describe-callback",
   "vitest/valid-expect",
   "vitest/valid-expect-in-promise",
