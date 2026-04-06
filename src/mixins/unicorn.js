@@ -56,6 +56,7 @@ export function unicorn(options = {}) {
       'unicorn/prefer-node-protocol': 'off',
       'unicorn/prefer-number-properties': 'off',
       'unicorn/prefer-query-selector': 'off',
+      'unicorn/prefer-simple-condition-first': 'off',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/switch-case-braces': 'off',
       'unicorn/template-indent': 'off',
