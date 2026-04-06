@@ -234,6 +234,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "@tanstack/query/no-rest-destructuring",
   "@tanstack/query/no-unstable-deps",
   "@tanstack/query/no-void-query-fn",
+  "@tanstack/query/prefer-query-options",
   "@tanstack/query/stable-query-client",
 ]
 `;
