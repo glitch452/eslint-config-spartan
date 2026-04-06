@@ -17,6 +17,7 @@ exports[`chai > should configure the expected rules 1`] = `
   "chai-expect/missing-assertion": "error",
   "chai-expect/no-inner-compare": "error",
   "chai-expect/no-inner-literal": "error",
+  "chai-expect/no-uncalled-method": "error",
   "chai-expect/terminating-properties": "error",
   "chai-friendly/no-unused-expressions": "error",
   "no-unused-expressions": "off",
