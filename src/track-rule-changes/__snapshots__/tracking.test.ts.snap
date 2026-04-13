@@ -995,6 +995,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'eslint-plugin-cypress'" 1`] = `
 [
   "cypress/assertion-before-screenshot",
+  "cypress/no-and",
   "cypress/no-assigning-return-values",
   "cypress/no-async-before",
   "cypress/no-async-tests",
