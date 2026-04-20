@@ -92,7 +92,7 @@
     "@commander-js/extra-typings": "14.0.0",
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
-    "@eslint/config-inspector": "1.5.0",
+    "@eslint/config-inspector": "2.0.0",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/node": "24.12.2",
     "@vitest/coverage-v8": "4.1.4",
