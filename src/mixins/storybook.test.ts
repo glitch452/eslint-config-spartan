@@ -25,13 +25,13 @@ describe(storybook.name, () => {
     ...listRules(storybookPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.storybook),
     ...listRules(reactHooksPlugin.rules, prefixes.reactHooks),
     ...listRules(importPlugin.rules, prefixes.import),
-    ...listRules(importXPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.importX),
+    ...listRules(importXPlugin.rules, prefixes.importX),
   ];
   const deprecatedRules = [
     ...getDeprecatedRules(storybookPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.storybook),
     ...getDeprecatedRules(reactHooksPlugin.rules, prefixes.reactHooks),
     ...getDeprecatedRules(importPlugin.rules, prefixes.import),
-    ...getDeprecatedRules(importXPlugin.rules as unknown as Record<string, Rule.RuleModule>, prefixes.importX),
+    ...getDeprecatedRules(importXPlugin.rules, prefixes.importX),
   ];
 
   it('should test all the returned configs', () => {

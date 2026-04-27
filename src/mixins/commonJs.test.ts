@@ -17,7 +17,7 @@ describe(commonJs.name, () => {
   ];
   const deprecatedRules = [
     ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
-    ...getDeprecatedRules(unicornPlugin.rules as any, prefixes.unicorn),
+    ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
   ];
 
   it('should create a valid eslint config', () => {
