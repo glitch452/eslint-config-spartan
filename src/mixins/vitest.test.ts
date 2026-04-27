@@ -19,7 +19,7 @@ describe(vitest.name, () => {
     ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(vitestPlugin.rules as any, prefixes.vitest),
+    ...getDeprecatedRules(vitestPlugin.rules, prefixes.vitest),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unicornPlugin.rules, prefixes.unicorn),
     ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
