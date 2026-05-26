@@ -1,6 +1,6 @@
 import typescriptEsLint from 'typescript-eslint';
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import importPlugin from 'eslint-plugin-import';
+import importXPlugin from 'eslint-plugin-import-x';
 import securityPlugin from 'eslint-plugin-security';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import typescriptEnumPlugin from 'eslint-plugin-typescript-enum';
@@ -37,7 +37,7 @@ describe(buildConfig.name, () => {
     ...new Linter({ configType: 'eslintrc' }).getRules().keys(),
     ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
     ...listRules(stylisticPlugin.rules as any, prefixes.stylistic),
-    ...listRules(importPlugin.rules, prefixes.import),
+    ...listRules(importXPlugin.rules, prefixes.importX),
     ...listRules(securityPlugin.rules, prefixes.security),
     ...listRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...listRules(typescriptEnumPlugin.rules, prefixes.typescriptEnum),
@@ -46,7 +46,7 @@ describe(buildConfig.name, () => {
   const deprecatedRules = [
     ...getDeprecatedRules(new Linter({ configType: 'eslintrc' }).getRules()),
     ...getDeprecatedRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
-    ...getDeprecatedRules(importPlugin.rules, prefixes.import),
+    ...getDeprecatedRules(importXPlugin.rules, prefixes.importX),
     ...getDeprecatedRules(securityPlugin.rules, prefixes.security),
     ...getDeprecatedRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...getDeprecatedRules(typescriptEnumPlugin.rules, prefixes.typescriptEnum),

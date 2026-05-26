@@ -15,11 +15,6 @@ interface RemarkPreset {
 
 type RemarkPlugin = () => any;
 
-declare module 'eslint-plugin-import' {
-  const module: EsLintPlugin;
-  export default module;
-}
-
 declare module '@next/eslint-plugin-next' {
   const module: EsLintPlugin;
   export default module;

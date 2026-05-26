@@ -9,7 +9,7 @@ import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
 import cypressPlugin from 'eslint-plugin-cypress';
 import i18nextPlugin from 'eslint-plugin-i18next';
 import i18nJsonPlugin from 'eslint-plugin-i18n-json';
-import importPlugin from 'eslint-plugin-import';
+import importXPlugin from 'eslint-plugin-import-x';
 import jsDocPlugin from 'eslint-plugin-jsdoc';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import mochaPlugin from 'eslint-plugin-mocha';
@@ -43,7 +43,7 @@ describe('Track changes in available plugin rules', () => {
     { name: 'eslint-plugin-cypress', rules: listRules(cypressPlugin.rules, prefixes.cypress, true) },
     { name: 'eslint-plugin-i18next', rules: listRules(i18nextPlugin.rules, prefixes.i18next, true) },
     { name: 'eslint-plugin-i18n-json', rules: listRules(i18nJsonPlugin.rules, prefixes.i18nJson, true) },
-    { name: 'eslint-plugin-import', rules: listRules(importPlugin.rules, prefixes.import, true) },
+    { name: 'eslint-plugin-import-x', rules: listRules(importXPlugin.rules, prefixes.importX, true) },
     { name: 'eslint-plugin-jsdoc', rules: listRules(jsDocPlugin.rules, prefixes.jsDoc, true) },
     { name: 'eslint-plugin-jsx-a11y', rules: listRules(jsxA11yPlugin.rules, prefixes.jsxA11y, true) },
     { name: 'eslint-plugin-mdx', rules: listRules(mdxPlugin.rules, prefixes.mdx, true) },

@@ -1,8 +1,7 @@
 import eslint from '@eslint/js';
-import { fixupPluginRules } from '@eslint/compat';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import typescriptEsLint from 'typescript-eslint';
-import importPlugin from 'eslint-plugin-import';
+import importXPlugin from 'eslint-plugin-import-x';
 import securityPlugin from 'eslint-plugin-security';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import typescriptEnumPlugin from 'eslint-plugin-typescript-enum';
@@ -34,7 +33,7 @@ const inputPluginExtensions = [
  * - [@eslint/js](https://www.npmjs.com/package/@eslint/js)
  * - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint)
  * - [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin)
- * - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+ * - [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
  * - [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security)
  * - [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports)
  * - [eslint-plugin-typescript-enum](https://www.npmjs.com/package/eslint-plugin-typescript-enum)
@@ -61,7 +60,7 @@ export function buildConfig(...configs) {
       name: `${CONFIG_NAME_PREFIX}/base`,
       files,
       plugins: {
-        [prefixes.import]: fixupPluginRules(importPlugin),
+        [prefixes.importX]: importXPlugin,
         [prefixes.security]: securityPlugin,
         [prefixes.stylistic]: /** @type {ESLint.Plugin} */ (stylisticPlugin),
         [prefixes.typescriptEnum]: typescriptEnumPlugin,
@@ -70,10 +69,10 @@ export function buildConfig(...configs) {
 
       // This is required to avoid 'parserPath or languageOptions.parser is required' error in the 'import' plugin
       settings: {
-        ...importPlugin.flatConfigs.typescript.settings,
-        'import/extensions': inputPluginExtensions,
-        'import/parsers': { '@typescript-eslint/parser': inputPluginExtensions },
-        'import/resolver': { typescript: true, node: { extensions: inputPluginExtensions } },
+        ...importXPlugin.flatConfigs.typescript.settings,
+        'import-x/extensions': inputPluginExtensions,
+        'import-x/parsers': { '@typescript-eslint/parser': inputPluginExtensions },
+        'import-x/resolver': { typescript: true, node: { extensions: inputPluginExtensions } },
       },
       // This is required to avoid ecmaVersion < 2015 error or 'import' / 'export' error in the 'import' plugin
       languageOptions: { parserOptions: { ecmaVersion: 'latest', sourceType: 'module' } },
@@ -94,19 +93,19 @@ export function buildConfig(...configs) {
         'security/detect-object-injection': 'off',
 
         /* -- import Rules -- */
-        ...warnToError(importPlugin.configs.recommended.rules),
-        'import/first': 'error',
-        'import/newline-after-import': 'error',
-        'import/no-absolute-path': 'error',
-        'import/no-cycle': 'error',
-        'import/no-deprecated': 'error',
-        'import/no-duplicates': ['error', { considerQueryString: true }],
-        'import/no-empty-named-blocks': 'error',
-        'import/no-import-module-exports': 'error',
-        'import/no-named-as-default-member': 'off',
-        'import/no-self-import': 'error',
-        'import/no-unresolved': 'off', // Let Typescript handle unresolved modules
-        'import/no-useless-path-segments': 'error',
+        ...warnToError(importXPlugin.configs.recommended.rules),
+        'import-x/first': 'error',
+        'import-x/newline-after-import': 'error',
+        'import-x/no-absolute-path': 'error',
+        'import-x/no-cycle': 'error',
+        'import-x/no-deprecated': 'error',
+        'import-x/no-duplicates': ['error', { considerQueryString: true }],
+        'import-x/no-empty-named-blocks': 'error',
+        'import-x/no-import-module-exports': 'error',
+        'import-x/no-named-as-default-member': 'off',
+        'import-x/no-self-import': 'error',
+        'import-x/no-unresolved': 'off', // Let Typescript handle unresolved modules
+        'import-x/no-useless-path-segments': 'error',
         // Disable built-in rule in favour of import plugin rule
         'no-duplicate-imports': 'off',
 
