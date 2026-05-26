@@ -5,7 +5,6 @@ exports[`storybook > '0' > should configure the expected rules 1`] = `undefined`
 exports[`storybook > '1' > should configure the expected rules 1`] = `
 {
   "import-x/no-anonymous-default-export": "off",
-  "import/no-anonymous-default-export": "off",
   "react-hooks/rules-of-hooks": "off",
   "storybook/await-interactions": "error",
   "storybook/context-in-play-function": "error",

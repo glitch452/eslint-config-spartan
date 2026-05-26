@@ -102,7 +102,7 @@ receive other configs or mixins as inputs, which are included in the final confi
 - The [typescript-eslint](https://www.npmjs.com/package/typescript-eslint) rules are prefixed with `@typescript-eslint`
 - The [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) rules are prefixed with
   `@stylistic`
-- The [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) rules are prefixed with `import`
+- The [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x) rules are prefixed with `import`
 - The [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security) rules are prefixed with `security`
 - The [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports) rules are prefixed with
   `unused-imports`
