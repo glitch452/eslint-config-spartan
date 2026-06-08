@@ -112,9 +112,6 @@
   "peerDependencies": {
     "eslint": "^9.32.0"
   },
-  "overrides": {
-    "fflate": "0.8.2"
-  },
   "engines": {
     "node": ">=20.10"
   },
