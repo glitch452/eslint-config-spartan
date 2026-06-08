@@ -25,13 +25,6 @@
 
     // Ignore these. Keep them at the end of the packageRules to maintain precedence.
     {
-      description: 'Do not update npm overrides entries',
-      enabled: false,
-      matchManagers: ['npm'],
-      matchDepTypes: ['overrides'],
-      matchPackageNames: ['fflate'],
-    },
-    {
       enabled: false,
       matchManagers: ['npm'],
       matchUpdateTypes: ['major'],
