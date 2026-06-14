@@ -1,5 +1,4 @@
-import angularPlugin from '@angular-eslint/eslint-plugin';
-import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
+import angularEsLint from 'angular-eslint';
 import { angular } from './angular.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -14,7 +13,7 @@ describe(angular.name, () => {
       id: 'angular',
       filesOption: 'files',
       expectedFiles: [files.jsTs],
-      plugins: [prefixes.angular, prefixes.angularTemplate],
+      plugins: [prefixes.angular],
     },
     {
       id: 'angularTemplate',
@@ -25,12 +24,12 @@ describe(angular.name, () => {
   ] as const;
 
   const validRules = [
-    ...listRules(angularPlugin.rules as any, prefixes.angular),
-    ...listRules(angularTemplatePlugin.rules as any, prefixes.angularTemplate),
+    ...listRules(angularEsLint.tsPlugin.rules as any, prefixes.angular),
+    ...listRules(angularEsLint.templatePlugin.rules as any, prefixes.angularTemplate),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(angularPlugin.rules as any, prefixes.angular),
-    ...getDeprecatedRules(angularTemplatePlugin.rules as any, prefixes.angularTemplate),
+    ...getDeprecatedRules(angularEsLint.tsPlugin.rules, prefixes.angular),
+    ...getDeprecatedRules(angularEsLint.templatePlugin.rules, prefixes.angularTemplate),
   ];
 
   it('should test all the returned configs', () => {

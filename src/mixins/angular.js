@@ -1,7 +1,5 @@
-import angularPlugin from '@angular-eslint/eslint-plugin';
-import angularTemplatePlugin from '@angular-eslint/eslint-plugin-template';
-import angularParser from '@angular-eslint/template-parser';
-import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
+import angularEsLint from 'angular-eslint';
+import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files } from '../utils/index.js';
 /** @import { Linter, ESLint } from 'eslint' */
 
@@ -25,15 +23,11 @@ export function angular(options = {}) {
     {
       name: `${CONFIG_NAME_PREFIX}/${angular.name}`,
       files: options.files ?? [files.jsTs],
-      plugins: {
-        // eslint-disable-next-line jsdoc/reject-any-type
-        [prefixes.angular]: /** @type {any} */ (angularPlugin),
-        // eslint-disable-next-line jsdoc/reject-any-type
-        [prefixes.angularTemplate]: /** @type {any} */ (angularTemplatePlugin),
-      },
-      processor: '@angular-eslint/template/extract-inline-html',
+      plugins: angularEsLint.configs.tsRecommended[0].plugins,
+      languageOptions: angularEsLint.configs.tsRecommended[0].languageOptions,
+      processor: angularEsLint.processInlineTemplates,
       rules: {
-        .../** @type {Partial<Linter.RulesRecord>} */ (angularPlugin.configs.recommended.rules),
+        ...angularEsLint.configs.tsRecommended[1].rules,
         '@angular-eslint/component-selector': ['error', { type: 'element', prefix: 'app', style: 'kebab-case' }],
         '@angular-eslint/directive-class-suffix': 'off',
         '@angular-eslint/directive-selector': ['off', { type: 'attribute', prefix: 'app', style: 'camelCase' }],
@@ -43,12 +37,9 @@ export function angular(options = {}) {
     {
       name: `${CONFIG_NAME_PREFIX}/${angular.name}Template`,
       files: options.templateFiles ?? [files.html],
-      plugins: {
-        // eslint-disable-next-line jsdoc/reject-any-type
-        [prefixes.angularTemplate]: /** @type {any} */ (angularTemplatePlugin),
-      },
-      languageOptions: { parser: angularParser },
-      rules: /** @type {Partial<Linter.RulesRecord>} */ (angularTemplatePlugin.configs.recommended.rules),
+      plugins: angularEsLint.configs.templateRecommended[0].plugins,
+      languageOptions: angularEsLint.configs.templateRecommended[0].languageOptions,
+      rules: angularEsLint.configs.templateRecommended[1].rules,
     },
   ];
 }
