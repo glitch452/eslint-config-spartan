@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { Options, defineConfig } from 'tsup';
+import { type UserConfig, defineConfig } from 'tsdown';
 
 const dateFormat = {
   year: 'numeric',
@@ -43,20 +43,19 @@ const banner = ((_context) => {
   lines.push(' */');
 
   return { js: lines.join('\n') };
-}) satisfies Options['banner'];
+}) satisfies UserConfig['banner'];
 
 const tsupConfig = defineConfig({
   banner,
-  bundle: true,
   clean: true,
+  deps: { skipNodeModulesBundle: true },
   dts: true,
   entry: ['src/**/index.js'],
   format: ['cjs', 'esm'],
   minify: false,
   outDir: 'dist',
-  skipNodeModulesBundle: true,
+  outExtensions: ({ format }) => ({ js: format === 'es' ? '.js' : '.cjs' }),
   target: 'es2022',
-  watch: false,
 });
 
 export default tsupConfig;
