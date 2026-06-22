@@ -51,7 +51,7 @@
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-mdx": "3.8.1",
     "eslint-plugin-chai-expect": "4.1.0",
-    "eslint-plugin-chai-friendly": "1.2.0",
+    "eslint-plugin-chai-friendly": "1.2.1",
     "eslint-plugin-cypress": "6.4.1",
     "eslint-plugin-googleappsscript": "1.0.5",
     "eslint-plugin-i18n-json": "4.0.1",
@@ -59,7 +59,7 @@
     "eslint-plugin-import-x": "4.16.2",
     "eslint-plugin-jest": "29.15.2",
     "eslint-plugin-jest-dom": "5.5.0",
-    "eslint-plugin-jsdoc": "63.0.2",
+    "eslint-plugin-jsdoc": "63.0.6",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-mdx": "3.8.1",
     "eslint-plugin-mocha": "11.3.0",
@@ -69,7 +69,7 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-regexp": "3.1.0",
     "eslint-plugin-security": "4.0.1",
-    "eslint-plugin-storybook": "10.4.4",
+    "eslint-plugin-storybook": "10.4.6",
     "eslint-plugin-tailwindcss": "3.18.3",
     "eslint-plugin-testing-library": "7.16.2",
     "eslint-plugin-typescript-enum": "2.1.0",
@@ -84,7 +84,7 @@
     "remark-preset-lint-recommended": "7.0.1",
     "remark-preset-prettier": "2.0.2",
     "tailwindcss": "3.4.19",
-    "typescript-eslint": "8.61.0"
+    "typescript-eslint": "8.61.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.3",
@@ -94,7 +94,7 @@
     "@eslint/config-inspector": "3.0.4",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/node": "24.13.2",
-    "@vitest/coverage-v8": "4.1.8",
+    "@vitest/coverage-v8": "4.1.9",
     "commander": "15.0.0",
     "eslint": "9.39.4",
     "husky": "9.1.7",
@@ -102,9 +102,9 @@
     "minimatch": "10.2.5",
     "prettier": "3.8.4",
     "rimraf": "6.1.3",
-    "tsdown": "0.22.2",
+    "tsdown": "0.22.3",
     "typescript": "6.0.3",
-    "vitest": "4.1.8",
+    "vitest": "4.1.9",
     "zod": "4.4.3"
   },
   "peerDependencies": {
