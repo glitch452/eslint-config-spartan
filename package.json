@@ -73,7 +73,7 @@
     "eslint-plugin-tailwindcss": "3.18.3",
     "eslint-plugin-testing-library": "7.16.2",
     "eslint-plugin-typescript-enum": "2.1.0",
-    "eslint-plugin-unicorn": "65.0.1",
+    "eslint-plugin-unicorn": "68.0.0",
     "eslint-plugin-unused-imports": "4.4.1",
     "globals": "17.6.0",
     "remark": "15.0.1",
