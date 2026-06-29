@@ -344,12 +344,12 @@ import { jest } from 'eslint-config-spartan/mixins';
 ### Jest DOM
 
 The `jestDom` mixin creates an ESLint config for
-[eslint-plugin-jest-dom](https://www.npmjs.com/package/eslint-plugin-jest-dom) to assist with using the
+[eslint-plugin-jest-dom-ya](https://www.npmjs.com/package/eslint-plugin-jest-dom-ya) to assist with using the
 [jest-dom](https://testing-library.com/docs/ecosystem-jest-dom/) element matchers.
 
 Rule Prefixes:
 
-- The `eslint-plugin-jest-dom` rules are prefixed with `jest-dom`
+- The `eslint-plugin-jest-dom-ya` rules are prefixed with `jest-dom`
 
 ```js
 import { jestDom } from 'eslint-config-spartan/mixins';

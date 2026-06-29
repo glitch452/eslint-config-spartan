@@ -1,4 +1,4 @@
-import jestDomPlugin from 'eslint-plugin-jest-dom';
+import jestDomPlugin from 'eslint-plugin-jest-dom-ya';
 import { jestDom } from './jestDom.js';
 import { configSchema } from '../__test__/utils/configSchema.js';
 import { difference, intersection } from '../__test__/utils/sets.js';
@@ -10,6 +10,7 @@ describe(jestDom.name, () => {
   const config = jestDom();
 
   const validRules = listRules(jestDomPlugin.rules, prefixes.jestDom);
+  // console.log(jestDomPlugin.rules);
   const deprecatedRules = getDeprecatedRules(jestDomPlugin.rules, prefixes.jestDom);
 
   it('should create a valid eslint config', () => {
@@ -46,6 +47,7 @@ describe(jestDom.name, () => {
   it('should only configure rules that exist', () => {
     const configuredRules = Object.keys(config.rules ?? {});
     const actual = difference(configuredRules, validRules);
+    console.log({ configuredRules, validRules });
     expect(actual).toStrictEqual([]);
   });
 
