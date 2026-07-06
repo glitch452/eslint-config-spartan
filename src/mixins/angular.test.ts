@@ -5,6 +5,7 @@ import { difference, intersection } from '../__test__/utils/sets.js';
 import { files } from '../utils/index.js';
 import { CONFIG_NAME_PREFIX, prefixes } from '../constants.js';
 import { getDeprecatedRules, getEnabledRules, getWarnRules, listRules } from '../__test__/utils/rules.js';
+import { Rule } from 'eslint';
 
 describe(angular.name, () => {
   const configs = angular();
@@ -28,8 +29,11 @@ describe(angular.name, () => {
     ...listRules(angularEsLint.templatePlugin.rules as any, prefixes.angularTemplate),
   ];
   const deprecatedRules = [
-    ...getDeprecatedRules(angularEsLint.tsPlugin.rules, prefixes.angular),
-    ...getDeprecatedRules(angularEsLint.templatePlugin.rules, prefixes.angularTemplate),
+    ...getDeprecatedRules(angularEsLint.tsPlugin.rules as Record<string, Rule.RuleModule>, prefixes.angular),
+    ...getDeprecatedRules(
+      angularEsLint.templatePlugin.rules as Record<string, Rule.RuleModule>,
+      prefixes.angularTemplate,
+    ),
   ];
 
   it('should test all the returned configs', () => {
