@@ -29,9 +29,7 @@ export function getWarnRules(rules: Partial<Record<string, Linter.RuleEntry>> = 
  */
 export function listRules(
   rules:
-    | Record<string, Linter.RuleEntry | Rule.RuleModule>
-    | Map<string, Linter.RuleEntry | Rule.RuleModule>
-    | undefined,
+    Record<string, Linter.RuleEntry | Rule.RuleModule> | Map<string, Linter.RuleEntry | Rule.RuleModule> | undefined,
   prefix?: string,
   shouldSort: boolean = false,
 ): string[] {
