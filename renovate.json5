@@ -7,6 +7,11 @@
   // Run on Monday Mornings
   schedule: ['* 0-12 * * 1'],
 
+  automerge: true,
+  automergeType: 'pr',
+  // Use GitHub's automerge feature instead of Renovate's automerge feature.
+  platformAutomerge: true,
+
   packageRules: [
     {
       description: 'Put typescript into its own group',
@@ -21,6 +26,12 @@
       groupSlug: 'commander',
       matchPackageNames: ['commander', '@commander-js/**'],
       matchUpdateTypes: ['major'],
+    },
+
+    {
+      description: 'Do not automerge major updates; require manual review',
+      matchUpdateTypes: ['major'],
+      automerge: false,
     },
 
     // Ignore these. Keep them at the end of the packageRules to maintain precedence.
