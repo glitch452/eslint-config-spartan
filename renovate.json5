@@ -5,7 +5,7 @@
   extends: ['github>glitch452/renovate-config', 'github>glitch452/renovate-config//presets/npm'],
 
   // Run on Monday Mornings
-  schedule: ['* 0-6 * * 1'],
+  schedule: ['* 0-12 * * 1'],
 
   packageRules: [
     {
