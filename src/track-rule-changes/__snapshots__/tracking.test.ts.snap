@@ -1270,6 +1270,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "playwright/no-skipped-test",
   "playwright/no-slowed-test",
   "playwright/no-standalone-expect",
+  "playwright/no-unnecessary-assertions",
   "playwright/no-unsafe-references",
   "playwright/no-unused-locators",
   "playwright/no-useless-await",
