@@ -117,6 +117,7 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
   "@next/next/no-head-import-in-document",
   "@next/next/no-html-link-for-pages",
   "@next/next/no-img-element",
+  "@next/next/no-location-assign-relative-destination",
   "@next/next/no-page-custom-font",
   "@next/next/no-script-component-in-head",
   "@next/next/no-styled-jsx-in-document",
