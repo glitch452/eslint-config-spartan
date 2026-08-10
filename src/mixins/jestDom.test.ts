@@ -47,7 +47,6 @@ describe(jestDom.name, () => {
   it('should only configure rules that exist', () => {
     const configuredRules = Object.keys(config.rules ?? {});
     const actual = difference(configuredRules, validRules);
-    console.log({ configuredRules, validRules });
     expect(actual).toStrictEqual([]);
   });
 
