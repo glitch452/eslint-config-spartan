@@ -52,7 +52,7 @@
     "eslint-mdx": "3.8.1",
     "eslint-plugin-chai-expect": "4.1.0",
     "eslint-plugin-chai-friendly": "1.2.1",
-    "eslint-plugin-cypress": "6.4.4",
+    "eslint-plugin-cypress": "7.0.1",
     "eslint-plugin-googleappsscript": "1.0.5",
     "eslint-plugin-i18n-json": "4.0.1",
     "eslint-plugin-i18next": "6.1.5",
