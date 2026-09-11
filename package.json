@@ -36,7 +36,7 @@
   "dependencies": {
     "@eslint/compat": "2.1.1",
     "@eslint/eslintrc": "3.3.7",
-    "@eslint/js": "9.39.5",
+    "@eslint/js": "10.0.1",
     "@next/eslint-plugin-next": "16.3.4",
     "@stylistic/eslint-plugin": "5.10.0",
     "@tanstack/eslint-plugin-query": "5.102.8",
@@ -96,7 +96,7 @@
     "@types/node": "24.13.3",
     "@vitest/coverage-v8": "4.1.11",
     "commander": "15.0.0",
-    "eslint": "9.39.5",
+    "eslint": "10.10.0",
     "husky": "9.1.7",
     "lint-staged": "17.5.0",
     "minimatch": "10.2.6",
@@ -108,7 +108,7 @@
     "zod": "4.5.4"
   },
   "peerDependencies": {
-    "eslint": "^9.39.5"
+    "eslint": "^9.39.5 || ^10.0.0"
   },
   "engines": {
     "node": ">=20.10"
