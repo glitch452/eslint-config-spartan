@@ -44,6 +44,7 @@ export function typeEnabled(options = {}) {
 
       '@typescript-eslint/dot-notation': 'error',
       '@typescript-eslint/no-deprecated': 'error',
+      '@typescript-eslint/no-generated-empty-object-type': 'error',
       '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
       '@typescript-eslint/no-misused-spread': 'error',
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
