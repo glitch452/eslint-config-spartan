@@ -48,7 +48,7 @@ const banner = ((_context) => {
 const tsupConfig = defineConfig({
   banner,
   clean: true,
-  deps: { skipNodeModulesBundle: true },
+  deps: { neverBundle: true },
   dts: true,
   entry: ['src/**/index.js'],
   format: ['cjs', 'esm'],
