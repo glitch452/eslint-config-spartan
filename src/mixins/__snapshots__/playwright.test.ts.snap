@@ -26,6 +26,7 @@ exports[`playwright > should configure the expected rules 1`] = `
   "playwright/no-eval": "error",
   "playwright/no-focused-test": "error",
   "playwright/no-force-option": "error",
+  "playwright/no-identical-title": "error",
   "playwright/no-nested-step": "error",
   "playwright/no-networkidle": "error",
   "playwright/no-page-pause": "error",
