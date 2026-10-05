@@ -63,6 +63,7 @@ export function typeEnabled(options = {}) {
       '@typescript-eslint/related-getter-setter-pairs': 'error',
       '@typescript-eslint/switch-exhaustiveness-check': ['error', { requireDefaultForNonUnion: true }],
       '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+      '@typescript-eslint/no-unsafe-enum-assignment': 'error',
     },
   };
 }
