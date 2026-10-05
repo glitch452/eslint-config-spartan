@@ -492,6 +492,7 @@ exports[`buildConfig > 'base' > should configure the expected rules 1`] = `
   "security/detect-child-process": "error",
   "security/detect-disable-mustache-escape": "error",
   "security/detect-eval-with-expression": "error",
+  "security/detect-invisible-characters": "error",
   "security/detect-new-buffer": "error",
   "security/detect-no-csrf-before-method-override": "error",
   "security/detect-non-literal-fs-filename": "error",
