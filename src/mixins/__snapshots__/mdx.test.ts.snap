@@ -11,6 +11,8 @@ exports[`mdx > 'base' > should configure the expected rules 1`] = `
 
 exports[`mdx > 'code-blocks' > should configure the expected rules 1`] = `
 {
+  "@stylistic/eol-last": "off",
+  "@stylistic/padded-blocks": "off",
   "@typescript-eslint/no-magic-numbers": "off",
   "@typescript-eslint/no-unused-vars": "off",
   "eol-last": "off",
