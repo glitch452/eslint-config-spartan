@@ -1,5 +1,6 @@
 import reactPlugin from 'eslint-plugin-react';
 import typescriptEsLint from 'typescript-eslint';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 // Note: Can't import this before unusedImportsPlugin, Error running test suite: Could not find ESLint Linter in require cache
 import * as mdxPlugin from 'eslint-plugin-mdx';
@@ -23,6 +24,7 @@ describe(mdx.name, () => {
     ...listRules(mdxPlugin.rules, prefixes.mdx),
     ...listRules(unusedImportsPlugin.rules, prefixes.unusedImports),
     ...listRules(reactPlugin.rules, prefixes.react),
+    ...listRules(stylisticPlugin.rules, prefixes.stylistic),
     ...listRules((typescriptEsLint.plugin as any).rules, prefixes.typescriptEsLint),
   ];
   const deprecatedRules = [
