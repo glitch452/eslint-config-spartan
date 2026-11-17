@@ -1034,6 +1034,10 @@ exports[`Track changes in available plugin rules > should snapshot the list of r
 
 exports[`Track changes in available plugin rules > should snapshot the list of rules for "'eslint-plugin-import-x'" 1`] = `
 [
+  "import-x/avoid-barrel-files",
+  "import-x/avoid-importing-barrel-files",
+  "import-x/avoid-namespace-import",
+  "import-x/avoid-re-export-all",
   "import-x/consistent-type-specifier-style",
   "import-x/default",
   "import-x/dynamic-import-chunkname",
