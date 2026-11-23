@@ -1,7 +1,7 @@
 import angularEsLint from 'angular-eslint';
 import { CONFIG_NAME_PREFIX } from '../constants.js';
 import { files } from '../utils/index.js';
-/** @import { Linter, ESLint } from 'eslint' */
+/** @import { Linter } from 'eslint' */
 
 /**
  * The `angular` mixin creates an ESLint config for
@@ -25,7 +25,7 @@ export function angular(options = {}) {
       files: options.files ?? [files.jsTs],
       plugins: angularEsLint.configs.tsRecommended[0].plugins,
       languageOptions: angularEsLint.configs.tsRecommended[0].languageOptions,
-      processor: angularEsLint.processInlineTemplates,
+      processor: angularEsLint.createProcessor(),
       rules: {
         ...angularEsLint.configs.tsRecommended[1].rules,
         '@angular-eslint/component-selector': ['error', { type: 'element', prefix: 'app', style: 'kebab-case' }],
