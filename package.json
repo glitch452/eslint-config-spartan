@@ -103,7 +103,7 @@
     "prettier": "3.10.1",
     "rimraf": "6.1.4",
     "tsdown": "0.23.7",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "vitest": "4.1.12",
     "zod": "4.6.7"
   },
